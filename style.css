@@ -44,10 +44,12 @@ body {
     width: 22px;
     height: 22px;
     object-fit: contain;
+    margin-left: 42px;
 }
 
 .logo span {
-    font-size: 18px;
+    font-family: "Hind", sans-serif;
+    font-size: 25px;
     font-weight: 600;
     line-height: 1;
     letter-spacing: -0.3px;
@@ -55,15 +57,16 @@ body {
 }
 
 .nav-wrapper {
+    justify-content: space-between;
     display: flex;
     align-items: center;
-    gap: 48px;
+    gap: 0;
 }
 
-.nav-home,
-.nav-all,
-.nav-cart {
-    flex-shrink: 0;
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0;
 }
 
 .nav-home {
@@ -72,11 +75,14 @@ body {
     justify-content: center;
     height: 55px;
     padding: 0 24px;
+    font-family: "Hind", sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #1A1A1A;
     text-decoration: none;
     white-space: nowrap;
+    margin-right: 8px;
+    margin-top: -1px;
 }
 
 .nav-home:hover {
@@ -89,11 +95,14 @@ body {
     justify-content: center;
     height: 55px;
     padding: 0 24px;
+    font-family: "Hind", sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #1A1A1A;
     text-decoration: none;
     white-space: nowrap;
+    margin-right: 24px;
+    margin-top: -1px;
 }
 
 .nav-all:hover {
@@ -111,6 +120,9 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    flex-shrink: 0;
+    margin-right: 32px;
+    margin-top: -4px;
 }
 
 .nav-cart:hover {
