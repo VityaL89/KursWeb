@@ -1,0 +1,123 @@
+@font-face {
+    font-family: "Hind";
+    src: url('./fonts/Hind-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hind", sans-serif;
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+}
+
+.header {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.logo span {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.3px;
+    color: #1A1A1A;
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.nav-home,
+.nav-all,
+.nav-cart {
+    flex-shrink: 0;
+}
+
+.nav-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    padding: 0 24px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #1A1A1A;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-home:hover {
+    opacity: 0.7;
+}
+
+.nav-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    padding: 0 24px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #1A1A1A;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-all:hover {
+    opacity: 0.7;
+}
+
+.nav-cart {
+    width: 56px;
+    height: 56px;
+    padding: 16px;
+    border-radius: 4px;
+    background-color: #1A1A1A;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-cart:hover {
+    background-color: #2B2B2B;
+}
+
+.cart-icon {
+    width: 24px;
+    height: 24px;
+}
