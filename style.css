@@ -332,3 +332,186 @@ body {
     align-items: center;
     box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
+
+.award-banner-section {
+    width: 100%;
+    background: #E5F8BC;
+    display: flex;
+    justify-content: center;
+    margin-top: -12px;
+}
+
+.award-banner-container {
+    width: 1440px;         
+    height: 487px;          
+    display: flex;
+    align-items: center;
+    padding-left: 56px;
+    overflow: hidden;     
+}
+
+.award-banner-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.award-banner-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 56px;
+    letter-spacing: -0.05em;
+    color: #1A1A1A;
+    margin-bottom: -29px;
+    margin-top: 1px;
+}
+
+.award-banner-subtitle {
+    font-family: "Montserrat", sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 56px;
+    letter-spacing: -0.05em;
+    color: #1A1A1A;
+    max-width: 494px;  
+    margin-bottom: 40px;
+    margin-top: 28px;
+}
+
+
+.award-banner-btn {
+    width: 265px;
+    height: 56px;
+    background: #1A1A1A;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 24px;
+    cursor: pointer;
+}
+
+.award-banner-btn:hover {
+    background: #2B2B2B;
+}
+
+.award-restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 202px);
+  grid-template-rows: 90px 305px 90px;
+  gap: 24px;
+  margin-left: 179px;
+}
+
+.award-restaurants-grid > :nth-child(1) { grid-column: 1; grid-row: 1; } 
+.award-restaurants-grid > :nth-child(2) { grid-column: 2; grid-row: 1; } 
+.award-restaurants-grid > :nth-child(3) { grid-column: 3; grid-row: 1; } 
+
+.award-restaurants-grid > :nth-child(4) { grid-column: 1; grid-row: 2; } 
+.award-restaurants-grid > :nth-child(5) { grid-column: 2; grid-row: 2; margin-top: 164px; } 
+.award-restaurants-grid > :nth-child(6) { grid-column: 3; grid-row: 2; } 
+
+
+.award-restaurants-grid > :nth-child(7) { grid-column: 1; grid-row: 3; }
+.award-restaurants-grid > :nth-child(8) { grid-column: 2; grid-row: 3; }
+.award-restaurants-grid > :nth-child(9) { grid-column: 3; grid-row: 3; }
+
+.award-card {
+  background: #FFFFFF;
+  border-radius: 12px; 
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 8px; 
+  box-sizing: border-box;
+}
+
+.award-img, 
+.award-img-large, 
+.award-img-small {
+  width: 100%;
+  border-radius: 8px; 
+  object-fit: cover;
+  display: block;
+}
+
+.award-card-title {
+  font-family: "Hind", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #1A1A1A;
+  padding-top: 12px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -4px;
+}
+
+.award-card-text {
+  height: 90px;
+  padding: 16px; 
+}
+.award-card-text .award-card-title {
+  padding-top: 0;
+  margin-top: 10px;
+}
+
+.award-card-image-center {
+  width: 202px;        
+  height: 305px;       
+  padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: -50px;
+}
+
+.award-card-image-center .award-img {
+  width: 186px;   
+  height: 161px;  
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transform: translateY(58px);
+}
+.award-card-image-center .award-card-title {
+  padding-top: 8px;
+  flex: none;
+  margin-top: 74px;
+}
+
+.award-card-tall {
+  height: 305px;
+}
+.award-card-tall .award-img {
+    height: 220px;
+}
+
+.award-card-image-large {
+  height: 305px;
+}
+.award-card-image-large .award-img-large {
+  height: 220px;
+}
+
+.award-card-small {
+  height: 90px;
+}
+.award-card-small .award-img-small {
+  height: 100%;
+}
+
+.award-card-text-bottom {
+  height: 90px;
+  padding: 16px;
+}
+.award-card-text-bottom .award-card-title {
+  padding-top: 0;
+}
+
