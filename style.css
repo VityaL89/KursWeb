@@ -515,3 +515,31 @@ body {
   padding-top: 0;
 }
 
+.arrivals {
+    padding-top: 120px; 
+    padding-bottom: 80px;
+    background: white;
+}
+
+.arrivals-title {
+    width: 100%;
+    margin-bottom: 82px;       
+    font-family: "Montserrat", sans-serif;
+    font-size: 35.16px;        
+    font-weight: 700;          
+    color: #1A1A1A;
+    margin-top: -49px;        
+    margin-left: 33px;         
+    letter-spacing: -0.7px;    
+    line-height: 48px;         
+}
+
+.arrivals-grid {
+    display: flex;
+    gap: 23px;
+    justify-content: flex-start; 
+    width: 100%;
+    margin-top: -51px;
+    margin-left: 32px;
+}
+
