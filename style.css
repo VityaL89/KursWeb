@@ -543,3 +543,121 @@ body {
     margin-left: 32px;
 }
 
+.categories {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: #ffffff;
+    overflow: visible; 
+}
+
+.categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.categories-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 35.16px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -0.7px;
+    color: #1A1A1A;
+    margin: 0;
+    margin-top: -140px;
+    margin-left: 32px;
+}
+
+.view-all-link {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;         
+    font-weight: 400;       
+    line-height: 1.5;        
+    letter-spacing: 0;
+    color: #1A1A1A;         
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    margin-top: -116px;
+    margin-right: 35px;
+}
+
+.view-all-link:hover {
+    opacity: 0.7;
+}
+
+.categories-grid {
+    display: flex;
+    gap: 26px;
+    align-items: flex-start;
+    position: relative;
+    overflow: visible;
+    margin-top: -57px;
+    margin-left: 32px; 
+}
+
+.category-card {
+    width: 200px;
+    height: 197px;
+    background: #F9F9F9;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    flex-shrink: 0; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+
+.category-card-half {
+    margin-right: -100px; 
+    opacity: 0.7; 
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.category-img {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.category-name {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #1A1A1A;
+    text-align: center;
+}
+
+.category-arrow {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    margin-left: -187px;
+    margin-top: 66px;
+}
+
+.category-arrow .arrow-icon {
+    width: 28px;
+    height: 28px;
+}
+
