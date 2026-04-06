@@ -134,3 +134,31 @@ body {
     width: 24px;
     height: 24px;
 }
+
+.categoriesChild-banner {
+    width: 100%;
+    height: 242px;
+    background-image: url('images/BannerPizza.png'); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.categories-banner-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.categories-banner-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 43.95px; 
+    font-weight: 700; 
+    line-height: 64px; 
+    letter-spacing: -5%; 
+    color: #ffffff; 
+    margin: 0;
+}
