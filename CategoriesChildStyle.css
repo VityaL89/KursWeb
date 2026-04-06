@@ -162,3 +162,163 @@ body {
     color: #ffffff; 
     margin: 0;
 }
+
+.breadcrumb {
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #6B7280;
+    margin-bottom: 24px;
+    margin-left: 0px; 
+}
+
+.breadcrumb-link {
+    text-decoration: underline;
+    color: #6B7280;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;      
+    padding: 0 56px;     
+}
+
+.restaurant-list {
+    padding-bottom: 80px;
+    background-color: #ffffff;
+    padding-top: 32px;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 427px);
+    grid-template-rows: repeat(2, auto);
+    gap: 36px 25px; 
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.restaurant-card {
+    width: 427px;
+    background: #F9F9F9;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.restaurant-card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+}
+
+.restaurant-card-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.new-tag {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #E5F8BC;
+    border-radius: 8px;
+    min-width: 67px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 9px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 22.5px;
+    font-weight: 500; 
+    color: #1A1A1A;
+    line-height: 1;
+    text-transform: lowercase; 
+    z-index: 2;
+    margin-left: 9px;
+    margin-top: 8px;
+}
+
+.restaurant-card-content {
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+}
+
+.restaurant-card-name {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22.5px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0;
+    margin-top: -2px;
+    margin-left: -3px;
+}
+
+.restaurant-card-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+}
+
+.rating-star {
+    width: 16px;
+    height: 16px;
+    display: block;
+    margin-left: -2px;
+    margin-top: -2px;
+}
+
+.rating-score {
+    font-weight: 400;
+    color: #596F72;
+    margin-top: 2px;
+    margin-left: -1px;
+}
+
+.rating-text {
+    font-weight: 400;
+    color: #6B7280;
+    margin-left: 3px;
+    margin-top: 2px;
+}
+
+.restaurant-card-desc {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #4B5563;
+    margin: 0;
+    line-height: 1.4;
+    margin-top: 2px;
+    margin-left: -4px;
+}
+
+.restaurant-card-category {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 3px 8px;
+    background: #E9E9E9;
+    border-radius: 4px;
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #636363;
+    margin-top: 18px;
+    margin-left: -3px;
+}
