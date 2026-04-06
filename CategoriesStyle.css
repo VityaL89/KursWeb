@@ -193,3 +193,41 @@ body {
     margin: 0;
     margin-left: 56px;
 }
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 427px); 
+    grid-template-rows: repeat(2, 309px);   
+    gap: 24px; 
+    justify-content: center; 
+    margin-top: -18px;                             
+}
+
+.menu-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 427px;
+    height: 309px;
+}
+
+.menu-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-label {
+    position: absolute;
+    top: 17px;
+    left: 16px;
+    background-color: #202020; 
+    color: #FFFFFF;
+    padding: 13px 17px; 
+    border-radius: 8px;
+    font-family: "Hind", sans-serif; 
+    font-size: 18px;                
+    font-weight: 500;               
+    line-height: 1;                  
+}
