@@ -152,3 +152,31 @@ body {
     margin-left: 8px;
     margin-top: 2px;
 }
+
+.Detail-banner {
+    width: 100%;
+    height: 242px;
+    background-image: url('images/RestaurantDetailBanner.png'); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Detail-banner-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Detail-banner-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 43.95px; 
+    font-weight: 700; 
+    line-height: 64px; 
+    letter-spacing: -5%; 
+    color: #ffffff; 
+    margin: 0;
+}
