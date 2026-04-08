@@ -1,0 +1,387 @@
+@font-face {
+    font-family: "Hind";
+    src: url('./fonts/Hind-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hind", sans-serif;
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+}
+
+.header {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.header .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 17px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    margin-left: 42px;
+}
+
+.logo span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.3px;
+    color: #1A1A1A;
+    margin-top: -3px;
+    margin-left: -1px;
+}
+
+.checkout-page {
+    background-color: #F9F9F9;
+    min-height: 100vh;
+}
+
+.checkout-banner {
+    width: 100%;
+    height: 305px;
+    background-color: #E5F8BC;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 56px;
+}
+
+.checkout-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 35.16px;        
+    font-weight: 700;          
+    line-height: 48px;         
+    letter-spacing: -2%;       
+    color: #1A1A1A;            
+    margin: 0;        
+    margin-left: 56px;
+    margin-top: 0px;        
+}
+
+.checkout-content {
+    display: flex;
+    gap: 40px;
+    margin-top: -150px;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Contact Section */
+.contact-section {
+    flex: 1;
+    max-width: 877px;
+    height: 528px;
+    background: #ffffff;
+    padding: 40px;
+    margin-left: 56px;
+    margin-top: -20px;
+    border-radius: 8px;
+}
+
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: -17px;
+}
+
+.contact-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22.5px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0;
+    margin-left: -16px;
+    margin-top: 4px;
+}
+
+.step-indicator {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    color: #6B7280;
+    margin-right: -16px;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-row {
+    display: flex;
+    gap: 24px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #1A1A1A;
+}
+
+.form-group input {
+    height: 48px;
+    padding: 0 16px;
+    background-color: #F5F5F5;
+    border: none;
+    border-radius: 4px;
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    color: #1A1A1A;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: #9CA3AF;
+}
+
+.form-note {
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    color: #6B7280;
+    margin-top: 4px;
+}
+
+.btn-next {
+    width: fit-content;
+    min-width: 120px;
+    height: 56px;
+    padding: 0 24px;
+    background-color: #202020;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 16px;
+    margin-left: -16px;
+}
+
+.btn-next:hover {
+    background-color: #2B2B2B;
+}
+
+.progress-bar {
+    display: flex;       /* Включаем флексбокс, чтобы части встали в ряд */
+    width: 100%;         /* Растягиваем на всю ширину формы */
+    height: 4px;         /* Высота линии */
+    margin-top: 14px;     /* Отступ от текста "Contact details" */
+    margin-bottom: 24px; /* Отступ до полей ввода */
+    border-radius: 2px;  /* Скругление углов всей линии */
+    overflow: hidden;
+    margin-left: -16px;   /* Чтобы углы не обрезались */
+}
+
+
+/* Активная часть (чёрная) */
+.progress-bar-active {
+    width: 276px;        /* Фиксированная ширина из макета */
+    height: 100%;
+    background-color: #1A1A1A; /* Черный цвет */
+    
+    /* ГЛАВНОЕ: запрещаем элементу сжиматься, даже если места мало */
+    flex-shrink: 0;      
+}
+
+/* Неактивная часть (серая) */
+.progress-bar-inactive {
+    /* Занимает всё оставшееся пространство */
+    flex: 1;            
+    height: 100%;
+    background-color: #F5F5F5; /* Серый цвет */
+}
+
+.form-group-first-name {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 24px;
+}
+
+.form-group-last-name {
+    position: relative;
+    top: -10px;  /* Сдвинуть выше */
+    left: 20px;  /* Сдвинуть вправо */
+}
+
+.input-email {
+    position: relative;
+    top: 5px;    /* Только инпут email сдвинется */
+}
+
+.label-first-name{
+    margin-top: 8px;
+    margin-left: -16px;
+}
+
+.label-last-name{
+    margin-left: -20px;
+    margin-top: 18px;
+}
+
+.label-email{
+    margin-top: -32px;
+    margin-left: -16px;
+}
+
+.label-phone{
+    margin-top: -3px;
+    margin-left: -16px
+}
+
+.input-first-name{
+    margin-left: -15px;
+    margin-top: -4px;
+}
+
+.input-last-name{
+    margin-left: -20px;
+    margin-top: -4px;
+    width: 402px;
+}
+
+.input-email{
+    width: 829px;
+    margin-top: -9px;
+    margin-left: -16px;
+}
+
+.input-phone{
+    margin-top: -3px;
+    margin-left: -16px;
+    width: 829px;
+}
+
+.form-note {
+    font-family: "Hind", sans-serif;
+    font-size: 11.52px;   
+    font-weight: 400;     
+    line-height: auto;
+    letter-spacing: 2%;   
+    color: #6B7280;       
+    display: block;
+    margin-top: 7px;     
+    margin-left: -16px; 
+    margin-bottom: -9px; 
+}
+
+.order-summary {
+    width: 427px;
+    height: 259px;
+    padding: 32px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    margin-top: -20px;
+    margin-left: -16px;         
+}
+
+.order-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22.5px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 24px 0;
+    margin-top: -5px;
+    margin-left: -8px;
+}
+
+.order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;                 
+    margin-bottom: 24px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    color: #4B5563;
+}
+
+.item-qty {
+    width: 20px;              
+    font-weight: 400;
+    margin-left: -8px;
+    margin-top: 2px;
+}
+
+.item-name {
+    flex: 1;                   
+    margin-left: 17px;
+    font-size: 18px;
+    margin-top: 1px;
+}
+
+.item-price {
+    font-weight: 500;
+    font-size: 18px;
+    margin-right: -8px;
+}
+
+.order-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px; 
+    border-top: 1px solid #E5E7EB; 
+}
+
+.total-label {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-top: 0px;
+    margin-left: -5px;
+}
+
+.total-price {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22.5px;         
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-top: 3px;
+    margin-right: -8px;
+}
