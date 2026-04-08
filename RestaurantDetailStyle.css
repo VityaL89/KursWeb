@@ -180,3 +180,114 @@ body {
     color: #ffffff; 
     margin: 0;
 }
+
+.restaurant-about {
+    padding: 2rem 0 3rem;
+    background-color: #ffffff;
+}
+
+.breadcrumb {
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #9CA3AF;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-left: 56px;
+}
+
+.breadcrumb a {
+    color: #9CA3AF;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: #6B7280;
+}
+
+.breadcrumb .separator {
+    color: #9CA3AF;
+    margin: 0 4px;
+}
+
+.breadcrumb .current {
+    color: #6B7280;
+    font-weight: 500;
+}
+
+.about-content {
+    max-width: 652px;
+}
+
+.about-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 35.16px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -2%;
+    color: #1A1A1A;
+    margin: 0 0 0.5rem 0;
+    margin-top: 35px;
+    margin-left: 56px;
+}
+
+.about-description {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+    color: #1A1A1A;
+    margin: 0 0 1rem 0;
+    margin-top: 13px;
+    margin-left: 56px;
+}
+
+.about-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 1.25rem;
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    color: #6B7280;
+}
+
+.about-rating .star-icon {
+    color: #6B7280;
+    font-size: 22px;
+    margin-top: -4px;
+    margin-left: 57px;
+
+}
+
+.about-rating .rating-value {
+    font-weight: 500;
+    color: #1A1A1A;
+}
+
+.about-rating .rating-label {
+    color: #6B7280;
+}
+
+.about-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-left: 56px;
+    margin-top: -2px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    font-family: "Hind", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #6B7280;
+    white-space: nowrap;
+}
