@@ -93,7 +93,6 @@ checkout-page {
     z-index: 2;
 }
 
-/* === DELIVERY SECTION === */
 .delivery-section {
     flex: 1;
     max-width: 877px;
@@ -101,7 +100,7 @@ checkout-page {
     background: #ffffff;
     padding: 40px;
     margin-left: 56px;
-    margin-top: -171px;
+    margin-top: -20px;
     border-radius: 8px;
 }
 
@@ -286,4 +285,94 @@ checkout-page {
 
 .input-city {
     width: 403px;  
+}
+
+.checkout-page{
+    background-color: #F9F9F9;
+    min-height: 100vh;
+}
+
+.order-summary {
+    width: 427px;
+    height: 259px;
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 8px;
+    margin-top: -18px;
+    align-self: flex-start;
+    margin-left: -16px;
+}
+
+.order-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22.5px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 24px 0;
+    margin-top: -7px;
+    margin-left: -8px;
+    margin-bottom: 26px;
+}
+
+.order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;                 
+    margin-bottom: 24px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    color: #4B5563;
+}
+
+.item-qty {
+    width: 20px;              
+    font-weight: 400;
+    margin-left: -8px;
+    margin-top: 2px;
+}
+
+.item-name {
+    flex: 1;                   
+    margin-left: 17px;
+    font-size: 18px;
+    margin-bottom: -1px;
+    margin-top: -1px;
+}
+
+.item-price {
+    font-weight: 500;
+    font-size: 18px;
+    margin-right: -8px;
+}
+
+.order-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px; 
+    border-top: 1px solid #E5E7EB; 
+}
+
+.total-label {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-top: 0px;
+    margin-left: -5px;
+}
+
+.total-price {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22.5px;         
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-top: 2px;
+    margin-right: -8px;
 }

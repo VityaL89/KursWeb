@@ -18,7 +18,7 @@
         </div>
     </header>
 
-<main>
+<main class="checkout-page">
 
     <section class="checkout-banner">
         <div class="container">
@@ -26,50 +26,79 @@
         </div>
     </section>
 
-     <div class="delivery-section">
-    <div class="delivery-header">
-        <h2 class="delivery-title">Delivery details</h2>
-        <span class="delivery-step-indicator">Step 2 of 3</span>
+    <div class="checkout-content">
+
+        <div class="delivery-section">
+        <div class="delivery-header">
+            <h2 class="delivery-title">Delivery details</h2>
+            <span class="delivery-step-indicator">Step 2 of 3</span>
+        </div>
+
+        <div class="delivery-progress-bar">
+            <div class="delivery-progress-bar-active"></div>
+            <div class="delivery-progress-bar-inactive"></div>
+        </div>
+
+        <form class="delivery-form">
+
+            <div class="delivery-row">
+                <div class="delivery-group delivery-group-streetname">
+                    <label class="label-streetname" for="streetname">Streetname</label>
+                    <input class="input-streetname" type="text" id="streetname" placeholder='"5th avenue"'>
+                </div>
+
+                <div class="delivery-group delivery-group-house">
+                    <label class="label-house" for="house">House number</label>
+                    <input class="input-house" type="text" id="house" placeholder='"8B"'>
+                </div>
+            </div>
+
+            <div class="delivery-row">
+                <div class="delivery-group delivery-group-zipcode">
+                    <label class="label-zipcode" for="zipcode">Zipcode</label>
+                    <input class="input-zipcode" type="text" id="zipcode" placeholder='"1234AB"'>
+                </div>
+
+                <div class="delivery-group delivery-group-city">
+                    <label class="label-city" for="city">City</label>
+                    <input class="input-city" type="text" id="city" placeholder='"Amsterdam"'>
+                </div>
+            </div>
+
+
+            <div class="delivery-buttons">
+                <button type="button" class="btn-previous">Previous step</button>
+                <button type="submit" class="btn-place-order">Place order</button>
+            </div>
+        </form>
     </div>
 
-    <div class="delivery-progress-bar">
-        <div class="delivery-progress-bar-active"></div>
-        <div class="delivery-progress-bar-inactive"></div>
+        <div class="order-summary">
+        <h3 class="order-title">Your order</h3>
+
+        <div class="order-items">
+            <div class="order-item">
+                <span class="item-qty">1</span>
+                <span class="item-name">Dishname</span>
+                <span class="item-price">€ 8,50</span>
+            </div>
+
+            <div class="order-item">
+                <span class="item-qty">1</span>
+                <span class="item-name">Dishname</span>
+                <span class="item-price">€ 8,50</span>
+            </div>
+
+        </div>
+
+        <div class="order-total">
+            <span class="total-label">Total</span>
+            <span class="total-price">€ 8,50</span>
+        </div>
     </div>
 
-    <form class="delivery-form">
+    </div>
 
-        <div class="delivery-row">
-            <div class="delivery-group delivery-group-streetname">
-                <label class="label-streetname" for="streetname">Streetname</label>
-                <input class="input-streetname" type="text" id="streetname" placeholder='"5th avenue"'>
-            </div>
-
-            <div class="delivery-group delivery-group-house">
-                <label class="label-house" for="house">House number</label>
-                <input class="input-house" type="text" id="house" placeholder='"8B"'>
-            </div>
-        </div>
-
-        <div class="delivery-row">
-            <div class="delivery-group delivery-group-zipcode">
-                <label class="label-zipcode" for="zipcode">Zipcode</label>
-                <input class="input-zipcode" type="text" id="zipcode" placeholder='"1234AB"'>
-            </div>
-
-            <div class="delivery-group delivery-group-city">
-                <label class="label-city" for="city">City</label>
-                <input class="input-city" type="text" id="city" placeholder='"Amsterdam"'>
-            </div>
-        </div>
-
-
-        <div class="delivery-buttons">
-            <button type="button" class="btn-previous">Previous step</button>
-            <button type="submit" class="btn-place-order">Place order</button>
-        </div>
-    </form>
-</div>
     
     
 </main>
