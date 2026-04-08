@@ -291,3 +291,101 @@ body {
     color: #6B7280;
     white-space: nowrap;
 }
+
+.menu-section {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    background-color: #f9f9f9;
+}
+
+.menu-category {
+    margin-bottom: 3rem;
+}
+
+.menu-category:last-child {
+    margin-bottom: 0;
+    margin-top: 74px;
+}
+
+.menu-category-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 1.5rem 0;
+    padding-left: 56px; 
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 24px;                            
+    max-width: 1327px;                    
+    margin: 0 auto;                       
+    padding: 0 56px;
+    margin-left: 0px;                      
+}
+
+.menu-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    min-height: 162px;
+    width: 427px;                    
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in;
+    position: relative;                   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-item:hover {
+    box-shadow: 0 14px 26px 0 rgba(0, 0, 0, 0.08);
+}
+
+.menu-item-name {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22.5px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+    margin-bottom: 9px;
+    margin-top: 5px;
+}
+
+.menu-item-description {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #6B7280;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+}
+
+.menu-item-price {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1A1A1A;
+    margin: 0;
+}
+
+.menu-item-quantity {
+    position: absolute;
+    top: 18px;
+    right: 17px;
+    background-color: #1A1A1A;
+    color: #ffffff;
+    width: 39px;
+    height: 39px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    z-index: 2;
+}
