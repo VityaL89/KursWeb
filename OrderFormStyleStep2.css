@@ -92,3 +92,198 @@ checkout-page {
     position: relative;
     z-index: 2;
 }
+
+/* === DELIVERY SECTION === */
+.delivery-section {
+    flex: 1;
+    max-width: 877px;
+    height: 397px;
+    background: #ffffff;
+    padding: 40px;
+    margin-left: 56px;
+    margin-top: -171px;
+    border-radius: 8px;
+}
+
+.delivery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: -17px;
+}
+
+.delivery-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22.5px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0;
+    margin-left: -16px;
+    margin-top: 4px;
+}
+
+.delivery-step-indicator {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    color: #6B7280;
+    margin-right: -16px;
+}
+
+.delivery-progress-bar {
+    display: flex;       
+    width: 100%;         
+    height: 4px;         
+    margin-top: 14px;     
+    margin-bottom: 32px; 
+    border-radius: 2px;  
+    overflow: hidden;
+    margin-left: -16px;   
+}
+
+.delivery-progress-bar-active {
+    width: 552px;       
+    height: 100%;
+    background-color: #1A1A1A; 
+    flex-shrink: 0;      
+}
+
+.delivery-progress-bar-inactive {
+    flex: 1;            
+    height: 100%;
+    background-color: #F5F5F5; 
+}
+
+.delivery-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.delivery-row {
+    display: flex;
+    gap: 24px;
+}
+
+.delivery-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.delivery-group label {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #1A1A1A;
+    margin-top: 0px;
+}
+
+.delivery-group input {
+    height: 48px;  
+    padding: 0 16px;
+    background-color: #F5F5F5;
+    border: none;
+    border-radius: 4px;
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    color: #1A1A1A;
+    outline: none;
+    margin-top: -4px;
+    margin-bottom: -8px;
+}
+
+.delivery-group input::placeholder {
+    color: #9CA3AF;
+}
+
+.delivery-buttons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.btn-previous {
+    background: none;
+    border: none;
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1A1A1A;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 8px;
+}
+
+.btn-previous:hover {
+    color: #6B7280;
+}
+
+.btn-place-order {
+    min-width: 135px;
+    height: 54px;
+    padding: 0 10px;
+    background-color: #1A1A1A;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-left: 16px;
+}
+
+.btn-place-order:hover {
+    background-color: #2B2B2B;
+}
+
+.delivery-group-streetname {
+    flex: 1;  
+}
+
+.label-streetname {
+    margin-left: -16px;
+}
+
+.input-streetname {
+    width: 646px; 
+    margin-left: -16px;
+}
+
+.delivery-group-house {
+    width: 159px;  
+    flex-shrink: 0;
+}
+
+.input-house {
+    width: 159px;  
+}
+
+.delivery-group-zipcode {
+    flex: 1;
+}
+
+.label-zipcode {
+    margin-top: 8px;
+    margin-left: -16px;
+}
+
+.input-zipcode {
+    width: 403px;  
+    margin-left: -16px;
+}
+
+.delivery-group-city {
+    flex: 1;
+}
+
+.label-city {
+    margin-top: 8px;
+    margin-left: 0px;
+}
+
+.input-city {
+    width: 403px;  
+}
