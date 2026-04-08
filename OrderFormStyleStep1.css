@@ -93,7 +93,7 @@ body {
     z-index: 2;
 }
 
-/* Contact Section */
+
 .contact-section {
     flex: 1;
     max-width: 877px;
@@ -129,7 +129,6 @@ body {
     margin-right: -16px;
 }
 
-/* Form Styles */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -201,33 +200,28 @@ body {
 }
 
 .progress-bar {
-    display: flex;       /* Включаем флексбокс, чтобы части встали в ряд */
-    width: 100%;         /* Растягиваем на всю ширину формы */
-    height: 4px;         /* Высота линии */
-    margin-top: 14px;     /* Отступ от текста "Contact details" */
-    margin-bottom: 24px; /* Отступ до полей ввода */
-    border-radius: 2px;  /* Скругление углов всей линии */
+    display: flex;       
+    width: 100%;         
+    height: 4px;         
+    margin-top: 14px;     
+    margin-bottom: 24px; 
+    border-radius: 2px;  
     overflow: hidden;
-    margin-left: -16px;   /* Чтобы углы не обрезались */
+    margin-left: -16px;   
 }
 
-
-/* Активная часть (чёрная) */
 .progress-bar-active {
-    width: 276px;        /* Фиксированная ширина из макета */
+    width: 276px;       
     height: 100%;
-    background-color: #1A1A1A; /* Черный цвет */
-    
-    /* ГЛАВНОЕ: запрещаем элементу сжиматься, даже если места мало */
+    background-color: #1A1A1A; 
     flex-shrink: 0;      
 }
 
-/* Неактивная часть (серая) */
 .progress-bar-inactive {
-    /* Занимает всё оставшееся пространство */
+
     flex: 1;            
     height: 100%;
-    background-color: #F5F5F5; /* Серый цвет */
+    background-color: #F5F5F5; 
 }
 
 .form-group-first-name {
@@ -239,13 +233,13 @@ body {
 
 .form-group-last-name {
     position: relative;
-    top: -10px;  /* Сдвинуть выше */
-    left: 20px;  /* Сдвинуть вправо */
+    top: -10px;  
+    left: 20px;  
 }
 
 .input-email {
     position: relative;
-    top: 5px;    /* Только инпут email сдвинется */
+    top: 5px;    
 }
 
 .label-first-name{

@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "Hind";
+    src: url('./fonts/Hind-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hind", sans-serif;
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+}
+
+.header {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.header .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 17px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    margin-left: 42px;
+}
+
+.logo span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.3px;
+    color: #1A1A1A;
+    margin-top: -3px;
+    margin-left: -1px;
+}
