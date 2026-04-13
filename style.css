@@ -188,6 +188,7 @@ body {
     transition: background-color 0.2s ease;
     margin-top: 50px;
     margin-left: 222px;
+    text-decoration: none;
 }
 
 .main-banner-btn:hover {
