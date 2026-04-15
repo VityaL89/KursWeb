@@ -640,24 +640,6 @@ body {
     text-align: center;
 }
 
-.category-arrow {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: #ffffff;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    cursor: pointer;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 2;
-    margin-left: -187px;
-    margin-top: 66px;
-}
-
 .category-arrow .arrow-icon {
     width: 28px;
     height: 28px;
