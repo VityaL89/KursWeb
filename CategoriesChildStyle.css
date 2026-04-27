@@ -402,3 +402,11 @@ body {
     margin-right: 16px;
     margin-top: -32px;
 }
+
+.back-btn {
+    display: none;
+}
+
+.mobile-menu-btn {
+    display: none; 
+}
