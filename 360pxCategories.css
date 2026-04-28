@@ -1,6 +1,7 @@
 @media (max-width: 361px) {
   
   body {
+    max-width: 361px;
     overflow-x: visible;
   }
   
