@@ -469,3 +469,11 @@ body {
     margin-right: 72px;
     margin-top: -32px;
 }
+
+.back-btn {
+    display: none;
+}
+
+.mobile-menu-btn {
+    display: none; 
+}
