@@ -1,0 +1,204 @@
+@media (max-width: 480px) {
+    body {
+        max-width: 360px;
+        background-color: #F5F5F5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .checkout-banner {
+        height: 281px;
+        background-color: #E2F3C0; 
+        padding: 32px 16px 100px 16px;
+        display: block;
+    }
+
+    .checkout-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 31.25px; 
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: -2%;
+        margin-left: 0;
+        max-width: 328px;
+    }
+
+    .checkout-content {
+        flex-direction: column;
+        gap: 16px;
+        margin-top: -80px; 
+        padding: 0 16px;
+        margin-left: 0;
+        margin-bottom: 40px;
+    }
+
+    .order-summary {
+        order: -1;
+        width: 328px;
+        height: 229px;
+        margin-left: 0;
+        margin-top: -71px;
+        padding: 24px;
+        border-radius: 8px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .order-title {
+        font-size: 20px;
+        margin: 0 0 16px 0;
+        margin-left: 0;
+    }
+
+    .order-item {
+        margin-bottom: 4px;
+    }
+
+    .item-qty, .item-name, .item-price {
+        font-size: 16px;
+        margin-top: 2px;
+        margin-left: 1px;
+    }
+
+    .order-total {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid #F3F4F6;
+    }
+
+    .order-items{
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        margin-bottom: 29px;
+    }
+
+    .total-label { font-size: 16px; margin-left: 3px; margin-top: 1px; }
+    .total-price { font-size: 20px; margin-right: 0; }
+
+    .delivery-section {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-top: 0;
+        padding: 24px;
+        background: #FFFFFF;
+        border-radius: 12px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .delivery-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-top: 0;
+    }
+
+    .delivery-title {
+        font-size: 20px;
+        margin-left: 0;
+        margin-top: 0px;
+    }
+
+    .delivery-step-indicator {
+        font-size: 16px;
+        margin-top: 2px;
+        margin-right: 0;
+    }
+
+    .delivery-progress-bar {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 8px;
+        margin-bottom: 24px;
+        background-color: #F2F2F2;
+    }
+
+    .delivery-progress-bar-active {
+        width: 66%; /* Шаг 2 из 3 */
+    }
+
+    .delivery-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .delivery-group {
+        gap: 4px;
+        width: 100% !important;
+    }
+
+    .delivery-group label {
+        font-size: 16px;
+        margin-left: 0 !important;
+        margin-top: 11px !important;
+    }
+
+    .delivery-group input,
+    .input-streetname,
+    .input-house,
+    .input-zipcode,
+    .input-city {
+        width: 100% !important;
+        max-width: 280px; 
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        background-color: #F2F2F2 !important;
+        height: 48px;
+        font-size: 16px;
+    }
+
+    .delivery-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 280px; 
+        margin: 24px auto 0 auto;
+        gap: 14px; 
+    }
+
+    .btn-previous {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 141px !important;
+        height: 52px !important;
+        padding: 0;
+        background: transparent;
+        border: none;
+        font-family: "Hind", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+        color: #1A1A1A;
+        margin-top: -16px;
+        margin-left: -1px;
+    }
+    .btn-place-order {
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 125px !important;
+        height: 52px !important;
+        padding: 13px 24px !important;
+        border-radius: 2px;
+        background-color: #1A1A1A;
+        color: #FFFFFF;
+        font-family: "Hind", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+        border: none;
+        cursor: pointer;
+        margin-top: -16px;
+        margin-left: -3px;
+    }
+}
