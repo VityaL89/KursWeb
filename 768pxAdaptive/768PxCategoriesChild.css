@@ -1,0 +1,103 @@
+/* ==========================================================================
+   MEDIA QUERY FOR CATEGORIES CHILD (768px - 1024px)
+   ========================================================================== */
+
+@media screen and (min-width: 370px) and (max-width: 1024px) {
+    /* 1. Глобальные контейнеры */
+    .container, 
+    .header .container, 
+    .categories-banner-container {
+        max-width: 100% !important;
+        padding: 0 32px !important; /* Увеличиваем безопасную зону по бокам */
+    }
+
+    /* 2. Навигация */
+    .logo-icon {
+        margin-left: 0 !important; /* Убираем специфический отступ */
+    }
+
+    .nav-cart {
+        margin-right: 0 !important;
+    }
+
+    /* 3. Баннер категории */
+    .categoriesChild-banner {
+        height: 200px !important;
+    }
+
+    .categories-banner-title {
+        font-size: 36px !important;
+        line-height: 1.2 !important;
+        text-align: center;
+    }
+
+    /* 4. Хлебные крошки */
+    .breadcrumb {
+        margin-left: 0 !important;
+        text-align: left;
+    }
+
+    /* 5. ГИБКАЯ СЕТКА РЕСТОРАНОВ */
+    .restaurant-grid {
+        /* Переключаемся с фиксированных 427px на колонки по 1 части (fr) */
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 24px !important;
+        justify-content: center !important;
+    }
+
+    .restaurant-card {
+        width: 100% !important; /* Карточка теперь тянется по сетке */
+        max-width: none !important;
+    }
+
+    .restaurant-card-img-wrapper,
+    .restaurant-card-img {
+        height: 200px !important;
+    }
+
+    /* 6. ФУТЕР (Адаптация колонок) */
+    .footer {
+        height: auto !important;
+        padding: 60px 0 !important;
+    }
+
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 40px !important;
+    }
+
+    .footer-logo-img {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        width: 100px !important;
+    }
+
+    .footer-nav {
+        flex-direction: row !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 30px !important;
+        width: 100% !important;
+    }
+
+    .footer-column {
+        margin-right: 0 !important; /* Сбрасываем десктопные margin-right: 203px */
+        margin-top: 0 !important;
+        text-align: center !important;
+        min-width: 150px;
+    }
+
+    .footer-links {
+        align-items: center !important;
+    }
+}
+
+/* Дополнительная правка для портретной ориентации (768px и меньше) */
+@media screen and (max-width: 768px) {
+    .restaurant-grid {
+        /* На узких экранах переходим в одну колонку */
+        grid-template-columns: 1fr !important;
+        padding: 0 10% !important; /* Делаем карточки чуть уже для изящности */
+    }
+}
