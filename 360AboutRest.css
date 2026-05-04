@@ -98,7 +98,7 @@
 
   .Detail-banner {
     background-image: none;
-    height: 228px;
+    height: 228px !important;
     background-color: #E5F8BC;
     padding: 0;
     position: relative;
@@ -115,24 +115,24 @@
     justify-content: center;
     position: relative;
     width: 100%;
-    padding: 0;
+    padding: 0 !important;
   }
 
   .Detail-banner-title {
     font-family: "Montserrat", sans-serif;
-    font-size: 39.06px;
+    font-size: 39.06px !important;
     font-weight: 700;
-    line-height: 52px;
+    line-height: 52px !important;
     letter-spacing: -0.05em;
     color: #2C2C2C;
     margin: 0;
     text-align: center;
     margin-top: 13px;
-    margin-left: 11px;
+    margin-left: -3px;
   }
 
   .restaurant-about {
-    padding: 32px 0;
+    padding: 32px 0 !important;
     background-color: #ffffff;
   }
 
@@ -144,14 +144,16 @@
 
   .about-title {
     font-family: "Montserrat", sans-serif;
-    font-size: 31.25px; 
+    font-size: 31.25px !important;
     font-weight: 700;
-    line-height: 40px;
-    letter-spacing: -0.02em; 
+    line-height: 40px !important;
+    letter-spacing: -0.02em;
     color: #1A1A1A;
     margin: 0;
-    margin-top: -24px;
-    margin-bottom: 3px;
+    margin-top: -24px !important;
+    margin-bottom: -10px;
+    margin-left: 0px !important;
+    max-width: 100% !important;
   }
 
 
@@ -162,7 +164,9 @@
     font-weight: 400;
     line-height: 24px;
     color: #4B5563;
-    margin: 0;
+    margin-left: 0px !important;
+    max-width: 100% !important;
+    margin-bottom: 29px;
   }
 
   .about-rating {
@@ -172,8 +176,8 @@
     font-family: "Hind", sans-serif;
     font-size: 16px;
     color: #6B7280;
-    margin-top: 6px;
-    margin-left: -61px;
+    margin-top: -23px;
+    margin-left: -30px;
   }
 
   .about-rating .rating-value {
@@ -204,7 +208,7 @@
   .about-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 62px;
+    gap: 36px;
     margin-top: 10px;
   }
 
@@ -220,7 +224,7 @@
     font-weight: 500;
     color: #1A1A1A;
     margin-top: -27px;
-    margin-left: -61px;
+    margin-left: -36px;
   }
 
   .menu-section {
@@ -238,18 +242,19 @@
 
 .menu-category-title {
     font-family: "Montserrat", sans-serif;
-    font-size: 25px;
+    font-size: 25px !important;
     font-weight: 700;
     line-height: 32px;
     color: #1A1A1A;
     margin: 0 0 24px 0;
-    margin-left: -57px;
+    margin-left: 0px;
+    padding-left: 0px !important;
 }
 
 .menu-grid {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 16px !important;
 }
 
 .menu-category .menu-item:nth-child(n+3) {
@@ -259,29 +264,29 @@
 .menu-item {
     background-color: #F9F9F9;
     border-radius: 8px;
-    padding: 20px;
+    padding: 20px !important;
     position: relative;
-    width: 328px;
-    margin-left: -52px;
+    width: 328px !important;
+    margin-left: -28px;
 }
 
 .menu-item-name {
-    font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: #1A1A1A;
-    margin: -19px 0 8px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px !important;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin: -18px 0 8px 0;
 }
 
 .menu-item:nth-child(2) .menu-item-name {
-    margin-top: -38px;
+    margin-top: 9px;
     margin-bottom: 8px;
     margin-left: 0px;
   }
 
 .menu-item-description {
     font-family: "Hind", sans-serif;
-    font-size: 16px;
+    font-size: 16px !important;
     color: #6B7280;
     margin: 0 0 19px 0;
 }
@@ -336,9 +341,9 @@
     color: #6B7280;
     line-height: 1.5;
     background-color: #ffffff;
-    margin-bottom: 24px;
+    margin-bottom: 24px !important;
     margin-top: -31px;
-    margin-left: -16px;
+    margin-left: -16px !important;
   }
 
   .breadcrumb-link {
@@ -562,22 +567,22 @@
   }
 
   .footer {
-    height: 634px;
-    padding: 40px 0 24px;
-    margin-top: -54px;
+    height: 634px !important;
+    padding: 40px 0 24px !important;
+    margin-top: -25px;
     background-color: #2c2c2c;
   }
   
   .footer-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    padding: 0 16px;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 32px !important;
+    padding: 0 16px !important;
   }
   
   .footer-logo-img {
-    margin-left: 0;
-    margin-top: 0;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
     width: 84px;
   }
   
@@ -601,7 +606,7 @@
   
   .footer-links {
     margin-top: 0 !important;
-    align-items: center;
+    align-items: center !important;
     gap: 4px;
   }
   
@@ -609,23 +614,28 @@
     font-size: 16px;
   }
   
+  .footer-column:nth-child(3) {
+    margin-right: 72px;
+    margin-top: -32px;
+}
+
   .footer-column:nth-child(2){
-    margin-bottom: 10px;
+    margin-bottom: 4px;
   }
 
   .footer-column:nth-child(1){
-    margin-bottom: 10px;
+    margin-bottom: 4px;
   }
 }
 
  .menu-category:nth-child(1) .menu-category-title {
-    margin-top: 0px;
-    margin-bottom: 24px; 
+    margin-top: 2px;
+    margin-bottom: 42px; 
   }
 
   .menu-category:nth-child(2) .menu-category-title {
-    margin-top: -65px; 
-    margin-bottom: 24px;
+    margin-top: -37px;
+    margin-bottom: 42px;
   }
 
 

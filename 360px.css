@@ -20,9 +20,9 @@
   }
 
   .container {
-      padding: 0 0px 0 16px;
-      max-width: 100%;
-      margin: 0;
+        padding: 0 0px 0 16px !important;
+        max-width: 100% !important;
+        margin: 0 !important;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -97,29 +97,29 @@
   }
 
   .main-banner{
-        height: 494px;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 0 24px;
+        height: 494px !important;
+        background-position: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0 24px !important;
         background: #B1DDE4;
   }
 
   .main-banner-title {
         font-family: "Montserrat", sans-serif;
-        font-size: 39.06px;
-        line-height: 52px;
+        font-size: 39.06px !important;
+        line-height: 52px !important;
         letter-spacing: -0.05em;
         font-weight: 900;
         color: #1A1A1A;
         margin: 0;
         padding: 0 16px;
         width: 328px;
-        margin-top: -192px;
-        margin-left: 1px;
+        margin-top: -192px !important;
+        margin-left: 1px !important;
         text-align: center;
   }
 
@@ -132,38 +132,38 @@
         height: 52px;
         font-size: 16px;
         border-radius: 4px;
-        margin-top: 23px;
-        margin-left: 77px;
+        margin-top: 23px !important;
+        margin-left: 77px !important;
   }
 
  .picks {
-    padding: 40px 0 23px;
+    padding: 40px 0 23px !important;
     background: #ffffff;
   }
 
   .picks-title {
       font-family: "Montserrat", sans-serif;
-      font-size: 31.25px;
+      font-size: 31.25px !important;
       font-weight: 700;
       line-height: 40px;
       letter-spacing: -0.02em;
       color: #2C2C2C;
       padding: 0 16px;
-      margin-bottom: 0px;
-      margin-top: -9px;
-      margin-left: -16px;
+      margin-bottom: 0px !important;
+      margin-top: -9px !important;
+      margin-left: -16px !important;
   }
 
   .picks-grid {
-      display: flex;
+      display: flex !important;
       flex-direction: row;
-      gap: 16px;
+      gap: 16px !important;
       margin: 0;
       padding: 0 16px 20px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      margin-top: 16px;
+      scrollbar-width: none !important;
+      margin-top: 16px !important;
   }
 
 .picks-grid::-webkit-scrollbar {
@@ -184,7 +184,7 @@
 }
 
 .picks-grid {
-  scrollbar-width: thin;
+  scrollbar-width: thin !important;
   scrollbar-color: #64748B #E5E7EB;
 }
 
@@ -298,42 +298,40 @@
   }
 
   .award-banner-container {
-    flex-direction: column;
-    height: auto;
-    padding: 0 16px;
-    align-items: center;
-    text-align: center;
+      flex-direction: column !important;
+      height: auto !important;
+      padding: 0 16px !important;
+      align-items: center !important;
+      text-align: center !important;
   }
 
   .award-banner-text {
-    width: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    width: 100% !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .award-banner-title {
         font-family: "Montserrat", sans-serif;
-        font-size: 39.06px;
+        font-size: 39.06px !important;
         font-weight: 900;
-        line-height: 52px;
+        line-height: 52px !important;
         letter-spacing: -0.05em;
         color: #1A1A1A;
         width: 100%;
-        margin-top: 64px;
-        margin-left: 0px;
+        margin: 64px 0px 0px 0px !important;
   }
 
   .award-banner-subtitle {
         font-family: "Montserrat", sans-serif;
-        font-size: 39.06px;
+        font-size: 39.06px !important;
         font-weight: 700;
-        line-height: 52px;
+        line-height: 52px !important;
         letter-spacing: -0.05em;
         color: #1A1A1A;
         width: 100%;
-        margin-top: 29px;
-        margin-left: 0px;
+        margin: 1px 0px 39px 0px !important;
   }
 
   .award-banner-btn {
@@ -351,25 +349,24 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 19px;
-        margin-left: 0px;
+        margin: 19px 0px 0px 0px !important;
   }
 
   .award-restaurants-grid {
-    display: none; 
+    display: none !important;
   }
 
   .categories {
-  padding: 40px 0 30px;
+  padding: 40px 0 30px !important;
   background: #ffffff;
 }
 
 .categories-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px; 
-  padding: 0 16px;    
+  align-items: center !important;
+  margin-bottom: 24px !important;
+  padding: 0 16px; 
 }
 
 .categories-title {
@@ -379,8 +376,8 @@
   line-height: 40px;  
   letter-spacing: -0.02em; 
   color: #1A1A1A;
-  margin-top: -100px;
-  margin-left: -16px;
+  margin-top: -70px !important;
+  margin-left: -175px !important;
 }
 
 .view-all-link { 
@@ -388,15 +385,15 @@
 }
 
 .categories-grid {
-  display: flex;
+  display: flex !important;
   flex-direction: row;
-  gap: 16px;
+  gap: 16px !important;
   margin: 0;
   padding: 0 16px 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  margin-top: -40px;
+  margin-top: -40px !important;
 }
 
 .categories-grid::-webkit-scrollbar {
@@ -417,15 +414,15 @@
 
 .category-card {
   flex: 0 0 152px;
-  width: 152px;
-  height: 162px;
+  width: 152px !important;
+  height: 162px !important;
   background: #F9F9F9;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 0 !important;
   gap: 12px;
   scroll-snap-align: start;
   cursor: pointer;
@@ -457,33 +454,35 @@
 
 
   .arrivals {
-  padding: 40px 0 55px;
+  padding: 40px 0 55px !important;
   background: #ffffff;
 }
 
 .arrivals-title {
     font-family: "Montserrat", sans-serif;
-    font-size: 31.25px;
+    font-size: 31.25px !important;
     font-weight: 700;
     line-height: 40px;
     letter-spacing: -0.02em;
     color: #1A1A1A;
     padding: 0 16px;
-    margin-top: -10px;
-    margin-left: -13px;
+    margin-bottom: 82px !important;
+    margin-top: -10px !important;
+    margin-left: -13px !important;
+    text-align: left !important;
 }
 
 .arrivals-grid {
-  display: flex;
+  display: flex !important;
   flex-direction: row;
-  gap: 16px;
+  gap: 16px !important;
   margin: 0;
   padding: 0 16px 24px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
-  margin-top: -68px;
-  margin-left: 2px;
+  margin-top: -68px !important;
+  margin-left: 2px !important;
 }
 
 .arrivals-grid::-webkit-scrollbar {
@@ -541,13 +540,13 @@
   .order-summary-card { width: 100%; margin: 0 16px 24px; padding: 16px; border-radius: 8px; }
   .bottom-illustration { max-width: 100%; height: auto; display: block; margin: 0 auto; }
 
-  .footer { height: 634px; padding: 40px 0 24px; background: #2c2c2c; color: #fff; }
-  .footer-content { flex-direction: column; align-items: center; gap: 32px; text-align: center; padding: 0 16px; }
-  .footer-logo-img {margin: 0 0 16px;width: 84px;height: 73px;margin-left: -17px; }
-  .footer-nav { flex-direction: column; gap: 24px; width: 100%; }
-  .footer-column:nth-child(1){ margin-right: 14px; margin-top: -13px;}
-  .footer-column:nth-child(2){margin-right: 14px; margin-top: 9px; }
-  .footer-column:nth-child(3){margin-right: 16px;margin-top: 11px; }
+  .footer { height: 634px !important; padding: 40px 0 24px !important; background: #2c2c2c; color: #fff; }
+  .footer-content { flex-direction: column !important; align-items: center !important; gap: 32px; text-align: center !important; padding: 0 16px; }
+  .footer-logo-img {margin: 0 0 16px !important;width: 84px;height: 73px;margin-left: -17px !important; }
+  .footer-nav { flex-direction: column !important; gap: 24px !important; width: 100% !important; }
+  .footer-column:nth-child(1){ margin-right: 14px !important; margin-top: -13px !important;}
+  .footer-column:nth-child(2){margin-right: 14px !important; margin-top: 9px !important; }
+  .footer-column:nth-child(3){margin-right: 16px !important;margin-top: 11px !important; }
   .footer-col-title { font-size: 20px; margin-bottom: 16px; }
   .footer-links { margin-top: 0 !important; align-items: center; gap: 10px; }
   .footer-links li a { font-size: 16px; color: #fff; }

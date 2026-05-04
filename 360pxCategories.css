@@ -6,8 +6,8 @@
   }
   
   .container {
-    padding: 0 16px;
-    max-width: 100%;
+    padding: 0 16px !important;
+    max-width: 100% !important;
     margin: 0;
   }
 
@@ -20,7 +20,7 @@
   .header .container {
     justify-content: center;
     position: relative;
-    padding: 0;
+    padding: 0 !important;
     height: 100%;
   }
   
@@ -82,7 +82,7 @@
   }
 
   .categories-banner {
-    height: 228px; 
+    height: 228px !important; 
     background-color: #E5F8BC;
     padding: 0;
     position: relative;
@@ -97,9 +97,9 @@
   
   .categories-banner-title {
     font-family: "Montserrat", sans-serif;
-    font-size: 39.06px; 
+    font-size: 39.06px !important; 
     font-weight: 700;
-    line-height: 52px;
+    line-height: 52px !important;
     letter-spacing: -0.05em; 
     color: #2C2C2C;
     margin: 0;
@@ -109,48 +109,52 @@
   }
 
   .menu-section {
-    padding: 32px 0;
+    padding: 32px 0 !important;
     background-color: #ffffff;
   }
   
   .menu-header {
-    margin-bottom: 24px;
+    margin-bottom: 24px !important;
   }
   
   .menu-title {
     font-family: "Montserrat", sans-serif;
-    font-size: 31.25px; 
+    font-size: 31.25px !important;
     font-weight: 700;
     line-height: 40px;
-    letter-spacing: -0.02em; 
+    letter-spacing: -0.02em;
     color: #2C2C2C;
     margin: 0 0 12px 0;
     padding: 0;
+    text-align: left;
   }
   
   .menu-subtitle {
     font-family: "Hind", sans-serif;
-    font-size: 16px;
+    font-size: 16px !important;
     font-weight: 400;
     line-height: 1.5;
     color: #2C2C2C;
-    margin: 0;
-    max-width: 328px; 
+    margin: 0 !important;
+    max-width: 328px;
+    text-align: left;
+    padding: 0px !important;
   }
 
   .menu-grid {
-    display: flex;
+    display: flex !important;
     flex-direction: row;
-    gap: 16px;
+    gap: 16px !important;
     margin: 0;
-    padding: 0 0 20px; 
+    padding: 0 0 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     flex-wrap: wrap;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    margin-top: 34px;
+    margin-top: 34px !important;
+    border-radius: 0px;
   }
   
   .menu-grid::-webkit-scrollbar {
@@ -159,8 +163,8 @@
 
   .menu-card {
     flex: 0 0 328px;
-    width: 328px;
-    height: 246px;
+    width: 328px !important;
+    height: 246px !important;
     min-width: 328px;
     border-radius: 8px;
     overflow: hidden;
@@ -178,19 +182,19 @@
   }
   
 .menu-label {
-           position: absolute;
-        top: 23px;
-        left: 25px;
+        position: absolute;
+        top: 23px !important;
+        left: 25px !important;
         display: flex;
         align-items: center;
         justify-content: center;
         min-height: 41px;
-        padding: 12px 9px;
+        padding: 12px 9px !important;
         background-color: #202020;
         color: #FFFFFF;
         border-radius: 8px;
         font-family: "Hind", sans-serif;
-        font-size: 14px;
+        font-size: 14px !important;
         font-weight: 500;
         line-height: 1;
         letter-spacing: 1px;
@@ -199,22 +203,22 @@
   }
 
   .footer {
-    height: 634px;
-    padding: 40px 0 24px;
+    height: 634px !important;
+    padding: 40px 0 24px !important;
     margin-top: -21px;
     background-color: #2c2c2c;
   }
   
   .footer-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 32px !important;
     padding: 0 16px;
   }
   
   .footer-logo-img {
-    margin-left: 0;
-    margin-top: 0;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
     width: 84px;
   }
   
@@ -238,7 +242,7 @@
   
   .footer-links {
     margin-top: 0 !important;
-    align-items: center;
+    align-items: center !important;
     gap: 4px;
   }
   
@@ -247,10 +251,15 @@
   }
   
   .footer-column:nth-child(2){
-    margin-bottom: 10px;
+    margin-bottom: 36px;
   }
 
   .footer-column:nth-child(1){
-    margin-bottom: 10px;
+    margin-bottom: 4px;
   }
+
+  .footer-column:nth-child(3) {
+    margin-right: 72px !important;
+    margin-top: -32px !important;
+}
 }
