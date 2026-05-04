@@ -1,0 +1,223 @@
+/* ==========================================================================
+   ПОЛНЫЙ АДАПТИВНЫЙ КОД ДЛЯ ПЛАНШЕТОВ (768px - 1024px)
+   ========================================================================== */
+
+@media screen and (max-width: 1024px) {
+    /* 1. Глобальные настройки контейнера */
+    .container {
+        max-width: 100% !important;
+        padding: 0 24px !important;
+        margin: 0 auto !important;
+    }
+
+    /* 2. Шапка (Header) */
+    .header .container {
+        padding: 10px 20px !important;
+    }
+
+    .logo-icon {
+        margin-left: 0 !important;
+    }
+
+    .nav-cart {
+        margin-right: 0 !important;
+    }
+
+    /* 3. Главный баннер (Main Banner) */
+    .main-banner {
+        height: 500px !important; /* Уменьшаем избыточную высоту */
+        background-position: center !important;
+        padding: 0 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .main-banner-title {
+        margin-top: 0 !important; /* Убираем огромный отрицательный маржин */
+        margin-left: 0 !important;
+        font-size: 38px !important;
+        line-height: 48px !important;
+        max-width: 100% !important;
+    }
+
+    .main-banner-btn {
+        margin-left: 179px !important;
+        margin-top: 30px !important;
+    }
+
+    /* 4. Сетки ресторанов (Picks & Arrivals) */
+    .picks, .arrivals {
+        padding: 60px 0 !important;
+    }
+
+    .picks-title, .arrivals-title {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 40px !important;
+        text-align: center !important;
+        font-size: 28px !important;
+    }
+
+    .picks-grid, .arrivals-grid {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 колонки вместо 3-х */
+        gap: 20px !important;
+    }
+
+    .restaurant-card {
+        width: 100% !important;
+    }
+
+    .card-arrow {
+        display: none !important; /* На планшетах стрелка не нужна, так как есть сетка */
+    }
+
+    /* 5. ИСПРАВЛЕННЫЙ БЛОК AWARD BANNER */
+    .award-banner-container {
+        height: auto !important;
+        flex-direction: column !important; /* Текст сверху, карточки снизу */
+        align-items: center !important;
+        padding: 60px 24px !important;
+        text-align: center !important;
+    }
+
+    .award-banner-text {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-bottom: 50px !important;
+    }
+
+    .award-banner-title, 
+    .award-banner-subtitle {
+        margin: 0 auto 15px auto !important;
+        text-align: center !important;
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+        max-width: 100% !important;
+    }
+
+    .award-banner-btn {
+        margin: 30px auto 0 auto !important; /* Кнопка строго по центру */
+    }
+
+    /* Сетка наградных карточек */
+    .award-restaurants-grid {
+        margin-left: 0 !important;
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 четкие колонки */
+        grid-template-rows: auto !important;
+        gap: 20px !important;
+    }
+
+    /* Сброс всех сложных позиций nth-child для карточек */
+    .award-restaurants-grid > * {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 220px !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Универсальный стиль для картинок в блоке наград */
+    .award-img, 
+    .award-img-large, 
+    .award-img-small,
+    .award-card-image-center .award-img {
+        width: 100% !important;
+        height: 160px !important; /* Фиксируем высоту, чтобы картинки были видны */
+        object-fit: cover !important;
+        border-radius: 8px !important;
+        transform: none !important; /* Убираем специфичные сдвиги */
+        margin: 0 0 12px 0 !important;
+    }
+
+    .award-card-title {
+        font-size: 16px !important;
+        text-align: center !important;
+        margin-top: 0 !important;
+        padding: 0 5px !important;
+    }
+
+    /* 6. Категории (Categories) */
+    .categories {
+        padding: 60px 0 !important;
+    }
+
+    .categories-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-bottom: 30px !important;
+    }
+
+    .categories-title {
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+
+    .view-all-link {
+        margin-top: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .categories-grid {
+        margin-left: 0 !important;
+        margin-top: 20px !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* 3 категории в ряд */
+        gap: 15px !important;
+    }
+
+    .category-card {
+        width: 100% !important;
+        height: 170px !important;
+        padding: 15px !important;
+    }
+
+    /* 7. Футер (Footer) */
+    .footer {
+        height: auto !important;
+        padding: 60px 0 !important;
+    }
+
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .footer-logo-img {
+        margin-left: 0 !important;
+        margin-bottom: 40px !important;
+    }
+
+    .footer-nav {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 30px !important;
+        width: 100% !important;
+    }
+
+    .footer-column {
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        min-width: 150px !important;
+    }
+
+    .footer-links {
+        align-items: center !important;
+    }
+}
