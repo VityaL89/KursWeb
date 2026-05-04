@@ -1,0 +1,112 @@
+@media screen and (max-width: 1024px) {
+    .container, .categories-banner-container, .header .container {
+        max-width: 100% !important;
+        padding: 0 24px !important;
+    }
+
+    .categories-banner {
+        height: 200px !important; 
+        text-align: center;
+    }
+
+    .categories-banner-title {
+        font-size: 32px !important; 
+        line-height: 1.2 !important;
+    }
+
+    .menu-section {
+        padding: 60px 0 !important;
+    }
+
+    .menu-header {
+        text-align: center !important;
+        margin-bottom: 40px !important;
+    }
+
+    .menu-title {
+        margin-left: 0 !important; 
+        margin-top: 0 !important;
+        font-size: 28px !important;
+    }
+
+    .menu-subtitle {
+        margin: 0 auto !important; 
+        font-size: 16px !important;
+        padding: 0 20px;
+    }
+
+    .menu-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; 
+        grid-template-rows: auto !important; 
+        gap: 24px !important; 
+        padding: 0 24px;
+        margin-top: 20px !important;
+    }
+
+    .menu-card {
+        width: 100% !important; 
+        height: 250px !important; 
+    }
+
+    .menu-label {
+        font-size: 16px !important;
+        padding: 10px 14px !important;
+        top: 12px !important;
+        left: 12px !important;
+    }
+
+    .footer {
+        height: auto !important;
+        padding: 60px 0 !important;
+    }
+
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 40px !important;
+    }
+
+    .footer-logo-img {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .footer-nav {
+        width: 100% !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 30px !important;
+    }
+
+    .footer-column {
+        margin-right: 0 !important; 
+        margin-top: 0 !important;
+        text-align: center !important;
+        min-width: 150px;
+    }
+
+    .footer-links {
+        margin-top: 0 !important;
+        align-items: center !important;
+    }
+
+    /* 6. Навигация */
+    .logo-icon {
+        margin-left: 0 !important;
+    }
+
+    .nav-cart {
+        margin-right: 0 !important;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .menu-grid {
+        grid-template-columns: 1fr !important; 
+    }
+    
+    .menu-card {
+        height: 220px !important;
+    }
+}
