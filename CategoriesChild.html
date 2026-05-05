@@ -206,70 +206,58 @@
         
         if (!categorySlug) {
             console.error('Категория не указана');
+
             window.location.href = 'CategoriesChildNoFood.html';
             return;
         }
 
         try {
+
             const categoriesRes = await fetch('http://localhost:3000/categories');
             const categories = await categoriesRes.json();
             const currentCategory = categories.find(cat => cat.slug === categorySlug);
             
-            if (filteredRestaurants.length === 0) {
-                console.log('Рестораны не найдены для категории:', categorySlug);
+
+            if (!currentCategory) {
                 window.location.href = 'CategoriesChildNoFood.html';
                 return;
             }
+
 
             const bannerTitle = document.querySelector('.categories-banner-title');
             if (bannerTitle) {
                 bannerTitle.textContent = currentCategory.name;
             }
             
+
             const banner = document.querySelector('.categoriesChild-banner');
-            if (banner) {
-                if (currentCategory.bannerImage) {
-                    banner.style.backgroundImage = `url('${currentCategory.bannerImage}')`;
-                    banner.style.backgroundSize = 'cover';
-                    banner.style.backgroundPosition = 'center';
-                } else {
-                    const fallbackColors = {
-                        'pizza': '#E5F8BC',
-                        'burgers': '#FFD6A5',
-                        'sushi': '#BDE0FE',
-                        'asian': '#A2D2FF',
-                        'desserts': '#FFC6FF',
-                        'comfort': '#C9E4DE'
-                    };
-                    banner.style.backgroundColor = fallbackColors[categorySlug] || '#E5F8BC';
-                    banner.style.backgroundImage = 'none';
-                }
+            if (banner && currentCategory.bannerImage) {
+                banner.style.backgroundImage = `url('${currentCategory.bannerImage}')`;
+                banner.style.backgroundSize = 'cover';
+                banner.style.backgroundPosition = 'center';
             }
             
+
             const breadcrumb = document.querySelector('.breadcrumb');
             if (breadcrumb) {
                 breadcrumb.innerHTML = `<a href="Categories.html" class="breadcrumb-link">categories</a> / ${currentCategory.name.toLowerCase()}`;
             }
 
+
             const restaurantsRes = await fetch('http://localhost:3000/restaurants');
             const allRestaurants = await restaurantsRes.json();
             
+
             const filteredRestaurants = allRestaurants.filter(restaurant => {
-                return restaurant.tags && restaurant.tags.some(tag => {
-                    const tagLower = tag.toLowerCase();
-                    const slugLower = categorySlug.toLowerCase();
-                    
-                    if (slugLower === 'comfort') {
-                        return tagLower === 'comfort food' || tagLower === 'comfort';
-                    }
-                    
-                    return tagLower === slugLower;
-                });
+                return restaurant.tags && restaurant.tags.some(tag => 
+                    tag.toLowerCase() === categorySlug.toLowerCase()
+                );
             });
 
             const restaurantGrid = document.querySelector('.restaurant-grid');
             if (restaurantGrid) {
                 if (filteredRestaurants.length === 0) {
+
                     window.location.href = 'CategoriesChildNoFood.html';
                     return;
                 } else {
@@ -283,6 +271,7 @@
 
         } catch (error) {
             console.error('Ошибка загрузки:', error);
+
             window.location.href = 'CategoriesChildNoFood.html';
         }
     }
