@@ -74,7 +74,7 @@
 
   .logo {
     position: absolute;
-    left: 50%;
+    left: 52%;
     transform: translateX(-50%);
     margin: 0;
     gap: 0;
@@ -116,10 +116,10 @@
         font-weight: 900;
         color: #1A1A1A;
         margin: 0;
-        padding: 0 16px;
+        padding: 0 17px;
         width: 328px;
         margin-top: -192px !important;
-        margin-left: 1px !important;
+        margin-left: 14px !important;
         text-align: center;
   }
 
@@ -133,7 +133,7 @@
         font-size: 16px;
         border-radius: 4px;
         margin-top: 23px !important;
-        margin-left: 77px !important;
+        margin-left: 90px !important;
   }
 
  .picks {
@@ -142,28 +142,28 @@
   }
 
   .picks-title {
-      font-family: "Montserrat", sans-serif;
-      font-size: 31.25px !important;
-      font-weight: 700;
-      line-height: 40px;
-      letter-spacing: -0.02em;
-      color: #2C2C2C;
-      padding: 0 16px;
-      margin-bottom: 0px !important;
-      margin-top: -9px !important;
-      margin-left: -16px !important;
+        font-family: "Montserrat", sans-serif;
+        font-size: 31.25px !important;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: -0.02em;
+        color: #2C2C2C;
+        padding: 0 0px;
+        margin-bottom: -67px !important;
+        margin-top: -9px !important;
+        margin-left: -15px !important;
   }
 
   .picks-grid {
-      display: flex !important;
-      flex-direction: row;
-      gap: 16px !important;
-      margin: 0;
-      padding: 0 16px 20px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none !important;
-      margin-top: 16px !important;
+        display: flex !important;
+        flex-direction: row;
+        gap: 0px !important;
+        margin: 0;
+        padding: 0 16px 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none !important;
+        margin-top: 16px !important;
   }
 
 .picks-grid::-webkit-scrollbar {
@@ -294,7 +294,7 @@
     padding: 40px 0;
     background: #E5F8BC;
     height: 597px;
-    margin-top: 0px;
+    margin-top: -78px;
   }
 
   .award-banner-container {
@@ -320,7 +320,7 @@
         letter-spacing: -0.05em;
         color: #1A1A1A;
         width: 100%;
-        margin: 64px 0px 0px 0px !important;
+        margin: 63px -10px 0px 0px !important;
   }
 
   .award-banner-subtitle {
@@ -331,7 +331,7 @@
         letter-spacing: -0.05em;
         color: #1A1A1A;
         width: 100%;
-        margin: 1px 0px 39px 0px !important;
+        margin: 0px -13px 39px 0px !important;
   }
 
   .award-banner-btn {
@@ -349,7 +349,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 19px 0px 0px 0px !important;
+        margin: 19px -15px 0px 0px !important;
   }
 
   .award-restaurants-grid {
@@ -362,11 +362,11 @@
 }
 
 .categories-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center !important;
-  margin-bottom: 24px !important;
-  padding: 0 16px; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center !important;
+        margin-bottom: -55px !important;
+        padding: 0 16px;
 }
 
 .categories-title {
@@ -376,8 +376,8 @@
   line-height: 40px;  
   letter-spacing: -0.02em; 
   color: #1A1A1A;
-  margin-top: -70px !important;
-  margin-left: -175px !important;
+  margin-top: -149px !important;
+  margin-left: -161px !important;
 }
 
 .view-all-link { 
@@ -393,7 +393,7 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  margin-top: -40px !important;
+  margin-top: -95px !important;
 }
 
 .categories-grid::-webkit-scrollbar {
@@ -459,23 +459,23 @@
 }
 
 .arrivals-title {
-    font-family: "Montserrat", sans-serif;
-    font-size: 31.25px !important;
-    font-weight: 700;
-    line-height: 40px;
-    letter-spacing: -0.02em;
-    color: #1A1A1A;
-    padding: 0 16px;
-    margin-bottom: 82px !important;
-    margin-top: -10px !important;
-    margin-left: -13px !important;
-    text-align: left !important;
+        font-family: "Montserrat", sans-serif;
+        font-size: 31.25px !important;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: -0.02em;
+        color: #1A1A1A;
+        padding: 0 16px;
+        margin-bottom: 14px !important;
+        margin-top: -10px !important;
+        margin-left: -13px !important;
+        text-align: left !important;
 }
 
 .arrivals-grid {
   display: flex !important;
   flex-direction: row;
-  gap: 16px !important;
+  gap: 0px !important;
   margin: 0;
   padding: 0 16px 24px;
   overflow-x: auto;
@@ -542,11 +542,11 @@
 
   .footer { height: 634px !important; padding: 40px 0 24px !important; background: #2c2c2c; color: #fff; }
   .footer-content { flex-direction: column !important; align-items: center !important; gap: 32px; text-align: center !important; padding: 0 16px; }
-  .footer-logo-img {margin: 0 0 16px !important;width: 84px;height: 73px;margin-left: -17px !important; }
+  .footer-logo-img {margin: 0 0 16px !important;width: 84px;height: 73px;margin-left: -3px !important; }
   .footer-nav { flex-direction: column !important; gap: 24px !important; width: 100% !important; }
-  .footer-column:nth-child(1){ margin-right: 14px !important; margin-top: -13px !important;}
-  .footer-column:nth-child(2){margin-right: 14px !important; margin-top: 9px !important; }
-  .footer-column:nth-child(3){margin-right: 16px !important;margin-top: 11px !important; }
+  .footer-column:nth-child(1){ margin-right: 2px !important; margin-top: -13px !important;}
+  .footer-column:nth-child(2){margin-right: 2px !important; margin-top: 9px !important; }
+  .footer-column:nth-child(3){margin-right: 2px !important;margin-top: 11px !important; }
   .footer-col-title { font-size: 20px; margin-bottom: 16px; }
   .footer-links { margin-top: 0 !important; align-items: center; gap: 10px; }
   .footer-links li a { font-size: 16px; color: #fff; }
@@ -562,4 +562,12 @@
   .carousel-arrow-left, .carousel-arrow-right, .previous-btn, .next-btn { display: none; }
   input[type="checkbox"], input[type="radio"] { transform: scale(1.2); margin-right: 8px; }
   .restaurant-card:hover, .category-card:hover, .menu-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); transform: none; }
+}
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 68px 0;
 }

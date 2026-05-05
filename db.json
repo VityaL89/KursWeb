@@ -55,6 +55,78 @@
       "image": "images/Restaurant.png",
       "tags": ["Sushi"],
       "isNew": false
+    },
+    {
+      "id": 5,
+      "name": "Taco Fiesta",
+      "categoryId": 4,
+      "slug": "taco-fiesta",
+      "description": "Spicy Mexican tacos",
+      "rating": 4.0,
+      "ratingText": "Good",
+      "image": "images/Restaurant.png",
+      "tags": ["Asian", "Mexican"],
+      "isNew": false
+    },
+    {
+      "id": 6,
+      "name": "Sweet Heaven",
+      "categoryId": 5,
+      "slug": "sweet-heaven",
+      "description": "Best desserts in city",
+      "rating": 4.8,
+      "ratingText": "Excellent",
+      "image": "images/Restaurant.png",
+      "tags": ["Desserts"],
+      "isNew": true
+    },
+    {
+      "id": 7,
+      "name": "KFC",
+      "categoryId": 2,
+      "slug": "kfc",
+      "description": "Finger lickin' good",
+      "rating": 4.1,
+      "ratingText": "Very Good",
+      "image": "images/Restaurant.png",
+      "tags": ["Comfort food", "Burgers"],
+      "isNew": false
+    },
+    {
+      "id": 8,
+      "name": "Pizza Hut",
+      "categoryId": 1,
+      "slug": "pizza-hut",
+      "description": "Great pizza delivery",
+      "rating": 4.2,
+      "ratingText": "Very Good",
+      "image": "images/Restaurant.png",
+      "tags": ["Pizza"],
+      "isNew": false
+    },
+    {
+      "id": 9,
+      "name": "Wok to Walk",
+      "categoryId": 4,
+      "slug": "wok-to-walk",
+      "description": "Fresh Asian wok dishes",
+      "rating": 4.4,
+      "ratingText": "Very Good",
+      "image": "images/Restaurant.png",
+      "tags": ["Asian"],
+      "isNew": false
+    },
+    {
+      "id": 10,
+      "name": "Sushi Express",
+      "categoryId": 3,
+      "slug": "sushi-express",
+      "description": "Quick sushi",
+      "rating": 3.9,
+      "ratingText": "Good",
+      "image": "images/Restaurant.png",
+      "tags": ["Sushi"],
+      "isNew": false
     }
   ],
   "menuItems": [

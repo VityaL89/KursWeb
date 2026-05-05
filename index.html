@@ -56,64 +56,19 @@
         <div class="container">
             <h2 class="picks-title">Our favourite picks</h2>
 
-            <div class="picks-grid">
-
-                <div class="restaurant-card">
-                    <img src="images/Restaurant.png" alt="Mira" class="card-img"> 
-
-                    <div class="card-content">
-                        <h3 class="card-title">Mira</h3>
-
-                        <div class="card-review">
-                            <img src="images/Star.png" class="star-icon" alt="">
-                            <span class="review-score">4.2</span>
-                            <span class="review-text">Very Good</span>
-                        </div>
-
-                        <p class="card-desc">Nicest place for burgers</p>
-
-                        <div class="card-category">Comfort food</div>
-                    </div>
-                </div>
-
-                <div class="restaurant-card">
-                    <img src="images/Restaurant.png" alt="Kara Fin" class="card-img">
-
-                    <div class="card-content">
-                        <h3 class="card-title">Kara Fin</h3>
-
-                        <div class="card-review">
-                            <img src="images/Star.png" class="star-icon" alt="">
-                            <span class="review-score">4.2</span>
-                            <span class="review-text">Very Good</span>
-                        </div>
-
-                        <p class="card-desc">Nicest place for burgers</p>
-
-                        <div class="card-category">Comfort food</div>
-                    </div>
-                </div>
-
-                <div class="restaurant-card-wrapper">
-                    <div class="restaurant-card">
-                        <img src="images/Restaurant.png" alt="‘T Kuyltje" class="card-img">
-                        <div class="card-content">
-                            <h3 class="card-title">‘T Kuyltje</h3>
-                            <div class="card-review">
-                                <img src="images/Star.png" class="star-icon" alt="">
-                                <span class="review-score">4.2</span>
-                                <span class="review-text">Very Good</span>
-                            </div>
-                            <p class="card-desc">Nicest place for burgers</p>
-                            <div class="card-category">Comfort food</div>
-                        </div>
-                    </div>
-                
-                <button class="card-arrow">
-                    <img src="images/arrow-right.png" class="arrow-icon">
+            <div class="slider-container">
+                <button class="slider-arrow slider-arrow-left" aria-label="Previous">
+                    <img src="images/arrow-left.png" alt="">
                 </button>
+
+                <div class="picks-grid slider-track">
                 </div>
+
+                <button class="slider-arrow slider-arrow-right" aria-label="Next">
+                    <img src="images/arrow-right.png" alt="">
+                </button>
             </div>
+        </div>
     </section>
 
     <section class="award-banner-section">
@@ -121,7 +76,7 @@
 
                 <div class="award-banner-text">
                     <h2 class="award-banner-title">Award winning</h2>
-                    <p class="award-banner-subtitle">The best restaurants near you!</p>
+                    <p class="award-banner-subtitle">The best restaurants near <br> you! </br> </p>
 
                     <button class="award-banner-btn">
                         Explore the best restaurants
@@ -174,64 +129,18 @@
         <div class="container">
             <h2 class="arrivals-title">New arrivals</h2>
 
-            <div class="arrivals-grid">
+            <div class="slider-container">
+                <button class="slider-arrow slider-arrow-left" aria-label="Previous">
+                    <img src="images/arrow-left.png" alt="">
+                </button>
 
-                <div class="restaurant-card">
-                    <img src="images/Restaurant.png" alt="Mira" class="card-img"> 
-
-                    <div class="card-content">
-                        <h3 class="card-title">Mira</h3>
-
-                        <div class="card-review">
-                            <img src="images/Star.png" class="star-icon" alt="">
-                            <span class="review-score">4.2</span>
-                            <span class="review-text">Very Good</span>
-                        </div>
-
-                        <p class="card-desc">Nicest place for burgers</p>
-
-                        <div class="card-category">Comfort food</div>
-                    </div>
+                <div class="arrivals-grid slider-track">
+                    <!-- Карточки генерируются через JS -->
                 </div>
 
-                <div class="restaurant-card">
-                    <img src="images/Restaurant.png" alt="Kara Fin" class="card-img">
-
-                    <div class="card-content">
-                        <h3 class="card-title">Kara Fin</h3>
-
-                        <div class="card-review">
-                            <img src="images/Star.png" class="star-icon" alt="">
-                            <span class="review-score">4.2</span>
-                            <span class="review-text">Very Good</span>
-                        </div>
-
-                        <p class="card-desc">Nicest place for burgers</p>
-
-                        <div class="card-category">Comfort food</div>
-                    </div>
-                </div>
-
-                <div class="restaurant-card-wrapper">
-                    <div class="restaurant-card">
-                        <img src="images/Restaurant.png" alt="‘T Kuyltje" class="card-img">
-                        <div class="card-content">
-                            <h3 class="card-title">‘T Kuyltje</h3>
-                            <div class="card-review">
-                                <img src="images/Star.png" class="star-icon" alt="">
-                                <span class="review-score">4.2</span>
-                                <span class="review-text">Very Good</span>
-                            </div>
-                            <p class="card-desc">Nicest place for burgers</p>
-                            <div class="card-category">Comfort food</div>
-                        </div>
-                    </div>
-                
-                    <button class="card-arrow">
-                        <img src="images/arrow-right.png" class="arrow-icon">
-                    </button>
-                </div>
-
+                <button class="slider-arrow slider-arrow-right" aria-label="Next">
+                    <img src="images/arrow-right.png" alt="">
+                </button>
             </div>
         </div>
     </section>
@@ -322,6 +231,8 @@
         </div>
     </div>
 </footer>
+
+<script src="JavaScript/index.js"></script>
 
 </body>
 </html>
