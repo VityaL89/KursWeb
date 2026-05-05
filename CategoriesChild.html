@@ -194,5 +194,103 @@
     </div>
 </footer>
 
+
+<script>
+
+    function getCategoryFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('category');
+    }
+
+    async function loadRestaurantsByCategory() {
+        const categorySlug = getCategoryFromURL();
+        
+        if (!categorySlug) {
+            console.error('Категория не указана');
+            return;
+        }
+
+        try {
+
+            const categoriesRes = await fetch('http://localhost:3000/categories');
+            const categories = await categoriesRes.json();
+            const currentCategory = categories.find(cat => cat.slug === categorySlug);
+            
+            if (currentCategory) {
+
+                const bannerTitle = document.querySelector('.categories-banner-title');
+                if (bannerTitle) {
+                    bannerTitle.textContent = currentCategory.name;
+                }
+                
+                const breadcrumb = document.querySelector('.breadcrumb');
+                if (breadcrumb) {
+                    breadcrumb.innerHTML = `<a href="Categories.html" class="breadcrumb-link">categories</a> / ${currentCategory.name.toLowerCase()}`;
+                }
+            }
+
+            const restaurantsRes = await fetch('http://localhost:3000/restaurants');
+            const allRestaurants = await restaurantsRes.json();
+            
+            const filteredRestaurants = allRestaurants.filter(restaurant => {
+                return restaurant.tags && restaurant.tags.some(tag => 
+                    tag.toLowerCase() === categorySlug.toLowerCase()
+                );
+            });
+
+            const restaurantGrid = document.querySelector('.restaurant-grid');
+            if (restaurantGrid) {
+                if (filteredRestaurants.length === 0) {
+                    restaurantGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">No restaurants found in this category</p>';
+                } else {
+                    restaurantGrid.innerHTML = '';
+                    filteredRestaurants.forEach(restaurant => {
+                        const card = createRestaurantCardForChild(restaurant);
+                        restaurantGrid.appendChild(card);
+                    });
+                }
+            }
+
+        } catch (error) {
+            console.error('Ошибка загрузки:', error);
+        }
+    }
+
+    function createRestaurantCardForChild(restaurant) {
+        const card = document.createElement('div');
+        card.className = 'restaurant-card';
+        card.style.cursor = 'pointer';
+        
+        const hasNewTag = restaurant.isNew ? '<span class="new-tag">new</span>' : '';
+        
+        card.innerHTML = `
+            <div class="restaurant-card-img-wrapper">
+                <img src="${restaurant.image || 'images/Restaurant.png'}" alt="${restaurant.name}" class="restaurant-card-img">
+                ${hasNewTag}
+            </div>
+            <div class="restaurant-card-content">
+                <h3 class="restaurant-card-name">${restaurant.name}</h3>
+                <div class="restaurant-card-rating">
+                    <img src="images/Star.png" alt="Star" class="rating-star">
+                    <span class="rating-score">${restaurant.rating || '4.5'}</span>
+                    <span class="rating-text">${restaurant.ratingText || 'Very Good'}</span>
+                </div>
+                <p class="restaurant-card-desc">${restaurant.description || 'Best place for delicious food'}</p>
+                <span class="restaurant-card-category">${restaurant.tags ? restaurant.tags[0] : 'Food'}</span>
+            </div>
+        `;
+        
+        card.addEventListener('click', () => {
+            window.location.href = `RestaurantDetail.html?id=${restaurant.id}`;
+        });
+        
+        return card;
+    }
+
+    document.addEventListener('DOMContentLoaded', loadRestaurantsByCategory);
+</script>
+
+
+
 </body>
 </html>

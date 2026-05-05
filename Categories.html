@@ -132,5 +132,35 @@
     </div>
 </footer>
 
+<script>
+
+    const categoryMapping = [
+        { name: "Pizza", slug: "pizza" },
+        { name: "Burgers", slug: "burgers" },
+        { name: "Desserts", slug: "desserts" },
+        { name: "Sushi", slug: "sushi" },
+        { name: "Asian", slug: "asian" },
+        { name: "Comfort", slug: "comfort" }
+    ];
+
+    function setupCategories() {
+        const menuCards = document.querySelectorAll('.menu-card');
+        
+        menuCards.forEach((card, index) => {
+            if (categoryMapping[index]) {
+                const category = categoryMapping[index];
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', () => {
+                    window.location.href = `CategoriesChild.html?category=${category.slug}`;
+                });
+            }
+        });
+    }
+    
+    document.addEventListener('DOMContentLoaded', setupCategories);
+</script>
+
+
+
 </body>
 </html>
