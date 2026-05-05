@@ -1,0 +1,79 @@
+{
+  "categories": [
+    { "id": 1, "name": "Pizza", "slug": "pizza", "image": "images/CategoriesPizza.png" },
+    { "id": 2, "name": "Burgers", "slug": "burgers", "image": "images/CategoriesBurgers.png" },
+    { "id": 3, "name": "Sushi", "slug": "sushi", "image": "images/CategoriesSushi.png" },
+    { "id": 4, "name": "Asian", "slug": "asian", "image": "images/CategoriesAsian.png" },
+    { "id": 5, "name": "Desserts", "slug": "desserts", "image": "images/CategoriesDesserts.png" },
+    { "id": 6, "name": "Comfort Food", "slug": "comfort-food", "image": "images/CategoriesComfort.png" }
+  ],
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Burger King",
+      "categoryId": 2,
+      "slug": "burger-king",
+      "description": "Nicest place for burgers",
+      "rating": 4.2,
+      "ratingText": "Very Good",
+      "image": "images/Restaurant.png",
+      "tags": ["Comfort food", "Burgers"],
+      "isNew": false
+    },
+    {
+      "id": 2,
+      "name": "Mira",
+      "categoryId": 2,
+      "slug": "mira",
+      "description": "Best burgers in town",
+      "rating": 4.5,
+      "ratingText": "Excellent",
+      "image": "images/Restaurant.png",
+      "tags": ["Burgers"],
+      "isNew": true
+    },
+    {
+      "id": 3,
+      "name": "La Poma",
+      "categoryId": 1,
+      "slug": "la-poma",
+      "description": "Authentic Italian pizza",
+      "rating": 4.7,
+      "ratingText": "Excellent",
+      "image": "images/Restaurant.png",
+      "tags": ["Pizza"],
+      "isNew": false
+    },
+    {
+      "id": 4,
+      "name": "Sushi Master",
+      "categoryId": 3,
+      "slug": "sushi-master",
+      "description": "Fresh sushi everyday",
+      "rating": 4.3,
+      "ratingText": "Very Good",
+      "image": "images/Restaurant.png",
+      "tags": ["Sushi"],
+      "isNew": false
+    }
+  ],
+  "menuItems": [
+    {
+      "id": 1,
+      "restaurantId": 1,
+      "name": "Cheeseburger",
+      "description": "Nice grilled burger with cheese",
+      "price": 8.50,
+      "category": "Burgers"
+    },
+    {
+      "id": 2,
+      "restaurantId": 1,
+      "name": "Fries",
+      "description": "Fried french fries",
+      "price": 2.50,
+      "category": "Sides"
+    }
+  ],
+  "orders": []
+}
