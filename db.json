@@ -16,7 +16,7 @@
       "description": "Nicest place for burgers",
       "rating": 4.2,
       "ratingText": "Very Good",
-      "image": "images/Restaurant.png",
+      "image": "images/BurgerKing.jpg",
       "tags": ["Comfort food", "Burgers"],
       "isNew": false
     },
@@ -28,7 +28,7 @@
       "description": "Best burgers in town",
       "rating": 4.5,
       "ratingText": "Excellent",
-      "image": "images/Restaurant.png",
+      "image": "images/MiraRest.jpg",
       "tags": ["Burgers"],
       "isNew": true
     },
@@ -40,7 +40,7 @@
       "description": "Authentic Italian pizza",
       "rating": 4.7,
       "ratingText": "Excellent",
-      "image": "images/Restaurant.png",
+      "image": "images/LaPomaPizza.webp",
       "tags": ["Pizza"],
       "isNew": false
     },
@@ -52,7 +52,7 @@
       "description": "Fresh sushi everyday",
       "rating": 4.3,
       "ratingText": "Very Good",
-      "image": "images/Restaurant.png",
+      "image": "images/SushiMaster.jpg",
       "tags": ["Sushi"],
       "isNew": false
     },
@@ -64,7 +64,7 @@
       "description": "Spicy Mexican tacos",
       "rating": 4.0,
       "ratingText": "Good",
-      "image": "images/Restaurant.png",
+      "image": "images/TacoFiesta.webp",
       "tags": ["Asian", "Mexican"],
       "isNew": false
     },
@@ -76,7 +76,7 @@
       "description": "Best desserts in city",
       "rating": 4.8,
       "ratingText": "Excellent",
-      "image": "images/Restaurant.png",
+      "image": "images/SweetHeaven.webp",
       "tags": ["Desserts"],
       "isNew": true
     },
@@ -88,7 +88,7 @@
       "description": "Finger lickin' good",
       "rating": 4.1,
       "ratingText": "Very Good",
-      "image": "images/Restaurant.png",
+      "image": "images/KFC.png",
       "tags": ["Comfort food", "Burgers"],
       "isNew": false
     },
@@ -100,7 +100,7 @@
       "description": "Great pizza delivery",
       "rating": 4.2,
       "ratingText": "Very Good",
-      "image": "images/Restaurant.png",
+      "image": "images/PizzaHut.jpg",
       "tags": ["Pizza"],
       "isNew": false
     },
@@ -112,7 +112,7 @@
       "description": "Fresh Asian wok dishes",
       "rating": 4.4,
       "ratingText": "Very Good",
-      "image": "images/Restaurant.png",
+      "image": "images/WokToWalk.jpg",
       "tags": ["Asian"],
       "isNew": false
     },
@@ -124,7 +124,7 @@
       "description": "Quick sushi",
       "rating": 3.9,
       "ratingText": "Good",
-      "image": "images/Restaurant.png",
+      "image": "images/SushiExpress.jpg",
       "tags": ["Sushi"],
       "isNew": false
     }
