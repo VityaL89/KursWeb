@@ -210,7 +210,7 @@ body {
 
 .picks-title {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 3px;
     font-family: "Montserrat", sans-serif;
     font-size: 32px;
     font-weight: 900;
@@ -341,7 +341,7 @@ body {
     background: #E5F8BC;
     display: flex;
     justify-content: center;
-    margin-top: -65px;
+    margin-top: -91px;
 }
 
 .award-banner-container {
@@ -525,7 +525,7 @@ body {
 
 .arrivals-title {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 4px;
     font-family: "Montserrat", sans-serif;
     font-size: 35.16px;
     font-weight: 700;
@@ -546,7 +546,7 @@ body {
 }
 
 .categories {
-    padding-top: 33px;
+    padding-top: 7px;
     padding-bottom: 80px;
     background: #ffffff;
     overflow: visible;
