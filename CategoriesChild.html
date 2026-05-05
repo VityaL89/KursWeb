@@ -196,7 +196,6 @@
 
 
 <script>
-
     function getCategoryFromURL() {
         const params = new URLSearchParams(window.location.search);
         return params.get('category');
@@ -211,33 +210,45 @@
         }
 
         try {
-
+            // Загружаем категории
             const categoriesRes = await fetch('http://localhost:3000/categories');
             const categories = await categoriesRes.json();
             const currentCategory = categories.find(cat => cat.slug === categorySlug);
             
             if (currentCategory) {
-
+                // Меняем текст заголовка
                 const bannerTitle = document.querySelector('.categories-banner-title');
                 if (bannerTitle) {
                     bannerTitle.textContent = currentCategory.name;
                 }
                 
+                // Меняем фон баннера
+                const banner = document.querySelector('.categoriesChild-banner');
+                if (banner && currentCategory.bannerImage) {
+                    banner.style.backgroundImage = `url('${currentCategory.bannerImage}')`;
+                    banner.style.backgroundSize = 'cover';
+                    banner.style.backgroundPosition = 'center';
+                }
+                
+                // Меняем breadcrumb
                 const breadcrumb = document.querySelector('.breadcrumb');
                 if (breadcrumb) {
                     breadcrumb.innerHTML = `<a href="Categories.html" class="breadcrumb-link">categories</a> / ${currentCategory.name.toLowerCase()}`;
                 }
             }
 
+            // Загружаем рестораны
             const restaurantsRes = await fetch('http://localhost:3000/restaurants');
             const allRestaurants = await restaurantsRes.json();
             
+            // Фильтруем рестораны по категории
             const filteredRestaurants = allRestaurants.filter(restaurant => {
                 return restaurant.tags && restaurant.tags.some(tag => 
                     tag.toLowerCase() === categorySlug.toLowerCase()
                 );
             });
 
+            // Отображаем рестораны
             const restaurantGrid = document.querySelector('.restaurant-grid');
             if (restaurantGrid) {
                 if (filteredRestaurants.length === 0) {

@@ -1,11 +1,11 @@
 {
   "categories": [
-    { "id": 1, "name": "Pizza", "slug": "pizza", "image": "images/CategoriesPizza.png" },
-    { "id": 2, "name": "Burgers", "slug": "burgers", "image": "images/CategoriesBurgers.png" },
-    { "id": 3, "name": "Sushi", "slug": "sushi", "image": "images/CategoriesSushi.png" },
-    { "id": 4, "name": "Asian", "slug": "asian", "image": "images/CategoriesAsian.png" },
-    { "id": 5, "name": "Desserts", "slug": "desserts", "image": "images/CategoriesDesserts.png" },
-    { "id": 6, "name": "Comfort Food", "slug": "comfort-food", "image": "images/CategoriesComfort.png" }
+    { "id": 1, "name": "Pizza", "slug": "pizza", "image": "images/CategoriesPizza.png", "bannerImage": "images/BannerPizza.png" },
+    { "id": 2, "name": "Burgers", "slug": "burgers", "image": "images/CategoriesBurgers.png", "bannerImage": "images/BannerBurgers.jpg" },
+    { "id": 3, "name": "Sushi", "slug": "sushi", "image": "images/CategoriesSushi.png", "bannerImage": "images/SushiBanner.jpg" },
+    { "id": 4, "name": "Asian", "slug": "asian", "image": "images/CategoriesAsian.png", "bannerImage": "images/BannerAsian.jpg" },
+    { "id": 5, "name": "Desserts", "slug": "desserts", "image": "images/CategoriesDesserts.png", "bannerImage": "images/BannerDeserts.jpg" },
+    { "id": 6, "name": "Comfort Food", "slug": "comfort", "image": "images/CategoriesComfort.png",  "bannerImage": "images/BannerComfort.jpg" }
   ],
   "restaurants": [
     {
