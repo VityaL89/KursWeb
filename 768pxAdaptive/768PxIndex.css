@@ -1,9 +1,4 @@
-/* ==========================================================================
-   ПОЛНЫЙ АДАПТИВНЫЙ КОД ДЛЯ ПЛАНШЕТОВ (768px - 1024px)
-   ========================================================================== */
-
 @media screen and (max-width: 1024px) {
-    /* 1. Глобальные настройки контейнера */
     .container {
         max-width: 100% !important;
         padding: 0 24px !important;
@@ -23,9 +18,8 @@
         margin-right: 0 !important;
     }
 
-    /* 3. Главный баннер (Main Banner) */
     .main-banner {
-        height: 500px !important; /* Уменьшаем избыточную высоту */
+        height: 500px !important; 
         background-position: center !important;
         padding: 0 20px !important;
         display: flex !important;
@@ -36,7 +30,7 @@
     }
 
     .main-banner-title {
-        margin-top: 0 !important; /* Убираем огромный отрицательный маржин */
+        margin-top: 0 !important; 
         margin-left: 0 !important;
         font-size: 38px !important;
         line-height: 48px !important;
@@ -48,7 +42,6 @@
         margin-top: 30px !important;
     }
 
-    /* 4. Сетки ресторанов (Picks & Arrivals) */
     .picks, .arrivals {
         padding: 60px 0 !important;
     }
@@ -56,7 +49,7 @@
     .picks-title, .arrivals-title {
         margin-left: 0 !important;
         margin-top: 0 !important;
-        margin-bottom: 40px !important;
+        margin-bottom: -40px !important;
         text-align: center !important;
         font-size: 28px !important;
     }
@@ -65,7 +58,7 @@
         margin-left: 0 !important;
         margin-top: 0 !important;
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important; /* 2 колонки вместо 3-х */
+        grid-template-columns: repeat(2, 1fr) !important; 
         gap: 20px !important;
     }
 
@@ -74,13 +67,12 @@
     }
 
     .card-arrow {
-        display: none !important; /* На планшетах стрелка не нужна, так как есть сетка */
+        display: none !important; 
     }
 
-    /* 5. ИСПРАВЛЕННЫЙ БЛОК AWARD BANNER */
     .award-banner-container {
         height: auto !important;
-        flex-direction: column !important; /* Текст сверху, карточки снизу */
+        flex-direction: column !important; 
         align-items: center !important;
         padding: 60px 24px !important;
         text-align: center !important;
@@ -104,20 +96,13 @@
     }
 
     .award-banner-btn {
-        margin: 30px auto 0 auto !important; /* Кнопка строго по центру */
+        margin: 30px auto 0 auto !important; 
     }
 
-    /* Сетка наградных карточек */
     .award-restaurants-grid {
-        margin-left: 0 !important;
-        width: 100% !important;
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important; /* 2 четкие колонки */
-        grid-template-rows: auto !important;
-        gap: 20px !important;
+        display: none;
     }
 
-    /* Сброс всех сложных позиций nth-child для карточек */
     .award-restaurants-grid > * {
         grid-column: auto !important;
         grid-row: auto !important;
@@ -129,16 +114,15 @@
         flex-direction: column !important;
     }
 
-    /* Универсальный стиль для картинок в блоке наград */
     .award-img, 
     .award-img-large, 
     .award-img-small,
     .award-card-image-center .award-img {
         width: 100% !important;
-        height: 160px !important; /* Фиксируем высоту, чтобы картинки были видны */
+        height: 160px !important; 
         object-fit: cover !important;
         border-radius: 8px !important;
-        transform: none !important; /* Убираем специфичные сдвиги */
+        transform: none !important; 
         margin: 0 0 12px 0 !important;
     }
 
@@ -149,9 +133,9 @@
         padding: 0 5px !important;
     }
 
-    /* 6. Категории (Categories) */
     .categories {
         padding: 60px 0 !important;
+        margin-top: -165px;
     }
 
     .categories-header {
@@ -176,7 +160,7 @@
         margin-left: 0 !important;
         margin-top: 20px !important;
         display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important; /* 3 категории в ряд */
+        grid-template-columns: repeat(3, 1fr) !important; 
         gap: 15px !important;
     }
 

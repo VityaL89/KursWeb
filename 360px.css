@@ -359,6 +359,7 @@
   .categories {
   padding: 40px 0 30px !important;
   background: #ffffff;
+  margin-top: 0px !important;
 }
 
 .categories-header {
