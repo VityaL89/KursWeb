@@ -833,6 +833,8 @@ body {
     right: 3px;
 }
 
+
+
 /* Для мобильных */
 @media (max-width: 768px) {
     .slider-track .restaurant-card {
