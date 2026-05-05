@@ -206,53 +206,72 @@
         
         if (!categorySlug) {
             console.error('Категория не указана');
+            window.location.href = 'CategoriesChildNoFood.html';
             return;
         }
 
         try {
-            // Загружаем категории
             const categoriesRes = await fetch('http://localhost:3000/categories');
             const categories = await categoriesRes.json();
             const currentCategory = categories.find(cat => cat.slug === categorySlug);
             
-            if (currentCategory) {
-                // Меняем текст заголовка
-                const bannerTitle = document.querySelector('.categories-banner-title');
-                if (bannerTitle) {
-                    bannerTitle.textContent = currentCategory.name;
-                }
-                
-                // Меняем фон баннера
-                const banner = document.querySelector('.categoriesChild-banner');
-                if (banner && currentCategory.bannerImage) {
+            if (filteredRestaurants.length === 0) {
+                console.log('Рестораны не найдены для категории:', categorySlug);
+                window.location.href = 'CategoriesChildNoFood.html';
+                return;
+            }
+
+            const bannerTitle = document.querySelector('.categories-banner-title');
+            if (bannerTitle) {
+                bannerTitle.textContent = currentCategory.name;
+            }
+            
+            const banner = document.querySelector('.categoriesChild-banner');
+            if (banner) {
+                if (currentCategory.bannerImage) {
                     banner.style.backgroundImage = `url('${currentCategory.bannerImage}')`;
                     banner.style.backgroundSize = 'cover';
                     banner.style.backgroundPosition = 'center';
-                }
-                
-                // Меняем breadcrumb
-                const breadcrumb = document.querySelector('.breadcrumb');
-                if (breadcrumb) {
-                    breadcrumb.innerHTML = `<a href="Categories.html" class="breadcrumb-link">categories</a> / ${currentCategory.name.toLowerCase()}`;
+                } else {
+                    const fallbackColors = {
+                        'pizza': '#E5F8BC',
+                        'burgers': '#FFD6A5',
+                        'sushi': '#BDE0FE',
+                        'asian': '#A2D2FF',
+                        'desserts': '#FFC6FF',
+                        'comfort': '#C9E4DE'
+                    };
+                    banner.style.backgroundColor = fallbackColors[categorySlug] || '#E5F8BC';
+                    banner.style.backgroundImage = 'none';
                 }
             }
+            
+            const breadcrumb = document.querySelector('.breadcrumb');
+            if (breadcrumb) {
+                breadcrumb.innerHTML = `<a href="Categories.html" class="breadcrumb-link">categories</a> / ${currentCategory.name.toLowerCase()}`;
+            }
 
-            // Загружаем рестораны
             const restaurantsRes = await fetch('http://localhost:3000/restaurants');
             const allRestaurants = await restaurantsRes.json();
             
-            // Фильтруем рестораны по категории
             const filteredRestaurants = allRestaurants.filter(restaurant => {
-                return restaurant.tags && restaurant.tags.some(tag => 
-                    tag.toLowerCase() === categorySlug.toLowerCase()
-                );
+                return restaurant.tags && restaurant.tags.some(tag => {
+                    const tagLower = tag.toLowerCase();
+                    const slugLower = categorySlug.toLowerCase();
+                    
+                    if (slugLower === 'comfort') {
+                        return tagLower === 'comfort food' || tagLower === 'comfort';
+                    }
+                    
+                    return tagLower === slugLower;
+                });
             });
 
-            // Отображаем рестораны
             const restaurantGrid = document.querySelector('.restaurant-grid');
             if (restaurantGrid) {
                 if (filteredRestaurants.length === 0) {
-                    restaurantGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">No restaurants found in this category</p>';
+                    window.location.href = 'CategoriesChildNoFood.html';
+                    return;
                 } else {
                     restaurantGrid.innerHTML = '';
                     filteredRestaurants.forEach(restaurant => {
@@ -264,6 +283,7 @@
 
         } catch (error) {
             console.error('Ошибка загрузки:', error);
+            window.location.href = 'CategoriesChildNoFood.html';
         }
     }
 
