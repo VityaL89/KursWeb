@@ -301,6 +301,20 @@ body {
 
 .menu-category {
     margin-bottom: 3rem;
+    margin-top: -16px;
+    margin-left: -110px;
+}
+
+.menu-category:nth-child(1) .menu-category-title {
+    margin-top: 17px !important;
+    margin-bottom: 26px !important;
+    margin-left: 87px !important;
+}
+
+.menu-category:nth-child(2) .menu-category-title {
+    margin-top: 61px !important;
+    margin-bottom: 26px !important;
+    margin-left: 82px !important;
 }
 
 .menu-category:last-child {
@@ -314,7 +328,9 @@ body {
     font-weight: 700;
     color: #1A1A1A;
     margin: 0 0 1.5rem 0;
-    padding-left: 56px; 
+    padding-left: 81px;
+    margin-left: 85px;
+    margin-top: -26px;
 }
 
 .menu-grid {

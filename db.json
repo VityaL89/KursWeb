@@ -167,5 +167,335 @@
       "category": "Sides"
     }
   ],
+  "menuItems": [
+    {
+      "id": 1,
+      "restaurantId": 1,
+      "name": "Cheeseburger",
+      "description": "Nice grilled burger with cheese",
+      "price": 8.50,
+      "category": "To eat"
+    },
+    {
+      "id": 2,
+      "restaurantId": 1,
+      "name": "Fries",
+      "description": "Fried french fries",
+      "price": 2.50,
+      "category": "To eat"
+    },
+    {
+      "id": 3,
+      "restaurantId": 1,
+      "name": "Vanilla ice cream",
+      "description": "Ice cream",
+      "price": 2.00,
+      "category": "Dessert"
+    },
+    {
+      "id": 4,
+      "restaurantId": 1,
+      "name": "Coca-Cola",
+      "description": "",
+      "price": 1.75,
+      "category": "To drink"
+    },
+    {
+      "id": 5,
+      "restaurantId": 1,
+      "name": "Fanta",
+      "description": "",
+      "price": 1.50,
+      "category": "To drink"
+    },
+    {
+      "id": 6,
+      "restaurantId": 1,
+      "name": "Sprite",
+      "description": "",
+      "price": 1.50,
+      "category": "To drink"
+    },
+    {
+      "id": 7,
+      "restaurantId": 2,
+      "name": "Double Cheeseburger",
+      "description": "Double patty with cheese",
+      "price": 11.50,
+      "category": "To eat"
+    },
+    {
+      "id": 8,
+      "restaurantId": 2,
+      "name": "Crispy Chicken",
+      "description": "Crispy chicken sandwich",
+      "price": 9.50,
+      "category": "To eat"
+    },
+    {
+      "id": 9,
+      "restaurantId": 2,
+      "name": "Tiramisu",
+      "description": "Classic Italian dessert",
+      "price": 4.50,
+      "category": "Dessert"
+    },
+    {
+      "id": 10,
+      "restaurantId": 2,
+      "name": "Coca-Cola",
+      "description": "",
+      "price": 1.75,
+      "category": "To drink"
+    },
+    {
+      "id": 11,
+      "restaurantId": 2,
+      "name": "Fanta",
+      "description": "",
+      "price": 1.50,
+      "category": "To drink"
+    },
+    {
+      "id": 12,
+      "restaurantId": 3,
+      "name": "Margherita",
+      "description": "Tomato sauce, mozzarella, basil",
+      "price": 9.50,
+      "category": "To eat"
+    },
+    {
+      "id": 13,
+      "restaurantId": 3,
+      "name": "Pepperoni",
+      "description": "Tomato sauce, mozzarella, pepperoni",
+      "price": 11.50,
+      "category": "To eat"
+    },
+    {
+      "id": 14,
+      "restaurantId": 3,
+      "name": "Quattro Formaggi",
+      "description": "Four cheeses pizza",
+      "price": 12.50,
+      "category": "To eat"
+    },
+    {
+      "id": 15,
+      "restaurantId": 3,
+      "name": "Tiramisu",
+      "description": "Classic Italian dessert",
+      "price": 4.50,
+      "category": "Dessert"
+    },
+    {
+      "id": 16,
+      "restaurantId": 3,
+      "name": "Coca-Cola",
+      "description": "",
+      "price": 1.75,
+      "category": "To drink"
+    },
+    {
+      "id": 17,
+      "restaurantId": 4,
+      "name": "Salmon Nigiri",
+      "description": "Fresh salmon over rice",
+      "price": 6.50,
+      "category": "To eat"
+    },
+    {
+      "id": 18,
+      "restaurantId": 4,
+      "name": "Tuna Maki",
+      "description": "Tuna roll with rice and seaweed",
+      "price": 7.50,
+      "category": "To eat"
+    },
+    {
+      "id": 19,
+      "restaurantId": 4,
+      "name": "Mochi Ice Cream",
+      "description": "Japanese ice cream dessert",
+      "price": 3.00,
+      "category": "Dessert"
+    },
+    {
+      "id": 20,
+      "restaurantId": 4,
+      "name": "Green Tea",
+      "description": "Hot green tea",
+      "price": 2.00,
+      "category": "To drink"
+    },
+    {
+      "id": 21,
+      "restaurantId": 5,
+      "name": "Tacos al Pastor",
+      "description": "Spicy pork tacos",
+      "price": 8.50,
+      "category": "To eat"
+    },
+    {
+      "id": 22,
+      "restaurantId": 5,
+      "name": "Burrito",
+      "description": "Large burrito with beans and rice",
+      "price": 10.50,
+      "category": "To eat"
+    },
+    {
+      "id": 23,
+      "restaurantId": 5,
+      "name": "Churros",
+      "description": "Fried dough pastry with cinnamon",
+      "price": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "id": 24,
+      "restaurantId": 5,
+      "name": "Margarita",
+      "description": "Classic margarita cocktail",
+      "price": 6.00,
+      "category": "To drink"
+    },
+    {
+      "id": 25,
+      "restaurantId": 6,
+      "name": "Chocolate Fondue",
+      "description": "Melted chocolate with fruits",
+      "price": 7.50,
+      "category": "To eat"
+    },
+    {
+      "id": 26,
+      "restaurantId": 6,
+      "name": "Waffle with Berries",
+      "description": "Belgian waffle with fresh berries",
+      "price": 6.50,
+      "category": "To eat"
+    },
+    {
+      "id": 27,
+      "restaurantId": 6,
+      "name": "Hot Chocolate",
+      "description": "Warm chocolate drink",
+      "price": 2.50,
+      "category": "To drink"
+    },
+    {
+      "id": 28,
+      "restaurantId": 7,
+      "name": "Zinger Burger",
+      "description": "Spicy chicken burger",
+      "price": 9.50,
+      "category": "To eat"
+    },
+    {
+      "id": 29,
+      "restaurantId": 7,
+      "name": "Popcorn Chicken",
+      "description": "Small crispy chicken pieces",
+      "price": 4.50,
+      "category": "To eat"
+    },
+    {
+      "id": 30,
+      "restaurantId": 7,
+      "name": "Ice Cream Sundae",
+      "description": "Ice cream with chocolate sauce",
+      "price": 2.50,
+      "category": "Dessert"
+    },
+    {
+      "id": 31,
+      "restaurantId": 7,
+      "name": "Coca-Cola",
+      "description": "",
+      "price": 1.75,
+      "category": "To drink"
+    },
+    {
+      "id": 32,
+      "restaurantId": 8,
+      "name": "Classic Pepperoni",
+      "description": "Pepperoni pizza with mozzarella",
+      "price": 10.50,
+      "category": "To eat"
+    },
+    {
+      "id": 33,
+      "restaurantId": 8,
+      "name": "Hawaiian Pizza",
+      "description": "Pizza with ham and pineapple",
+      "price": 11.50,
+      "category": "To eat"
+    },
+    {
+      "id": 34,
+      "restaurantId": 8,
+      "name": "Cinnamon Rolls",
+      "description": "Sweet cinnamon rolls",
+      "price": 3.50,
+      "category": "Dessert"
+    },
+    {
+      "id": 35,
+      "restaurantId": 8,
+      "name": "Coca-Cola",
+      "description": "",
+      "price": 1.75,
+      "category": "To drink"
+    },
+    {
+      "id": 36,
+      "restaurantId": 9,
+      "name": "Wok Noodles",
+      "description": "Stir-fried noodles with vegetables",
+      "price": 9.50,
+      "category": "To eat"
+    },
+    {
+      "id": 37,
+      "restaurantId": 9,
+      "name": "Fried Rice",
+      "description": "Fried rice with egg and vegetables",
+      "price": 8.50,
+      "category": "To eat"
+    },
+    {
+      "id": 38,
+      "restaurantId": 9,
+      "name": "Bubble Tea",
+      "description": "Milk tea with tapioca pearls",
+      "price": 3.00,
+      "category": "To drink"
+    },
+    {
+      "id": 39,
+      "restaurantId": 10,
+      "name": "California Roll",
+      "description": "Crab, avocado, cucumber",
+      "price": 7.50,
+      "category": "To eat"
+    },
+    {
+      "id": 40,
+      "restaurantId": 10,
+      "name": "Salmon Sashimi",
+      "description": "Fresh sliced salmon",
+      "price": 8.50,
+      "category": "To eat"
+    },
+    {
+      "id": 41,
+      "restaurantId": 10,
+      "name": "Miso Soup",
+      "description": "Traditional Japanese soup",
+      "price": 2.00,
+      "category": "To drink"
+    }
+  ],
   "orders": []
 }

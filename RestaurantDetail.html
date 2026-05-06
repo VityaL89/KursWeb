@@ -12,11 +12,10 @@
 <body>
     <header class="header">
         <div class="container">
-
             <button class="mobile-menu-btn" aria-label="Открыть меню">
-            <span></span>
-            <span></span>
-            <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
             <a href="#" class="logo">
@@ -34,154 +33,96 @@
                     <img src="images/ShoppingCart.png" alt="Cart" class="cart-icon">
                     <span class="cart-text">Order</span>
                     <span class="cart-total">€ 8</span>
-            </button>
+                </button>
             </nav>
         </div>
     </header>
 
     <main>
         <section class="Detail-banner">
-        <div class="container Detail-banner-container">
+            <div class="container Detail-banner-container">
+                <a href="index.html" class="back-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </a>
+                <h1 class="Detail-banner-title" id="restaurant-name">restaurant.name</h1>
+            </div>
+        </section>
 
-            <a href="index.html" class="back-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            </a>
+        <section class="restaurant-about">
+            <div class="container">
+                <nav class="breadcrumb" id="breadcrumb">
+                    <a href="/categories" class="breadcrumb-link">categories</a>
+                    <span class="separator">/</span>
+                    <a href="/categories/pizza" class="breadcrumb-link" id="category-link">pizza</a>
+                    <span class="separator">/</span>
+                    <span class="current" id="restaurant-breadcrumb">restaurant.name</span>
+                </nav>
 
-            <h1 class="Detail-banner-title">restaurant.name</h1>
-        </div>
-    </section>
-
-    <section class="restaurant-about">
-        <div class="container">
-
-            <nav class="breadcrumb">
-                <a href="/categories">categories</a>
-                <span class="separator">/</span>
-                <a href="/categories/pizza">pizza</a>
-                <span class="separator">/</span>
-                <span class="current">restaurant.name</span>
-            </nav>
-
-            <div class="about-content">
-                <h1 class="about-title">About</h1>
-                
-                <p class="about-description">
-                    This restaurant is great for it's atmosphere. Try the speciality dish.name
-                </p>
-
-                <div class="about-rating">
-                    <span class="star-icon">★</span>
-                    <span class="rating-value">4.2</span>
-                    <span class="rating-label">Very Good</span>
-                </div>
-
-                <div class="about-tags">
-                    <span class="tag">Comfort food</span>
-                    <span class="tag">Pizza</span>
+                <div class="about-content">
+                    <h1 class="about-title">About</h1>
+                    <p class="about-description" id="restaurant-description">
+                        This restaurant is great for it's atmosphere. Try the speciality dish.name
+                    </p>
+                    <div class="about-rating" id="rating-container">
+                        <span class="star-icon">★</span>
+                        <span class="rating-value" id="rating-value">4.2</span>
+                        <span class="rating-label" id="rating-label">Very Good</span>
+                    </div>
+                    <div class="about-tags" id="tags-container">
+                        <span class="tag">Comfort food</span>
+                        <span class="tag">Pizza</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section class="menu-section">
+            <div class="container" id="menu-container">
 
-    <section class="menu-section">
-    <div class="container">
-        
-        <div class="menu-category">
-            <h2 class="menu-category-title">Section.name</h2>
-            <div class="menu-grid">
-
-                <div class="menu-item">
-                    <h3 class="menu-item-name">Dishname</h3>
-                    <p class="menu-item-description">Juicy dish with extra mayonaise</p>
-                    <span class="menu-item-price">€ 8,-</span>
-                </div>
-
-                <div class="menu-item">
-                    <h3 class="menu-item-name">Dishname</h3>
-                    <p class="menu-item-description">Juicy dish with extra mayonaise</p>
-                    <span class="menu-item-price">€ 8,-</span>
-                </div>
- 
-                <div class="menu-item">
-                    <h3 class="menu-item-name">Dishname</h3>
-                    <p class="menu-item-description">Hidden on mobile</p>
-                    <span class="menu-item-price">€ 8,-</span>
-                </div>
             </div>
-        </div>
-
-
-        <div class="menu-category">
-            <h2 class="menu-category-title">Section.name</h2>
-            <div class="menu-grid">
-
-                <div class="menu-item">
-                    <h3 class="menu-item-name">Dishname</h3>
-                    <p class="menu-item-description">Juicy dish with extra mayonaise</p>
-                    <span class="menu-item-price">€ 8,-</span>
-                </div>
-
-                <div class="menu-item">
-                    <h3 class="menu-item-name">Dishname</h3>
-                    <p class="menu-item-description">Juicy dish with extra mayonaise</p>
-                    <span class="menu-item-price">€ 8,-</span>
-                </div>
-
-                <div class="menu-item">
-                    <h3 class="menu-item-name">Dishname</h3>
-                    <p class="menu-item-description">Hidden on mobile</p>
-                    <span class="menu-item-price">€ 8,-</span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
+        </section>
     </main>
 
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            
-            <div class="footer-logo">
-                <a href="#">
-                    <img src="images/logoFooter.png" alt="MealDrop Logo" class="footer-logo-img">
-                </a>
-            </div>
-
-            <div class="footer-nav">
-                
-                <div class="footer-column">
-                    <h4 class="footer-col-title">Discover us</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Categories.html">Categories</a></li>
-                        <li><a href="About.html">About</a></li>
-                    </ul>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#">
+                        <img src="images/logoFooter.png" alt="MealDrop Logo" class="footer-logo-img">
+                    </a>
                 </div>
 
-                <div class="footer-column">
-                    <h4 class="footer-col-title">Our social media</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Twitter</a></li>
-                    </ul>
-                </div>
+                <div class="footer-nav">
+                    <div class="footer-column">
+                        <h4 class="footer-col-title">Discover us</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="Categories.html">Categories</a></li>
+                            <li><a href="About.html">About</a></li>
+                        </ul>
+                    </div>
 
-                <div class="footer-column">
-                    <h4 class="footer-col-title">Check our apps</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                    </ul>
-                </div>
+                    <div class="footer-column">
+                        <h4 class="footer-col-title">Our social media</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                        </ul>
+                    </div>
 
+                    <div class="footer-column">
+                        <h4 class="footer-col-title">Check our apps</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+
+    <script src="JavaScript/restaurant-detail.js"></script>
 </body>
 </html>
