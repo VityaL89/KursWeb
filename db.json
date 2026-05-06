@@ -18,7 +18,9 @@
       "ratingText": "Very Good",
       "image": "images/BurgerKing.jpg",
       "tags": ["Comfort food", "Burgers"],
-      "isNew": false
+      "isNew": false,
+      "lat": 53.9045,
+      "lng": 27.5615
     },
     {
       "id": 2,
@@ -30,7 +32,9 @@
       "ratingText": "Excellent",
       "image": "images/MiraRest.jpg",
       "tags": ["Burgers"],
-      "isNew": true
+      "isNew": true,
+      "lat": 53.8930,
+      "lng": 27.5674
     },
     {
       "id": 3,
@@ -42,7 +46,9 @@
       "ratingText": "Excellent",
       "image": "images/LaPomaPizza.webp",
       "tags": ["Pizza"],
-      "isNew": false
+      "isNew": false,
+      "lat": 53.9168,
+      "lng": 27.6257
     },
     {
       "id": 4,
@@ -54,7 +60,9 @@
       "ratingText": "Very Good",
       "image": "images/SushiMaster.jpg",
       "tags": ["Sushi"],
-      "isNew": false
+      "isNew": false,
+      "lat": 53.9206,
+      "lng": 27.5197
     },
     {
       "id": 5,
@@ -66,7 +74,9 @@
       "ratingText": "Good",
       "image": "images/TacoFiesta.webp",
       "tags": ["Asian", "Mexican"],
-      "isNew": false
+      "isNew": false,
+      "lat": 53.9342,
+      "lng": 27.5995
     },
     {
       "id": 6,
@@ -78,7 +88,9 @@
       "ratingText": "Excellent",
       "image": "images/SweetHeaven.webp",
       "tags": ["Desserts"],
-      "isNew": true
+      "isNew": true,
+      "lat": 53.8892,
+      "lng": 27.5422
     },
     {
       "id": 7,
@@ -90,7 +102,9 @@
       "ratingText": "Very Good",
       "image": "images/KFC.png",
       "tags": ["Comfort food", "Burgers"],
-      "isNew": false
+      "isNew": false,
+      "lat": 53.9398,
+      "lng": 27.5757
     },
     {
       "id": 8,
@@ -102,7 +116,9 @@
       "ratingText": "Very Good",
       "image": "images/PizzaHut.jpg",
       "tags": ["Pizza"],
-      "isNew": false
+      "isNew": false,
+      "lat": 53.9311,
+      "lng": 27.6146
     },
     {
       "id": 9,
@@ -114,7 +130,9 @@
       "ratingText": "Very Good",
       "image": "images/WokToWalk.jpg",
       "tags": ["Asian"],
-      "isNew": false
+      "isNew": false,
+      "lat": 53.9045,
+      "lng": 27.5615
     },
     {
       "id": 10,
@@ -126,7 +144,9 @@
       "ratingText": "Good",
       "image": "images/SushiExpress.jpg",
       "tags": ["Sushi"],
-      "isNew": false
+      "isNew": false,
+      "lat": 53.8930,
+      "lng": 27.5674
     }
   ],
   "menuItems": [
