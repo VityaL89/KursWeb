@@ -113,7 +113,7 @@ body {
 }
 
 .nav-cart {
-    width: 146px;
+    width: 170px;
     height: 56px;          
     padding: 15 16px;       
     border-radius: 6px;     
@@ -493,4 +493,295 @@ body {
 
 .mobile-menu-btn {
     display: none; 
+}
+
+.food-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1440px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.food-modal-content {
+    background-color: #ffffff;
+    border-radius: 16px;
+    width: 652px;
+    height: 277px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+.food-modal-header {
+    background-color: #F9F9F9;
+    padding: 24px 32px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.food-modal-body {
+    padding: 24px 32px;
+    background-color: #ffffff;
+    height: 117px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#modal-food-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 31.25px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0;
+}
+
+#modal-food-description {
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+    color: #6B7280;
+    margin: 5px 0 0 0;
+}
+
+#modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1A1A1A;
+}
+
+.food-modal-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.quantity-controls button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #F5F5F5;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1A1A1A;
+}
+
+.quantity-controls button:hover {
+    background: #EBEBEB;
+}
+
+#modal-quantity {
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1A1A1A;
+    min-width: 20px;
+    text-align: center;
+}
+
+#modal-add-btn {
+    background-color: #202020;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 13px 24px;
+    font-family: 'Hind', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 360px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal-add-btn:hover {
+    background-color: #2B2B2B;
+}
+
+@media (max-width: 768px) {
+    .food-modal-content {
+        width: 90%;
+        height: auto;
+        min-height: 277px;
+    }
+    .food-modal-header {
+        height: auto;
+        padding: 20px;
+    }
+    .food-modal-body {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    #modal-add-btn {
+        width: 100%;
+    }
+}
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 420px;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 1001;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cart-sidebar-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid #F3F4F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F9F9F9;
+}
+
+.cart-sidebar-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 32px;
+}
+
+.cart-sidebar-footer {
+    padding: 24px 32px;
+    border-top: 1px solid #F3F4F6;
+    background-color: #ffffff;
+}
+
+.cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+#cart-checkout-btn:hover {
+    background-color: #2B2B2B;
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1A1A1A;
+}
+
+.cart-item-description {
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+    color: #6B7280;
+    margin: 4px 0;
+}
+
+.cart-item-price {
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+    color: #1A1A1A;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-item-quantity {
+    width: 78px;
+    height: 48px;
+    border: none;
+    background-color: #F3F4F6;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1A1A1A;
+    text-align: center;
+}
+
+.menu-item-quantity-badge {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background-color: #20201F;
+    color: #ffffff;
+    width: 39px;
+    height: 39px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Hind', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .cart-sidebar {
+        width: 100%;
+    }
 }

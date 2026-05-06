@@ -170,7 +170,6 @@
         padding: 15px !important;
     }
 
-    /* 7. Футер (Footer) */
     .footer {
         height: auto !important;
         padding: 60px 0 !important;
@@ -203,5 +202,9 @@
 
     .footer-links {
         align-items: center !important;
+    }
+
+    .cart-sidebar {
+        width: 100%;
     }
 }

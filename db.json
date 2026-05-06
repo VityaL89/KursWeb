@@ -1,15 +1,51 @@
 {
   "categories": [
-    { "id": 1, "name": "Pizza", "slug": "pizza", "image": "images/CategoriesPizza.png", "bannerImage": "images/BannerPizza.png" },
-    { "id": 2, "name": "Burgers", "slug": "burgers", "image": "images/CategoriesBurgers.png", "bannerImage": "images/BannerBurgers.jpg" },
-    { "id": 3, "name": "Sushi", "slug": "sushi", "image": "images/CategoriesSushi.png", "bannerImage": "images/SushiBanner.jpg" },
-    { "id": 4, "name": "Asian", "slug": "asian", "image": "images/CategoriesAsian.png", "bannerImage": "images/BannerAsian.jpg" },
-    { "id": 5, "name": "Desserts", "slug": "desserts", "image": "images/CategoriesDesserts.png", "bannerImage": "images/BannerDeserts.jpg" },
-    { "id": 6, "name": "Comfort Food", "slug": "comfort", "image": "images/CategoriesComfort.png",  "bannerImage": "images/BannerComfort.jpg" }
+    {
+      "id": "1",
+      "name": "Pizza",
+      "slug": "pizza",
+      "image": "images/CategoriesPizza.png",
+      "bannerImage": "images/BannerPizza.png"
+    },
+    {
+      "id": "2",
+      "name": "Burgers",
+      "slug": "burgers",
+      "image": "images/CategoriesBurgers.png",
+      "bannerImage": "images/BannerBurgers.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Sushi",
+      "slug": "sushi",
+      "image": "images/CategoriesSushi.png",
+      "bannerImage": "images/SushiBanner.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Asian",
+      "slug": "asian",
+      "image": "images/CategoriesAsian.png",
+      "bannerImage": "images/BannerAsian.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Desserts",
+      "slug": "desserts",
+      "image": "images/CategoriesDesserts.png",
+      "bannerImage": "images/BannerDeserts.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Comfort Food",
+      "slug": "comfort",
+      "image": "images/CategoriesComfort.png",
+      "bannerImage": "images/BannerComfort.jpg"
+    }
   ],
   "restaurants": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Burger King",
       "categoryId": 2,
       "slug": "burger-king",
@@ -17,13 +53,16 @@
       "rating": 4.2,
       "ratingText": "Very Good",
       "image": "images/BurgerKing.jpg",
-      "tags": ["Comfort food", "Burgers"],
+      "tags": [
+        "Comfort food",
+        "Burgers"
+      ],
       "isNew": false,
       "lat": 53.8971,
       "lng": 30.3382
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Mira",
       "categoryId": 2,
       "slug": "mira",
@@ -31,13 +70,15 @@
       "rating": 4.5,
       "ratingText": "Excellent",
       "image": "images/MiraRest.jpg",
-      "tags": ["Burgers"],
+      "tags": [
+        "Burgers"
+      ],
       "isNew": true,
       "lat": 53.9064,
       "lng": 30.3409
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "La Poma",
       "categoryId": 1,
       "slug": "la-poma",
@@ -45,13 +86,15 @@
       "rating": 4.7,
       "ratingText": "Excellent",
       "image": "images/LaPomaPizza.webp",
-      "tags": ["Pizza"],
+      "tags": [
+        "Pizza"
+      ],
       "isNew": false,
       "lat": 53.8939,
       "lng": 30.3294
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Sushi Master",
       "categoryId": 3,
       "slug": "sushi-master",
@@ -59,27 +102,32 @@
       "rating": 4.3,
       "ratingText": "Very Good",
       "image": "images/SushiMaster.jpg",
-      "tags": ["Sushi"],
+      "tags": [
+        "Sushi"
+      ],
       "isNew": false,
-      "lat": 53.9040,
-      "lng": 30.3450
+      "lat": 53.904,
+      "lng": 30.345
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Taco Fiesta",
       "categoryId": 4,
       "slug": "taco-fiesta",
       "description": "Spicy Mexican tacos",
-      "rating": 4.0,
+      "rating": 4,
       "ratingText": "Good",
       "image": "images/TacoFiesta.webp",
-      "tags": ["Asian", "Mexican"],
+      "tags": [
+        "Asian",
+        "Mexican"
+      ],
       "isNew": false,
       "lat": 53.9105,
       "lng": 30.3361
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Sweet Heaven",
       "categoryId": 5,
       "slug": "sweet-heaven",
@@ -87,13 +135,15 @@
       "rating": 4.8,
       "ratingText": "Excellent",
       "image": "images/SweetHeaven.webp",
-      "tags": ["Desserts"],
+      "tags": [
+        "Desserts"
+      ],
       "isNew": true,
       "lat": 53.8965,
-      "lng": 30.3320
+      "lng": 30.332
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "KFC",
       "categoryId": 2,
       "slug": "kfc",
@@ -101,13 +151,16 @@
       "rating": 4.1,
       "ratingText": "Very Good",
       "image": "images/KFC.png",
-      "tags": ["Comfort food", "Burgers"],
+      "tags": [
+        "Comfort food",
+        "Burgers"
+      ],
       "isNew": false,
       "lat": 53.9115,
       "lng": 30.3407
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Pizza Hut",
       "categoryId": 1,
       "slug": "pizza-hut",
@@ -115,13 +168,15 @@
       "rating": 4.2,
       "ratingText": "Very Good",
       "image": "images/PizzaHut.jpg",
-      "tags": ["Pizza"],
+      "tags": [
+        "Pizza"
+      ],
       "isNew": false,
       "lat": 53.9025,
-      "lng": 30.3430
+      "lng": 30.343
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Wok to Walk",
       "categoryId": 4,
       "slug": "wok-to-walk",
@@ -129,13 +184,15 @@
       "rating": 4.4,
       "ratingText": "Very Good",
       "image": "images/WokToWalk.jpg",
-      "tags": ["Asian"],
+      "tags": [
+        "Asian"
+      ],
       "isNew": false,
       "lat": 53.8971,
       "lng": 30.3382
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Sushi Express",
       "categoryId": 3,
       "slug": "sushi-express",
@@ -143,40 +200,41 @@
       "rating": 3.9,
       "ratingText": "Good",
       "image": "images/SushiExpress.jpg",
-      "tags": ["Sushi"],
+      "tags": [
+        "Sushi"
+      ],
       "isNew": false,
       "lat": 53.9064,
       "lng": 30.3409
     }
   ],
-
   "menuItems": [
     {
-      "id": 1,
+      "id": "1",
       "restaurantId": 1,
       "name": "Cheeseburger",
       "description": "Nice grilled burger with cheese",
-      "price": 8.50,
+      "price": 8.5,
       "category": "To eat"
     },
     {
-      "id": 2,
+      "id": "2",
       "restaurantId": 1,
       "name": "Fries",
       "description": "Fried french fries",
-      "price": 2.50,
+      "price": 2.5,
       "category": "To eat"
     },
     {
-      "id": 3,
+      "id": "3",
       "restaurantId": 1,
       "name": "Vanilla ice cream",
       "description": "Ice cream",
-      "price": 2.00,
+      "price": 2,
       "category": "Dessert"
     },
     {
-      "id": 4,
+      "id": "4",
       "restaurantId": 1,
       "name": "Coca-Cola",
       "description": "",
@@ -184,47 +242,47 @@
       "category": "To drink"
     },
     {
-      "id": 5,
+      "id": "5",
       "restaurantId": 1,
       "name": "Fanta",
       "description": "",
-      "price": 1.50,
+      "price": 1.5,
       "category": "To drink"
     },
     {
-      "id": 6,
+      "id": "6",
       "restaurantId": 1,
       "name": "Sprite",
       "description": "",
-      "price": 1.50,
+      "price": 1.5,
       "category": "To drink"
     },
     {
-      "id": 7,
+      "id": "7",
       "restaurantId": 2,
       "name": "Double Cheeseburger",
       "description": "Double patty with cheese",
-      "price": 11.50,
+      "price": 11.5,
       "category": "To eat"
     },
     {
-      "id": 8,
+      "id": "8",
       "restaurantId": 2,
       "name": "Crispy Chicken",
       "description": "Crispy chicken sandwich",
-      "price": 9.50,
+      "price": 9.5,
       "category": "To eat"
     },
     {
-      "id": 9,
+      "id": "9",
       "restaurantId": 2,
       "name": "Tiramisu",
       "description": "Classic Italian dessert",
-      "price": 4.50,
+      "price": 4.5,
       "category": "Dessert"
     },
     {
-      "id": 10,
+      "id": "10",
       "restaurantId": 2,
       "name": "Coca-Cola",
       "description": "",
@@ -232,47 +290,47 @@
       "category": "To drink"
     },
     {
-      "id": 11,
+      "id": "11",
       "restaurantId": 2,
       "name": "Fanta",
       "description": "",
-      "price": 1.50,
+      "price": 1.5,
       "category": "To drink"
     },
     {
-      "id": 12,
+      "id": "12",
       "restaurantId": 3,
       "name": "Margherita",
       "description": "Tomato sauce, mozzarella, basil",
-      "price": 9.50,
+      "price": 9.5,
       "category": "To eat"
     },
     {
-      "id": 13,
+      "id": "13",
       "restaurantId": 3,
       "name": "Pepperoni",
       "description": "Tomato sauce, mozzarella, pepperoni",
-      "price": 11.50,
+      "price": 11.5,
       "category": "To eat"
     },
     {
-      "id": 14,
+      "id": "14",
       "restaurantId": 3,
       "name": "Quattro Formaggi",
       "description": "Four cheeses pizza",
-      "price": 12.50,
+      "price": 12.5,
       "category": "To eat"
     },
     {
-      "id": 15,
+      "id": "15",
       "restaurantId": 3,
       "name": "Tiramisu",
       "description": "Classic Italian dessert",
-      "price": 4.50,
+      "price": 4.5,
       "category": "Dessert"
     },
     {
-      "id": 16,
+      "id": "16",
       "restaurantId": 3,
       "name": "Coca-Cola",
       "description": "",
@@ -280,119 +338,119 @@
       "category": "To drink"
     },
     {
-      "id": 17,
+      "id": "17",
       "restaurantId": 4,
       "name": "Salmon Nigiri",
       "description": "Fresh salmon over rice",
-      "price": 6.50,
+      "price": 6.5,
       "category": "To eat"
     },
     {
-      "id": 18,
+      "id": "18",
       "restaurantId": 4,
       "name": "Tuna Maki",
       "description": "Tuna roll with rice and seaweed",
-      "price": 7.50,
+      "price": 7.5,
       "category": "To eat"
     },
     {
-      "id": 19,
+      "id": "19",
       "restaurantId": 4,
       "name": "Mochi Ice Cream",
       "description": "Japanese ice cream dessert",
-      "price": 3.00,
+      "price": 3,
       "category": "Dessert"
     },
     {
-      "id": 20,
+      "id": "20",
       "restaurantId": 4,
       "name": "Green Tea",
       "description": "Hot green tea",
-      "price": 2.00,
+      "price": 2,
       "category": "To drink"
     },
     {
-      "id": 21,
+      "id": "21",
       "restaurantId": 5,
       "name": "Tacos al Pastor",
       "description": "Spicy pork tacos",
-      "price": 8.50,
+      "price": 8.5,
       "category": "To eat"
     },
     {
-      "id": 22,
+      "id": "22",
       "restaurantId": 5,
       "name": "Burrito",
       "description": "Large burrito with beans and rice",
-      "price": 10.50,
+      "price": 10.5,
       "category": "To eat"
     },
     {
-      "id": 23,
+      "id": "23",
       "restaurantId": 5,
       "name": "Churros",
       "description": "Fried dough pastry with cinnamon",
-      "price": 3.50,
+      "price": 3.5,
       "category": "Dessert"
     },
     {
-      "id": 24,
+      "id": "24",
       "restaurantId": 5,
       "name": "Margarita",
       "description": "Classic margarita cocktail",
-      "price": 6.00,
+      "price": 6,
       "category": "To drink"
     },
     {
-      "id": 25,
+      "id": "25",
       "restaurantId": 6,
       "name": "Chocolate Fondue",
       "description": "Melted chocolate with fruits",
-      "price": 7.50,
+      "price": 7.5,
       "category": "To eat"
     },
     {
-      "id": 26,
+      "id": "26",
       "restaurantId": 6,
       "name": "Waffle with Berries",
       "description": "Belgian waffle with fresh berries",
-      "price": 6.50,
+      "price": 6.5,
       "category": "To eat"
     },
     {
-      "id": 27,
+      "id": "27",
       "restaurantId": 6,
       "name": "Hot Chocolate",
       "description": "Warm chocolate drink",
-      "price": 2.50,
+      "price": 2.5,
       "category": "To drink"
     },
     {
-      "id": 28,
+      "id": "28",
       "restaurantId": 7,
       "name": "Zinger Burger",
       "description": "Spicy chicken burger",
-      "price": 9.50,
+      "price": 9.5,
       "category": "To eat"
     },
     {
-      "id": 29,
+      "id": "29",
       "restaurantId": 7,
       "name": "Popcorn Chicken",
       "description": "Small crispy chicken pieces",
-      "price": 4.50,
+      "price": 4.5,
       "category": "To eat"
     },
     {
-      "id": 30,
+      "id": "30",
       "restaurantId": 7,
       "name": "Ice Cream Sundae",
       "description": "Ice cream with chocolate sauce",
-      "price": 2.50,
+      "price": 2.5,
       "category": "Dessert"
     },
     {
-      "id": 31,
+      "id": "31",
       "restaurantId": 7,
       "name": "Coca-Cola",
       "description": "",
@@ -400,31 +458,31 @@
       "category": "To drink"
     },
     {
-      "id": 32,
+      "id": "32",
       "restaurantId": 8,
       "name": "Classic Pepperoni",
       "description": "Pepperoni pizza with mozzarella",
-      "price": 10.50,
+      "price": 10.5,
       "category": "To eat"
     },
     {
-      "id": 33,
+      "id": "33",
       "restaurantId": 8,
       "name": "Hawaiian Pizza",
       "description": "Pizza with ham and pineapple",
-      "price": 11.50,
+      "price": 11.5,
       "category": "To eat"
     },
     {
-      "id": 34,
+      "id": "34",
       "restaurantId": 8,
       "name": "Cinnamon Rolls",
       "description": "Sweet cinnamon rolls",
-      "price": 3.50,
+      "price": 3.5,
       "category": "Dessert"
     },
     {
-      "id": 35,
+      "id": "35",
       "restaurantId": 8,
       "name": "Coca-Cola",
       "description": "",
@@ -432,53 +490,111 @@
       "category": "To drink"
     },
     {
-      "id": 36,
+      "id": "36",
       "restaurantId": 9,
       "name": "Wok Noodles",
       "description": "Stir-fried noodles with vegetables",
-      "price": 9.50,
+      "price": 9.5,
       "category": "To eat"
     },
     {
-      "id": 37,
+      "id": "37",
       "restaurantId": 9,
       "name": "Fried Rice",
       "description": "Fried rice with egg and vegetables",
-      "price": 8.50,
+      "price": 8.5,
       "category": "To eat"
     },
     {
-      "id": 38,
+      "id": "38",
       "restaurantId": 9,
       "name": "Bubble Tea",
       "description": "Milk tea with tapioca pearls",
-      "price": 3.00,
+      "price": 3,
       "category": "To drink"
     },
     {
-      "id": 39,
+      "id": "39",
       "restaurantId": 10,
       "name": "California Roll",
       "description": "Crab, avocado, cucumber",
-      "price": 7.50,
+      "price": 7.5,
       "category": "To eat"
     },
     {
-      "id": 40,
+      "id": "40",
       "restaurantId": 10,
       "name": "Salmon Sashimi",
       "description": "Fresh sliced salmon",
-      "price": 8.50,
+      "price": 8.5,
       "category": "To eat"
     },
     {
-      "id": 41,
+      "id": "41",
       "restaurantId": 10,
       "name": "Miso Soup",
       "description": "Traditional Japanese soup",
-      "price": 2.00,
+      "price": 2,
       "category": "To drink"
     }
   ],
-  "orders": []
+  "orders": [],
+  "carts": [
+    {
+      "restaurantId": 4,
+      "items": [],
+      "total": 0,
+      "id": "GndGGVkRqBk"
+    },
+    {
+      "restaurantId": 2,
+      "items": [
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 1
+        },
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 2
+        }
+      ],
+      "total": 30.5,
+      "id": "gd_N8W7rCh4"
+    },
+    {
+      "restaurantId": 7,
+      "items": [
+        {
+          "id": "29",
+          "name": "Popcorn Chicken",
+          "description": "Small crispy chicken pieces",
+          "price": 4.5,
+          "quantity": 1
+        }
+      ],
+      "total": 4.5,
+      "id": "FCsfAjiHzps"
+    },
+    {
+      "restaurantId": 3,
+      "items": [
+        {
+          "id": "12",
+          "name": "Margherita",
+          "description": "Tomato sauce, mozzarella, basil",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ],
+      "total": 9.5,
+      "id": "HgSMOrwATek"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
