@@ -356,7 +356,7 @@ checkout-page {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 24px; 
+    padding-top: 2px;
     border-top: 1px solid #E5E7EB; 
 }
 

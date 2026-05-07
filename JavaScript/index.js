@@ -1,23 +1,63 @@
-const API_URL = 'http://localhost:3000';
+// ============================
+// СЛАЙДЕРЫ
+// ============================
 
-function initHorizontalScroll(containerSelector, leftBtnSelector, rightBtnSelector) {
-    const container = document.querySelector(containerSelector);
-    const leftBtn = document.querySelector(leftBtnSelector);
-    const rightBtn = document.querySelector(rightBtnSelector);
+function updateArrows(container, leftBtn, rightBtn) {
+    const scrollLeft = container.scrollLeft;
+    const scrollWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
 
+    if (scrollLeft > 10) {
+        leftBtn.style.opacity = '1';
+        leftBtn.style.pointerEvents = 'auto';
+    } else {
+        leftBtn.style.opacity = '0';
+        leftBtn.style.pointerEvents = 'none';
+    }
+
+    const maxScroll = scrollWidth - clientWidth - 10;
+    if (scrollLeft < maxScroll) {
+        rightBtn.style.opacity = '1';
+        rightBtn.style.pointerEvents = 'auto';
+    } else {
+        rightBtn.style.opacity = '0';
+        rightBtn.style.pointerEvents = 'none';
+    }
+}
+
+function initSlider(container, leftBtn, rightBtn) {
     if (!container || !leftBtn || !rightBtn) return;
 
-    
+    setTimeout(() => {
+        updateArrows(container, leftBtn, rightBtn);
+    }, 100);
+
     leftBtn.addEventListener('click', () => {
-        container.scrollBy({ left: -320, behavior: 'smooth' });
+        container.scrollBy({ left: -300, behavior: 'smooth' });
+        setTimeout(() => {
+            updateArrows(container, leftBtn, rightBtn);
+        }, 300);
     });
 
-    
     rightBtn.addEventListener('click', () => {
-        container.scrollBy({ left: 320, behavior: 'smooth' });
+        container.scrollBy({ left: 300, behavior: 'smooth' });
+        setTimeout(() => {
+            updateArrows(container, leftBtn, rightBtn);
+        }, 300);
+    });
+
+    container.addEventListener('scroll', () => {
+        updateArrows(container, leftBtn, rightBtn);
+    });
+    
+    window.addEventListener('resize', () => {
+        updateArrows(container, leftBtn, rightBtn);
     });
 }
 
+// ============================
+// КАРТОЧКИ РЕСТОРАНОВ
+// ============================
 
 function createRestaurantCard(restaurant) {
     const card = document.createElement('div');
@@ -43,104 +83,53 @@ function createRestaurantCard(restaurant) {
     return card;
 }
 
-
-function updateArrows(container, leftBtn, rightBtn) {
-    const scrollLeft = container.scrollLeft;
-    const scrollWidth = container.scrollWidth;
-    const clientWidth = container.clientWidth;
-
-    
-    if (scrollLeft > 10) {
-        leftBtn.style.opacity = '1';
-        leftBtn.style.pointerEvents = 'auto';
-    } else {
-        leftBtn.style.opacity = '0';
-        leftBtn.style.pointerEvents = 'none';
-    }
-
-    
-    const maxScroll = scrollWidth - clientWidth - 10;
-    if (scrollLeft < maxScroll) {
-        rightBtn.style.opacity = '1';
-        rightBtn.style.pointerEvents = 'auto';
-    } else {
-        rightBtn.style.opacity = '0';
-        rightBtn.style.pointerEvents = 'none';
-    }
-}
-
-function initSlider(container, leftBtn, rightBtn) {
-    if (!container || !leftBtn || !rightBtn) return;
-
-    
-    setTimeout(() => {
-        updateArrows(container, leftBtn, rightBtn);
-    }, 100);
-
-    
-    leftBtn.addEventListener('click', () => {
-        container.scrollBy({ left: -300, behavior: 'smooth' });
-        setTimeout(() => {
-            updateArrows(container, leftBtn, rightBtn);
-        }, 300);
-    });
-
-    
-    rightBtn.addEventListener('click', () => {
-        container.scrollBy({ left: 300, behavior: 'smooth' });
-        setTimeout(() => {
-            updateArrows(container, leftBtn, rightBtn);
-        }, 300);
-    });
-
-    
-    container.addEventListener('scroll', () => {
-        updateArrows(container, leftBtn, rightBtn);
-    });
-}
+// ============================
+// ЗАГРУЗКА РЕСТОРАНОВ
+// ============================
 
 async function loadRestaurants() {
     try {
         const response = await fetch(`${API_URL}/restaurants`);
         const restaurants = await response.json();
 
-        
+        // Picks
         const picksGrid = document.querySelector('.picks .slider-track');
         if (picksGrid) {
-            picksGrid.innerHTML = ''; 
-
+            picksGrid.innerHTML = '';
             const picks = restaurants.slice(0, 6);
             picks.forEach(rest => {
                 picksGrid.appendChild(createRestaurantCard(rest));
             });
 
+            const picksContainer = document.querySelector('.picks .slider-container');
+            const picksLeft = picksContainer?.querySelector('.slider-arrow-left') || document.querySelector('.picks .slider-arrow-left');
+            const picksRight = picksContainer?.querySelector('.slider-arrow-right') || document.querySelector('.picks .slider-arrow-right');
             
-            const picksLeft = document.querySelector('.picks .slider-arrow-left');
-            const picksRight = document.querySelector('.picks .slider-arrow-right');
-            initSlider(picksGrid, picksLeft, picksRight);
+            if (picksLeft && picksRight) {
+                initSlider(picksGrid, picksLeft, picksRight);
+            }
         }
 
-        
+        // Arrivals
         const arrivalsGrid = document.querySelector('.arrivals .slider-track');
         if (arrivalsGrid) {
             arrivalsGrid.innerHTML = '';
-
-            
             const sorted = [...restaurants].sort((a, b) => {
                 if (a.isNew === b.isNew) return 0;
                 return a.isNew ? -1 : 1;
             });
-
-            
             const arrivals = sorted.slice(0, 6);
             arrivals.forEach(rest => {
                 arrivalsGrid.appendChild(createRestaurantCard(rest));
             });
 
-           
-            const arrivalsLeft = document.querySelector('.arrivals .slider-arrow-left');
-            const arrivalsRight = document.querySelector('.arrivals .slider-arrow-right');
-            initSlider(arrivalsGrid, arrivalsLeft, arrivalsRight);
+            const arrivalsContainer = document.querySelector('.arrivals .slider-container');
+            const arrivalsLeft = arrivalsContainer?.querySelector('.slider-arrow-left') || document.querySelector('.arrivals .slider-arrow-left');
+            const arrivalsRight = arrivalsContainer?.querySelector('.slider-arrow-right') || document.querySelector('.arrivals .slider-arrow-right');
+            
+            if (arrivalsLeft && arrivalsRight) {
+                initSlider(arrivalsGrid, arrivalsLeft, arrivalsRight);
+            }
         }
 
     } catch (error) {
@@ -148,6 +137,9 @@ async function loadRestaurants() {
     }
 }
 
+// ============================
+// ЗАГРУЗКА КАТЕГОРИЙ
+// ============================
 
 async function loadCategories() {
     try {
@@ -157,7 +149,6 @@ async function loadCategories() {
         const categoriesGrid = document.querySelector('.categories-grid');
         if (categoriesGrid) {
             categoriesGrid.innerHTML = '';
-
             categories.forEach(cat => {
                 const card = document.createElement('div');
                 card.className = 'category-card';
@@ -165,11 +156,9 @@ async function loadCategories() {
                     <img src="${cat.image}" alt="${cat.name}" class="category-img">
                     <span class="category-name">${cat.name}</span>
                 `;
-
                 card.addEventListener('click', () => {
                     window.location.href = `CategoriesChild.html?category=${cat.slug}`;
                 });
-
                 categoriesGrid.appendChild(card);
             });
         }
@@ -179,10 +168,13 @@ async function loadCategories() {
     }
 }
 
+// ============================
+// КОРЗИНА
+// ============================
+
 async function updateHeaderCartTotalFromServer() {
     try {
-
-        const res = await fetch('http://localhost:3000/carts');
+        const res = await fetch(`${API_URL}/carts`);
         const carts = await res.json();
         
         let total = 0;
@@ -213,7 +205,6 @@ function toggleCartSidebar() {
         sidebar.style.display = 'flex';
         overlay.style.display = 'block';
         isCartSidebarOpen = true;
-
         loadCartData();
     } else {
         sidebar.style.display = 'none';
@@ -224,18 +215,16 @@ function toggleCartSidebar() {
 
 async function loadCartData() {
     try {
-
-        const resRestaurants = await fetch('http://localhost:3000/restaurants');
+        const resRestaurants = await fetch(`${API_URL}/restaurants`);
         const restaurants = await resRestaurants.json();
         
-        const res = await fetch('http://localhost:3000/carts');
+        const res = await fetch(`${API_URL}/carts`);
         const carts = await res.json();
 
         let allItems = [];
         let total = 0;
         carts.forEach(cart => {
             if (cart.items) {
-
                 const restaurant = restaurants.find(r => r.id === cart.restaurantId);
                 const restaurantName = restaurant ? restaurant.name : 'Unknown restaurant';
                 
@@ -244,7 +233,7 @@ async function loadCartData() {
                         ...item,
                         cartId: cart.id,
                         restaurantId: cart.restaurantId,
-                        restaurantName: restaurantName 
+                        restaurantName: restaurantName
                     });
                     total += item.price * item.quantity;
                 });
@@ -288,36 +277,33 @@ function updateCartUI(items, total) {
         select.addEventListener('change', async function() {
             const newQuantity = parseInt(this.value);
             if (newQuantity > 0) {
-
                 const cartId = item.cartId;
-                const resCart = await fetch(`http://localhost:3000/carts/${cartId}`);
+                const resCart = await fetch(`${API_URL}/carts/${cartId}`);
                 const currentCart = await resCart.json();
                 if (currentCart) {
                     const cartItem = currentCart.items.find(c => c.id === item.id);
                     if (cartItem) {
                         cartItem.quantity = newQuantity;
                         currentCart.total = currentCart.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
-                        await fetch(`http://localhost:3000/carts/${cartId}`, {
+                        await fetch(`${API_URL}/carts/${cartId}`, {
                             method: 'PUT',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(currentCart)
                         });
-
                         loadCartData();
                         updateHeaderCartTotalFromServer();
                     }
                 }
             } else if (newQuantity === 0) {
-
                 const cartId = item.cartId;
-                const resCart = await fetch(`http://localhost:3000/carts/${cartId}`);
+                const resCart = await fetch(`${API_URL}/carts/${cartId}`);
                 const currentCart = await resCart.json();
                 if (currentCart) {
                     const index = currentCart.items.findIndex(c => c.id === item.id);
                     if (index !== -1) {
                         currentCart.items.splice(index, 1);
                         currentCart.total = currentCart.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
-                        await fetch(`http://localhost:3000/carts/${cartId}`, {
+                        await fetch(`${API_URL}/carts/${cartId}`, {
                             method: 'PUT',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(currentCart)
@@ -335,23 +321,23 @@ function updateCartUI(items, total) {
     totalElement.textContent = `€ ${total.toFixed(2)}`;
 }
 
+// ============================
+// ОБРАБОТЧИКИ СОБЫТИЙ
+// ============================
 
 document.querySelector('.main-banner-btn')?.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.href = 'Categories.html';
 });
 
-
 document.querySelector('.award-banner-btn')?.addEventListener('click', () => {
     window.location.href = 'Categories.html';
 });
-
 
 document.querySelector('.view-all-link')?.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.href = 'Categories.html';
 });
-
 
 document.querySelector('.burger-menu')?.addEventListener('click', () => {
     const nav = document.querySelector('.nav-wrapper');
@@ -361,6 +347,12 @@ document.querySelector('.burger-menu')?.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
+    // Проверяем, что API_URL определена
+    if (typeof API_URL === 'undefined') {
+        console.error('API_URL не определена! Проверьте подключение auth.js');
+        return;
+    }
+    
     await loadCategories();
     await loadRestaurants();
     await updateHeaderCartTotalFromServer();
@@ -371,13 +363,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-
 document.getElementById('cart-close-btn').addEventListener('click', toggleCartSidebar);
 document.getElementById('cart-overlay').addEventListener('click', toggleCartSidebar);
 
-
 document.getElementById('cart-checkout-btn').addEventListener('click', function() {
-
-    alert('Переход к оформлению заказа!');
+    if (typeof getCurrentUser === 'undefined') {
+        alert('Auth system not loaded');
+        return;
+    }
+    const user = getCurrentUser();
+    if (!user) {
+        alert('Please sign in to checkout');
+        window.location.href = 'Login.html';
+        return;
+    }
+    window.location.href = 'OrderFormStep1.html';
 });
-

@@ -1,0 +1,239 @@
+// JavaScript/cart.js
+const API_URL = 'http://localhost:3000';
+
+let isCartSidebarOpen = false;
+
+// ============================
+// ОБНОВЛЕНИЕ ЦЕНЫ В ХЕДЕРЕ
+// ============================
+
+async function updateHeaderCartTotalFromServer() {
+    const user = getCurrentUser();
+    const headerTotal = document.getElementById('header-cart-total');
+    if (!headerTotal) return;
+    
+    if (!user) {
+        headerTotal.textContent = '€ 0,00';
+        return;
+    }
+    
+    try {
+        const res = await fetch(`${API_URL}/carts?userId=${user.id}`);
+        const carts = await res.json();
+        const cart = carts.length > 0 ? carts[0] : null;
+        const total = cart ? cart.total : 0;
+        headerTotal.textContent = `€ ${total.toFixed(2)}`;
+    } catch (error) {
+        console.error('Ошибка загрузки корзины:', error);
+    }
+}
+
+// ============================
+// ПЕРЕКЛЮЧЕНИЕ САЙДБАРА КОРЗИНЫ
+// ============================
+
+function toggleCartSidebar() {
+    const sidebar = document.getElementById('cart-sidebar');
+    const overlay = document.getElementById('cart-overlay');
+    
+    if (!isCartSidebarOpen) {
+        sidebar.style.display = 'flex';
+        overlay.style.display = 'block';
+        isCartSidebarOpen = true;
+        loadCartData();
+    } else {
+        sidebar.style.display = 'none';
+        overlay.style.display = 'none';
+        isCartSidebarOpen = false;
+    }
+}
+
+// ============================
+// ЗАГРУЗКА ДАННЫХ КОРЗИНЫ
+// ============================
+
+async function loadCartData() {
+    const user = getCurrentUser();
+    const cartContainer = document.getElementById('cart-items-container');
+    const totalElement = document.getElementById('cart-total-price');
+    
+    if (!cartContainer) return;
+    
+    if (!user) {
+        cartContainer.innerHTML = '<p style="text-align: center; color: #6B7280; padding: 20px;">Your cart is empty</p>';
+        if (totalElement) totalElement.textContent = '€ 0,00';
+        return;
+    }
+    
+    try {
+        const res = await fetch(`${API_URL}/carts?userId=${user.id}`);
+        const carts = await res.json();
+        const cart = carts.length > 0 ? carts[0] : { items: [], total: 0 };
+        
+        updateCartUI(cart);
+    } catch (error) {
+        console.error('Ошибка загрузки корзины:', error);
+    }
+}
+
+// ============================
+// ОБНОВЛЕНИЕ UI КОРЗИНЫ
+// ============================
+
+function updateCartUI(cart) {
+    const cartContainer = document.getElementById('cart-items-container');
+    const totalElement = document.getElementById('cart-total-price');
+    
+    if (!cartContainer) return;
+    
+    cartContainer.innerHTML = '';
+    
+    if (!cart || cart.items.length === 0) {
+        cartContainer.innerHTML = '<p style="text-align: center; color: #6B7280; padding: 20px;">Your cart is empty</p>';
+        if (totalElement) totalElement.textContent = '€ 0,00';
+        return;
+    }
+    
+    cart.items.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'cart-item';
+        itemElement.innerHTML = `
+            <div class="cart-item-info">
+                <div class="cart-item-name">${item.name}</div>
+                <div class="cart-item-description">${item.description || ''}</div>
+                <div class="cart-item-price">€ ${(item.price * item.quantity).toFixed(2)}</div>
+            </div>
+            <div class="cart-item-controls">
+                <select class="cart-item-quantity">
+                    ${Array.from({length: 11}, (_, i) => `<option value="${i}" ${i === item.quantity ? 'selected' : ''}>${i}</option>`).join('')}
+                </select>
+            </div>
+        `;
+        
+        const select = itemElement.querySelector('.cart-item-quantity');
+        select.addEventListener('change', async function() {
+            const newQuantity = parseInt(this.value);
+            const user = getCurrentUser();
+            if (!user) return;
+            
+            if (newQuantity > 0) {
+                const resCart = await fetch(`${API_URL}/carts?userId=${user.id}`);
+                const carts = await resCart.json();
+                const currentCart = carts[0];
+                
+                if (currentCart) {
+                    const cartItem = currentCart.items.find(c => c.id === item.id);
+                    if (cartItem) {
+                        cartItem.quantity = newQuantity;
+                        currentCart.total = currentCart.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+                        await fetch(`${API_URL}/carts/${currentCart.id}`, {
+                            method: 'PUT',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(currentCart)
+                        });
+                        loadCartData();
+                        updateHeaderCartTotalFromServer();
+                    }
+                }
+            } else if (newQuantity === 0) {
+                const resCart = await fetch(`${API_URL}/carts?userId=${user.id}`);
+                const carts = await resCart.json();
+                const currentCart = carts[0];
+                
+                if (currentCart) {
+                    const index = currentCart.items.findIndex(c => c.id === item.id);
+                    if (index !== -1) {
+                        currentCart.items.splice(index, 1);
+                        currentCart.total = currentCart.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+                        await fetch(`${API_URL}/carts/${currentCart.id}`, {
+                            method: 'PUT',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(currentCart)
+                        });
+                        loadCartData();
+                        updateHeaderCartTotalFromServer();
+                    }
+                }
+            }
+        });
+        
+        cartContainer.appendChild(itemElement);
+    });
+    
+    if (totalElement) {
+        totalElement.textContent = `€ ${cart.total.toFixed(2)}`;
+    }
+}
+
+// ============================
+// ОБНОВЛЕНИЕ БЕЙДЖЕЙ (для страниц ресторанов)
+// ============================
+
+async function updateMenuBadges(cart) {
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        const nameElement = item.querySelector('.menu-item-name');
+        if (!nameElement) return;
+        
+        const itemName = nameElement.textContent;
+        
+        let quantity = 0;
+        if (cart && cart.items) {
+            const cartItem = cart.items.find(c => c.name === itemName);
+            if (cartItem) {
+                quantity = cartItem.quantity;
+            }
+        }
+        
+        const oldBadge = item.querySelector('.menu-item-quantity-badge');
+        if (oldBadge) {
+            oldBadge.remove();
+        }
+        
+        if (quantity > 0) {
+            const badge = document.createElement('span');
+            badge.className = 'menu-item-quantity-badge';
+            badge.textContent = quantity;
+            item.appendChild(badge);
+        }
+    });
+}
+
+// ============================
+// ИНИЦИАЛИЗАЦИЯ
+// ============================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Обновляем корзину при загрузке страницы
+    updateHeaderCartTotalFromServer();
+    
+    // Обработчики событий корзины
+    const cartButton = document.getElementById('header-cart-btn') || document.querySelector('.nav-cart');
+    if (cartButton) {
+        cartButton.addEventListener('click', toggleCartSidebar);
+    }
+    
+    const closeBtn = document.getElementById('cart-close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', toggleCartSidebar);
+    }
+    
+    const overlay = document.getElementById('cart-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', toggleCartSidebar);
+    }
+    
+    // Обработчик кнопки Checkout
+    const checkoutBtn = document.getElementById('cart-checkout-btn');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', function() {
+            const user = getCurrentUser();
+            if (!user) {
+                alert('Please sign in to checkout');
+                window.location.href = 'Login.html';
+                return;
+            }
+            window.location.href = 'OrderFormStep1.html';
+        });
+    }
+});
