@@ -548,52 +548,27 @@
     },
     {
       "restaurantId": 2,
-      "items": [
-        {
-          "id": "7",
-          "name": "Double Cheeseburger",
-          "description": "Double patty with cheese",
-          "price": 11.5,
-          "quantity": 1
-        },
-        {
-          "id": "8",
-          "name": "Crispy Chicken",
-          "description": "Crispy chicken sandwich",
-          "price": 9.5,
-          "quantity": 2
-        }
-      ],
-      "total": 30.5,
+      "items": [],
+      "total": 0,
       "id": "gd_N8W7rCh4"
     },
     {
       "restaurantId": 7,
-      "items": [
-        {
-          "id": "29",
-          "name": "Popcorn Chicken",
-          "description": "Small crispy chicken pieces",
-          "price": 4.5,
-          "quantity": 1
-        }
-      ],
-      "total": 4.5,
+      "items": [],
+      "total": 0,
       "id": "FCsfAjiHzps"
     },
     {
       "restaurantId": 3,
-      "items": [
-        {
-          "id": "12",
-          "name": "Margherita",
-          "description": "Tomato sauce, mozzarella, basil",
-          "price": 9.5,
-          "quantity": 1
-        }
-      ],
-      "total": 9.5,
+      "items": [],
+      "total": 0,
       "id": "HgSMOrwATek"
+    },
+    {
+      "restaurantId": 1,
+      "items": [],
+      "total": 0,
+      "id": "fhYn6MVxoeM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

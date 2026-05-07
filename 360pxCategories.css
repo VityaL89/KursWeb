@@ -113,32 +113,37 @@
     background-color: #ffffff;
   }
   
-  .menu-header {
+   .menu-header {
     margin-bottom: 24px !important;
+    padding: 0 3px !important;
+    width: 100%;
+    box-sizing: border-box;
   }
-  
+
   .menu-title {
     font-family: "Montserrat", sans-serif;
     font-size: 31.25px !important;
     font-weight: 700;
-    line-height: 40px;
-    letter-spacing: -0.02em;
-    color: #2C2C2C;
-    margin: 0 0 12px 0;
+    line-height: 40px !important;
+    letter-spacing: -2%; 
+    color: #1A1A1A;
+    margin: 0 0 8px 0;
     padding: 0;
-    text-align: left;
+    width: 100%;
+    text-align: left !important;
   }
-  
+
   .menu-subtitle {
     font-family: "Hind", sans-serif;
     font-size: 16px !important;
     font-weight: 400;
-    line-height: 1.5;
-    color: #2C2C2C;
+    line-height: 26px !important;
+    color: #4B5563;
     margin: 0 !important;
-    max-width: 328px;
-    text-align: left;
-    padding: 0px !important;
+    width: 100%;
+    padding: 0 !important;
+    text-align: left !important;
+    max-width: 100%;
   }
 
   .menu-grid {
@@ -214,6 +219,7 @@
     align-items: center !important;
     gap: 32px !important;
     padding: 0 16px;
+    margin: 0;
   }
   
   .footer-logo-img {
@@ -259,7 +265,7 @@
   }
 
   .footer-column:nth-child(3) {
-    margin-right: 72px !important;
+    margin-right: 0px !important;
     margin-top: -32px !important;
-}
+  }
 }

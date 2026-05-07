@@ -5,7 +5,6 @@
         margin: 0 auto !important;
     }
 
-    /* 2. Шапка (Header) */
     .header .container {
         padding: 10px 20px !important;
     }
@@ -15,7 +14,9 @@
     }
 
     .nav-cart {
-        margin-right: 0 !important;
+        margin-left: -1px;
+        width: 150px;
+        margin-right: -13px !important;
     }
 
     .main-banner {
@@ -64,6 +65,14 @@
 
     .restaurant-card {
         width: 100% !important;
+    }
+
+    .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 6px;
+    margin-left: -40px;
     }
 
     .card-arrow {

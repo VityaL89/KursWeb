@@ -230,10 +230,12 @@
   .menu-section {
     padding: 32px 0 60px;
     background-color: #ffffff;
+    margin-left: 3px;
 }
 
 .menu-category {
     margin-bottom: 40px;
+    margin-left: -12px;
 }
 
 .menu-category:last-child {
@@ -247,7 +249,7 @@
     line-height: 32px;
     color: #1A1A1A;
     margin: 0 0 24px 0;
-    margin-left: 0px;
+    margin-left: 13px;
     padding-left: 0px !important;
 }
 
@@ -260,6 +262,18 @@
 .menu-category .menu-item:nth-child(n+3) {
     display: none !important;
 }
+
+ .menu-category:nth-child(1) .menu-category-title {
+    margin-top: 2px !important;
+    margin-bottom: 42px !important; 
+    margin-left: 10px !important;
+  }
+
+  .menu-category:nth-child(2) .menu-category-title {
+    margin-top: -37px !important;
+    margin-bottom: 25px !important;
+    margin-left: 10px !important;
+  }
 
 .menu-item {
     background-color: #F9F9F9;
@@ -626,16 +640,32 @@
   .footer-column:nth-child(1){
     margin-bottom: 4px;
   }
+
+      .food-modal-header {
+        padding: 16px 20px;
+    }
+    
+    .food-modal-body {
+        padding: 16px 20px;
+    }
+    
+    #modal-add-btn {
+        height: 44px;
+        font-size: 14px;
+        width: 100%;
+    }
+    
+    #modal-food-name {
+        font-size: 20px;
+    }
+    
+    #modal-food-description {
+        font-size: 15px;
+    }
+
 }
 
- .menu-category:nth-child(1) .menu-category-title {
-    margin-top: 2px !important;
-    margin-bottom: 42px !important; 
-  }
 
-  .menu-category:nth-child(2) .menu-category-title {
-    margin-top: -37px !important;
-    margin-bottom: 42px !important;
-  }
+    
 
 
