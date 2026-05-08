@@ -13,7 +13,8 @@ async function updateHeaderCartTotalFromServer() {
     if (!headerTotal) return;
     
     if (!user) {
-        headerTotal.textContent = '€ 0,00';
+        const guestCart = getGuestCart();
+        headerTotal.textContent = `€ ${(guestCart.total || 0).toFixed(2)}`;
         return;
     }
     
@@ -60,8 +61,8 @@ async function loadCartData() {
     if (!cartContainer) return;
     
     if (!user) {
-        cartContainer.innerHTML = '<p style="text-align: center; color: #6B7280; padding: 20px;">Your cart is empty</p>';
-        if (totalElement) totalElement.textContent = '€ 0,00';
+        const guestCart = getGuestCart();
+        updateCartUI(guestCart);
         return;
     }
     
@@ -114,7 +115,22 @@ function updateCartUI(cart) {
         select.addEventListener('change', async function() {
             const newQuantity = parseInt(this.value);
             const user = getCurrentUser();
-            if (!user) return;
+            if (!user) {
+                const guestCart = getGuestCart();
+                const existing = guestCart.items.find(c => String(c.id) === String(item.id));
+                if (!existing) return;
+
+                if (newQuantity > 0) {
+                    existing.quantity = newQuantity;
+                } else {
+                    const idx = guestCart.items.findIndex(c => String(c.id) === String(item.id));
+                    if (idx !== -1) guestCart.items.splice(idx, 1);
+                }
+                setGuestCart({ items: guestCart.items });
+                loadCartData();
+                updateHeaderCartTotalFromServer();
+                return;
+            }
             
             if (newQuantity > 0) {
                 const resCart = await fetch(`${API_URL}/carts?userId=${user.id}`);

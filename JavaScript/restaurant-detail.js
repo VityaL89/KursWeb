@@ -2,6 +2,8 @@ let isCartSidebarOpen = false;
 let selectedFood = null;
 let foodQuantity = 1;
 
+const API_URL = 'http://localhost:3000';
+
 
 function getRestaurantIdFromURL() {
     const params = new URLSearchParams(window.location.search);
@@ -19,7 +21,7 @@ async function loadRestaurantDetails() {
 
     try {
 
-        const resRestaurants = await fetch('http://localhost:3000/restaurants');
+        const resRestaurants = await fetch(`${API_URL}/restaurants`);
         const restaurants = await resRestaurants.json();
         const restaurant = restaurants.find(r => r.id == restaurantId);
 
@@ -30,37 +32,111 @@ async function loadRestaurantDetails() {
         }
 
 
-        const resMenu = await fetch('http://localhost:3000/menuItems');
+        const resMenu = await fetch(`${API_URL}/menuItems`);
         const allMenuItems = await resMenu.json();
         const restaurantMenu = allMenuItems.filter(item => item.restaurantId == restaurantId);
 
-
-        const resCart = await fetch('http://localhost:3000/carts');
-        const allCarts = await resCart.json();
-        
-
-        let allItems = [];
-        allCarts.forEach(cart => {
-            if (cart.items) {
-                cart.items.forEach(item => {
-                    allItems.push({
-                        ...item,
-                        cartId: cart.id,
-                        restaurantId: cart.restaurantId
-                    });
-                });
-            }
-        });
-        const cart = { 
-            items: allItems, 
-            total: allItems.reduce((sum, i) => sum + i.price * i.quantity, 0) 
-        };
-
-
+        const cart = await loadCurrentCart();
         updateRestaurantPage(restaurant, restaurantMenu, cart);
 
     } catch (error) {
         console.error('Ошибка загрузки данных:', error);
+    }
+}
+
+function getGuestCart() {
+    try {
+        const raw = localStorage.getItem('guestCart');
+        const parsed = raw ? JSON.parse(raw) : null;
+        if (!parsed || !Array.isArray(parsed.items)) return { items: [], total: 0 };
+        const total = parsed.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
+        return { items: parsed.items, total };
+    } catch {
+        return { items: [], total: 0 };
+    }
+}
+
+function setGuestCart(cart) {
+    const safeItems = cart && Array.isArray(cart.items) ? cart.items : [];
+    const total = safeItems.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
+    localStorage.setItem('guestCart', JSON.stringify({ items: safeItems, total }));
+}
+
+function getCurrentUser() {
+    const userJson = sessionStorage.getItem('currentUser');
+    return userJson ? JSON.parse(userJson) : null;
+}
+
+function mergeCartItems(targetItems, incomingItems) {
+    const result = Array.isArray(targetItems) ? [...targetItems] : [];
+    (Array.isArray(incomingItems) ? incomingItems : []).forEach(inItem => {
+        if (!inItem) return;
+        const existing = result.find(t => String(t.id) === String(inItem.id));
+        if (existing) {
+            existing.quantity = (Number(existing.quantity) || 0) + (Number(inItem.quantity) || 0);
+        } else {
+            result.push({
+                id: inItem.id,
+                name: inItem.name,
+                description: inItem.description,
+                price: Number(inItem.price) || 0,
+                quantity: Number(inItem.quantity) || 0
+            });
+        }
+    });
+    return result.filter(i => (Number(i.quantity) || 0) > 0);
+}
+
+async function loadCurrentCart() {
+    const user = getCurrentUser();
+    if (!user) return getGuestCart();
+
+    try {
+        const res = await fetch(`${API_URL}/carts?userId=${user.id}`);
+        const carts = await res.json();
+        const cart = carts.length > 0 ? carts[0] : null;
+        return cart ? cart : { items: [], total: 0 };
+    } catch {
+        return { items: [], total: 0 };
+    }
+}
+
+async function saveCurrentCart(cart) {
+    const user = getCurrentUser();
+    if (!user) {
+        setGuestCart(cart);
+        return;
+    }
+
+    try {
+        const res = await fetch(`${API_URL}/carts?userId=${user.id}`);
+        const carts = await res.json();
+        let currentCart = carts.length > 0 ? carts[0] : null;
+
+        if (!currentCart) {
+            const createRes = await fetch(`${API_URL}/carts`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    userId: user.id,
+                    restaurantId: null,
+                    items: [],
+                    total: 0
+                })
+            });
+            currentCart = await createRes.json();
+        }
+
+        currentCart.items = Array.isArray(cart.items) ? cart.items : [];
+        currentCart.total = currentCart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
+
+        await fetch(`${API_URL}/carts/${currentCart.id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(currentCart)
+        });
+    } catch (error) {
+        console.error('Ошибка сохранения корзины:', error);
     }
 }
 
@@ -148,7 +224,7 @@ function updateRestaurantPage(restaurant, menuItems, cart) {
 
             let quantity = 0;
             if (cart && cart.items) {
-                const cartItem = cart.items.find(c => c.id === item.id && c.restaurantId === restaurant.id);
+                const cartItem = cart.items.find(c => String(c.id) === String(item.id));
                 if (cartItem) {
                     quantity = cartItem.quantity;
                 }
@@ -205,122 +281,50 @@ function updateModalQuantity() {
 }
 
 async function addToCart(item, quantity) {
-    const restaurantId = getRestaurantIdFromURL();
-    if (!restaurantId) return;
+    const cart = await loadCurrentCart();
 
-    const resCart = await fetch('http://localhost:3000/carts');
-    const carts = await resCart.json();
-    
-    let cart = carts.find(c => c.restaurantId == restaurantId);
-
-    if (!cart) {
-        const newCart = {
-            restaurantId: parseInt(restaurantId),
-            items: [],
-            total: 0
-        };
-        const createRes = await fetch('http://localhost:3000/carts', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newCart)
-        });
-        cart = await createRes.json();
-    }
-
-    const existingItem = cart.items.find(c => c.id === item.id);
+    cart.items = Array.isArray(cart.items) ? cart.items : [];
+    const existingItem = cart.items.find(c => String(c.id) === String(item.id));
     if (existingItem) {
-        existingItem.quantity += quantity;
+        existingItem.quantity = (Number(existingItem.quantity) || 0) + quantity;
     } else {
         cart.items.push({
             id: item.id,
             name: item.name,
             description: item.description,
-            price: item.price,
+            price: Number(item.price) || 0,
             quantity: quantity
         });
     }
 
-    cart.total = cart.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+    cart.items = mergeCartItems([], cart.items);
+    cart.total = cart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
+    await saveCurrentCart(cart);
 
-    await fetch(`http://localhost:3000/carts/${cart.id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(cart)
-    });
-
-    const resAllCarts = await fetch('http://localhost:3000/carts');
-    const allCarts = await resAllCarts.json();
-    let allItems = [];
-    allCarts.forEach(c => {
-        if (c.items) {
-            c.items.forEach(item => {
-                allItems.push({
-                    ...item,
-                    cartId: c.id,
-                    restaurantId: c.restaurantId
-                });
-            });
-        }
-    });
-    const newCart = { 
-        items: allItems, 
-        total: allItems.reduce((sum, i) => sum + i.price * i.quantity, 0) 
-    };
-
-    updateCartUI(newCart);
-    updateMenuBadges(newCart);
-    updateHeaderCartTotal(newCart);
+    updateCartUI(cart);
+    updateMenuBadges(cart);
+    updateHeaderCartTotal(cart);
 }
 
 async function removeFromCart(itemId) {
-    const restaurantId = getRestaurantIdFromURL();
-    if (!restaurantId) return;
+    const cart = await loadCurrentCart();
+    cart.items = Array.isArray(cart.items) ? cart.items : [];
 
-    const resCart = await fetch(`http://localhost:3000/carts`);
-    const carts = await resCart.json();
-    let cart = carts.find(c => c.restaurantId == restaurantId);
-
-    if (!cart) return;
-
-    const index = cart.items.findIndex(c => c.id === itemId);
+    const index = cart.items.findIndex(c => String(c.id) === String(itemId));
     if (index !== -1) {
-        if (cart.items[index].quantity > 1) {
-            cart.items[index].quantity--;
+        if ((Number(cart.items[index].quantity) || 0) > 1) {
+            cart.items[index].quantity = (Number(cart.items[index].quantity) || 0) - 1;
         } else {
             cart.items.splice(index, 1);
         }
     }
 
-    cart.total = cart.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+    cart.total = cart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
+    await saveCurrentCart(cart);
 
-    await fetch(`http://localhost:3000/carts/${cart.id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(cart)
-    });
-
-    const resAllCarts = await fetch('http://localhost:3000/carts');
-    const allCarts = await resAllCarts.json();
-    let allItems = [];
-    allCarts.forEach(c => {
-        if (c.items) {
-            c.items.forEach(item => {
-                allItems.push({
-                    ...item,
-                    cartId: c.id,
-                    restaurantId: c.restaurantId
-                });
-            });
-        }
-    });
-    const newCart = { 
-        items: allItems, 
-        total: allItems.reduce((sum, i) => sum + i.price * i.quantity, 0) 
-    };
-
-    updateCartUI(newCart);
-    updateMenuBadges(newCart);
-    updateHeaderCartTotal(newCart);
+    updateCartUI(cart);
+    updateMenuBadges(cart);
+    updateHeaderCartTotal(cart);
 }
 
 async function updateCartUI(cart) {
@@ -359,82 +363,25 @@ async function updateCartUI(cart) {
         const select = itemElement.querySelector('.cart-item-quantity');
         select.addEventListener('change', async function() {
             const newQuantity = parseInt(this.value);
-            if (newQuantity > 0) {
-                const cartId = item.cartId;
-                const resCart = await fetch(`http://localhost:3000/carts/${cartId}`);
-                const currentCart = await resCart.json();
-                if (currentCart) {
-                    const cartItem = currentCart.items.find(c => c.id === item.id);
-                    if (cartItem) {
-                        cartItem.quantity = newQuantity;
-                        currentCart.total = currentCart.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
-                        await fetch(`http://localhost:3000/carts/${cartId}`, {
-                            method: 'PUT',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(currentCart)
-                        });
+            const currentCart = await loadCurrentCart();
+            currentCart.items = Array.isArray(currentCart.items) ? currentCart.items : [];
 
-                        const resAll = await fetch('http://localhost:3000/carts');
-                        const allCarts = await resAll.json();
-                        let allItems = [];
-                        allCarts.forEach(c => {
-                            if (c.items) {
-                                c.items.forEach(i => {
-                                    allItems.push({
-                                        ...i,
-                                        cartId: c.id,
-                                        restaurantId: c.restaurantId
-                                    });
-                                });
-                            }
-                        });
-                        const newCart = { 
-                            items: allItems, 
-                            total: allItems.reduce((sum, i) => sum + i.price * i.quantity, 0) 
-                        };
-                        updateCartUI(newCart);
-                        updateHeaderCartTotal(newCart);
-                    }
-                }
-            } else if (newQuantity === 0) {
-                // Удаляем товар
-                const cartId = item.cartId;
-                const resCart = await fetch(`http://localhost:3000/carts/${cartId}`);
-                const currentCart = await resCart.json();
-                if (currentCart) {
-                    const index = currentCart.items.findIndex(c => c.id === item.id);
-                    if (index !== -1) {
-                        currentCart.items.splice(index, 1);
-                        currentCart.total = currentCart.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
-                        await fetch(`http://localhost:3000/carts/${cartId}`, {
-                            method: 'PUT',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(currentCart)
-                        });
-                        // Перезагружаем все данные
-                        const resAll = await fetch('http://localhost:3000/carts');
-                        const allCarts = await resAll.json();
-                        let allItems = [];
-                        allCarts.forEach(c => {
-                            if (c.items) {
-                                c.items.forEach(i => {
-                                    allItems.push({
-                                        ...i,
-                                        cartId: c.id,
-                                        restaurantId: c.restaurantId
-                                    });
-                                });
-                            }
-                        });
-                        const newCart = { 
-                            items: allItems, 
-                            total: allItems.reduce((sum, i) => sum + i.price * i.quantity, 0) 
-                        };
-                        updateCartUI(newCart);
-                        updateHeaderCartTotal(newCart);
-                    }
-                }
+            const existing = currentCart.items.find(c => String(c.id) === String(item.id));
+            if (!existing) return;
+
+            if (newQuantity > 0) {
+                existing.quantity = newQuantity;
+            } else {
+                const idx = currentCart.items.findIndex(c => String(c.id) === String(item.id));
+                if (idx !== -1) currentCart.items.splice(idx, 1);
             }
+
+            currentCart.total = currentCart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
+            await saveCurrentCart(currentCart);
+
+            updateCartUI(currentCart);
+            updateHeaderCartTotal(currentCart);
+            updateMenuBadges(currentCart);
         });
         
         cartContainer.appendChild(itemElement);
@@ -453,11 +400,9 @@ async function updateMenuBadges(cart) {
         if (!nameElement) return;
         
         const itemName = nameElement.textContent;
-        const restaurantId = parseInt(getRestaurantIdFromURL());
-        
         let quantity = 0;
         if (cart && cart.items) {
-            const cartItem = cart.items.find(c => c.name === itemName && c.restaurantId === restaurantId);
+            const cartItem = cart.items.find(c => c.name === itemName);
             if (cartItem) {
                 quantity = cartItem.quantity;
             }
@@ -493,7 +438,7 @@ function updateHeaderCartTotal(cart) {
 // ============================
 // Переключение сайдбара корзины
 // ============================
-function toggleCartSidebar() {
+async function toggleCartSidebar() {
     const sidebar = document.getElementById('cart-sidebar');
     const overlay = document.getElementById('cart-overlay');
     
@@ -502,31 +447,9 @@ function toggleCartSidebar() {
         overlay.style.display = 'block';
         isCartSidebarOpen = true;
 
-        // Загружаем все корзины
-        fetch('http://localhost:3000/carts')
-            .then(res => res.json())
-            .then(carts => {
-                let allItems = [];
-                let total = 0;
-                carts.forEach(cart => {
-                    if (cart.items) {
-                        cart.items.forEach(item => {
-                            allItems.push({
-                                ...item,
-                                cartId: cart.id,
-                                restaurantId: cart.restaurantId
-                            });
-                            total += item.price * item.quantity;
-                        });
-                    }
-                });
-                const newCart = { 
-                    items: allItems, 
-                    total: total 
-                };
-                updateCartUI(newCart);
-                updateHeaderCartTotal(newCart);
-            });
+        const cart = await loadCurrentCart();
+        updateCartUI(cart);
+        updateHeaderCartTotal(cart);
     } else {
         sidebar.style.display = 'none';
         overlay.style.display = 'none';

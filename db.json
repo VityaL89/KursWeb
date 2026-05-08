@@ -567,6 +567,87 @@
       ],
       "total": 7.5,
       "id": "b3h1-Hh3wBg"
+    },
+    {
+      "id": "c399",
+      "restaurantId": 3,
+      "items": [],
+      "total": 0
+    },
+    {
+      "id": "bc65",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "1",
+          "name": "Cheeseburger",
+          "description": "Nice grilled burger with cheese",
+          "price": 8.5,
+          "quantity": 1
+        }
+      ],
+      "total": 8.5
+    },
+    {
+      "id": "42eb",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "41",
+          "name": "Miso Soup",
+          "description": "Traditional Japanese soup",
+          "price": 2,
+          "quantity": 1
+        }
+      ],
+      "total": 2
+    },
+    {
+      "id": "07df",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "40",
+          "name": "Salmon Sashimi",
+          "description": "Fresh sliced salmon",
+          "price": 8.5,
+          "quantity": 1
+        }
+      ],
+      "total": 8.5
+    },
+    {
+      "id": "5ce0",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "39",
+          "name": "California Roll",
+          "description": "Crab, avocado, cucumber",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5
+    },
+    {
+      "id": "09a0",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "40",
+          "name": "Salmon Sashimi",
+          "description": "Fresh sliced salmon",
+          "price": 8.5,
+          "quantity": 1
+        }
+      ],
+      "total": 8.5
     }
   ],
   "users": [
@@ -589,6 +670,16 @@
       "password": "password123",
       "role": "user",
       "phone": "+1234567890"
+    },
+    {
+      "id": "7023",
+      "firstName": "Anna",
+      "lastName": "Samailovich",
+      "email": "anna@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "username": "anna",
+      "phone": ""
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
