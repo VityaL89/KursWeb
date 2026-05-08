@@ -638,16 +638,237 @@
       "id": "09a0",
       "userId": "7023",
       "restaurantId": null,
+      "items": [],
+      "total": 0
+    },
+    {
+      "id": "0635",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [],
+      "total": 0
+    },
+    {
+      "id": "f611",
+      "userId": "7023",
+      "restaurantId": null,
       "items": [
         {
-          "id": "40",
-          "name": "Salmon Sashimi",
-          "description": "Fresh sliced salmon",
+          "id": "25",
+          "name": "Chocolate Fondue",
+          "description": "Melted chocolate with fruits",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5
+    },
+    {
+      "id": "3a46",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ],
+      "total": 9.5
+    },
+    {
+      "id": "e9f1",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ],
+      "total": 9.5
+    },
+    {
+      "id": "e97a",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 1
+        }
+      ],
+      "total": 11.5
+    },
+    {
+      "id": "deae",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 1
+        }
+      ],
+      "total": 11.5
+    },
+    {
+      "id": "4d64",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ],
+      "total": 9.5
+    },
+    {
+      "id": "f40a",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 1
+        }
+      ],
+      "total": 11.5
+    },
+    {
+      "id": "91e9",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [],
+      "total": 0
+    },
+    {
+      "id": "ade4",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ],
+      "total": 9.5
+    },
+    {
+      "id": "7161",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "10",
+          "name": "Coca-Cola",
+          "description": "",
+          "price": 1.75,
+          "quantity": 1
+        }
+      ],
+      "total": 1.75
+    },
+    {
+      "id": "88e2",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "38",
+          "name": "Bubble Tea",
+          "description": "Milk tea with tapioca pearls",
+          "price": 3,
+          "quantity": 1
+        }
+      ],
+      "total": 3
+    },
+    {
+      "id": "84cf",
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "37",
+          "name": "Fried Rice",
+          "description": "Fried rice with egg and vegetables",
           "price": 8.5,
           "quantity": 1
         }
       ],
       "total": 8.5
+    },
+    {
+      "id": "c3b4",
+      "userId": "eb37",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "11",
+          "name": "Fanta",
+          "description": "",
+          "price": 1.5,
+          "quantity": 1
+        },
+        {
+          "id": "10",
+          "name": "Coca-Cola",
+          "description": "",
+          "price": 1.75,
+          "quantity": 2
+        },
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 4
+        },
+        {
+          "id": "27",
+          "name": "Hot Chocolate",
+          "description": "Warm chocolate drink",
+          "price": 2.5,
+          "quantity": 1
+        },
+        {
+          "id": "26",
+          "name": "Waffle with Berries",
+          "description": "Belgian waffle with fresh berries",
+          "price": 6.5,
+          "quantity": 4
+        }
+      ],
+      "total": 89
     }
   ],
   "users": [
@@ -679,6 +900,16 @@
       "password": "1234",
       "role": "user",
       "username": "anna",
+      "phone": ""
+    },
+    {
+      "id": "eb37",
+      "firstName": "anna2",
+      "lastName": "sam",
+      "email": "anna2@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "username": "anna2",
       "phone": ""
     }
   ],

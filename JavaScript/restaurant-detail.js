@@ -1,8 +1,5 @@
-let isCartSidebarOpen = false;
 let selectedFood = null;
 let foodQuantity = 1;
-
-const API_URL = 'http://localhost:3000';
 
 
 function getRestaurantIdFromURL() {
@@ -43,103 +40,6 @@ async function loadRestaurantDetails() {
         console.error('Ошибка загрузки данных:', error);
     }
 }
-
-function getGuestCart() {
-    try {
-        const raw = localStorage.getItem('guestCart');
-        const parsed = raw ? JSON.parse(raw) : null;
-        if (!parsed || !Array.isArray(parsed.items)) return { items: [], total: 0 };
-        const total = parsed.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
-        return { items: parsed.items, total };
-    } catch {
-        return { items: [], total: 0 };
-    }
-}
-
-function setGuestCart(cart) {
-    const safeItems = cart && Array.isArray(cart.items) ? cart.items : [];
-    const total = safeItems.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
-    localStorage.setItem('guestCart', JSON.stringify({ items: safeItems, total }));
-}
-
-function getCurrentUser() {
-    const userJson = sessionStorage.getItem('currentUser');
-    return userJson ? JSON.parse(userJson) : null;
-}
-
-function mergeCartItems(targetItems, incomingItems) {
-    const result = Array.isArray(targetItems) ? [...targetItems] : [];
-    (Array.isArray(incomingItems) ? incomingItems : []).forEach(inItem => {
-        if (!inItem) return;
-        const existing = result.find(t => String(t.id) === String(inItem.id));
-        if (existing) {
-            existing.quantity = (Number(existing.quantity) || 0) + (Number(inItem.quantity) || 0);
-        } else {
-            result.push({
-                id: inItem.id,
-                name: inItem.name,
-                description: inItem.description,
-                price: Number(inItem.price) || 0,
-                quantity: Number(inItem.quantity) || 0
-            });
-        }
-    });
-    return result.filter(i => (Number(i.quantity) || 0) > 0);
-}
-
-async function loadCurrentCart() {
-    const user = getCurrentUser();
-    if (!user) return getGuestCart();
-
-    try {
-        const res = await fetch(`${API_URL}/carts?userId=${user.id}`);
-        const carts = await res.json();
-        const cart = carts.length > 0 ? carts[0] : null;
-        return cart ? cart : { items: [], total: 0 };
-    } catch {
-        return { items: [], total: 0 };
-    }
-}
-
-async function saveCurrentCart(cart) {
-    const user = getCurrentUser();
-    if (!user) {
-        setGuestCart(cart);
-        return;
-    }
-
-    try {
-        const res = await fetch(`${API_URL}/carts?userId=${user.id}`);
-        const carts = await res.json();
-        let currentCart = carts.length > 0 ? carts[0] : null;
-
-        if (!currentCart) {
-            const createRes = await fetch(`${API_URL}/carts`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    userId: user.id,
-                    restaurantId: null,
-                    items: [],
-                    total: 0
-                })
-            });
-            currentCart = await createRes.json();
-        }
-
-        currentCart.items = Array.isArray(cart.items) ? cart.items : [];
-        currentCart.total = currentCart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
-
-        await fetch(`${API_URL}/carts/${currentCart.id}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(currentCart)
-        });
-    } catch (error) {
-        console.error('Ошибка сохранения корзины:', error);
-    }
-}
-
 
 function updateRestaurantPage(restaurant, menuItems, cart) {
 
@@ -210,6 +110,7 @@ function updateRestaurantPage(restaurant, menuItems, cart) {
         itemsInCategory.forEach(item => {
             const menuItem = document.createElement('div');
             menuItem.className = 'menu-item';
+            menuItem.dataset.itemId = String(item.id);
             menuItem.style.backgroundColor = '#ffffff';
             menuItem.style.borderRadius = '8px';
             menuItem.style.padding = '24px';
@@ -279,109 +180,15 @@ function updateModalQuantity() {
 }
 
 async function addToCart(item, quantity) {
-    const cart = await loadCurrentCart();
-
-    cart.items = Array.isArray(cart.items) ? cart.items : [];
-    const existingItem = cart.items.find(c => String(c.id) === String(item.id));
-    if (existingItem) {
-        existingItem.quantity = (Number(existingItem.quantity) || 0) + quantity;
-    } else {
-        cart.items.push({
-            id: item.id,
-            name: item.name,
-            description: item.description,
-            price: Number(item.price) || 0,
-            quantity: quantity
-        });
-    }
-
-    cart.items = mergeCartItems([], cart.items);
-    cart.total = cart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
-    await saveCurrentCart(cart);
-
-    updateMenuBadges(cart);
+    await addItemToCurrentCart(item, quantity);
+    const updatedCart = await loadCurrentCart();
+    updateMenuBadges(updatedCart);
 }
 
 async function removeFromCart(itemId) {
-    const cart = await loadCurrentCart();
-    cart.items = Array.isArray(cart.items) ? cart.items : [];
-
-    const index = cart.items.findIndex(c => String(c.id) === String(itemId));
-    if (index !== -1) {
-        if ((Number(cart.items[index].quantity) || 0) > 1) {
-            cart.items[index].quantity = (Number(cart.items[index].quantity) || 0) - 1;
-        } else {
-            cart.items.splice(index, 1);
-        }
-    }
-
-    cart.total = cart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
-    await saveCurrentCart(cart);
-
-    updateMenuBadges(cart);
-}
-
-async function updateCartUI(cart) {
-    if (!isCartSidebarOpen) {
-        updateHeaderCartTotal(cart);
-        return;
-    }
-
-    const cartContainer = document.getElementById('cart-items-container');
-    const totalElement = document.getElementById('cart-total-price');
-    
-    cartContainer.innerHTML = '';
-    
-    if (!cart || cart.items.length === 0) {
-        cartContainer.innerHTML = '<p style="text-align: center; color: #6B7280; padding: 20px;">Your cart is empty</p>';
-        totalElement.textContent = '€ 0,00';
-        return;
-    }
-    
-    cart.items.forEach(item => {
-        const itemElement = document.createElement('div');
-        itemElement.className = 'cart-item';
-        itemElement.innerHTML = `
-            <div class="cart-item-info">
-                <div class="cart-item-name">${item.name}</div>
-                <div class="cart-item-description">${item.description || ''}</div>
-                <div class="cart-item-price">€ ${(item.price * item.quantity).toFixed(2)}</div>
-            </div>
-            <div class="cart-item-controls">
-                <select class="cart-item-quantity">
-                    ${Array.from({length: 11}, (_, i) => `<option value="${i}" ${i === item.quantity ? 'selected' : ''}>${i}</option>`).join('')}
-                </select>
-            </div>
-        `;
-        
-        const select = itemElement.querySelector('.cart-item-quantity');
-        select.addEventListener('change', async function() {
-            const newQuantity = parseInt(this.value);
-            const currentCart = await loadCurrentCart();
-            currentCart.items = Array.isArray(currentCart.items) ? currentCart.items : [];
-
-            const existing = currentCart.items.find(c => String(c.id) === String(item.id));
-            if (!existing) return;
-
-            if (newQuantity > 0) {
-                existing.quantity = newQuantity;
-            } else {
-                const idx = currentCart.items.findIndex(c => String(c.id) === String(item.id));
-                if (idx !== -1) currentCart.items.splice(idx, 1);
-            }
-
-            currentCart.total = currentCart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
-            await saveCurrentCart(currentCart);
-
-            updateCartUI(currentCart);
-            updateHeaderCartTotal(currentCart);
-            updateMenuBadges(currentCart);
-        });
-        
-        cartContainer.appendChild(itemElement);
-    });
-    
-    totalElement.textContent = `€ ${cart.total.toFixed(2)}`;
+    await removeItemFromCurrentCart(itemId);
+    const updatedCart = await loadCurrentCart();
+    updateMenuBadges(updatedCart);
 }
 
 // ============================
@@ -390,13 +197,11 @@ async function updateCartUI(cart) {
 async function updateMenuBadges(cart) {
     const menuItems = document.querySelectorAll('.menu-item');
     menuItems.forEach(item => {
-        const nameElement = item.querySelector('.menu-item-name');
-        if (!nameElement) return;
-        
-        const itemName = nameElement.textContent;
+        const itemId = item.dataset.itemId;
+        if (!itemId) return;
         let quantity = 0;
         if (cart && cart.items) {
-            const cartItem = cart.items.find(c => c.name === itemName);
+            const cartItem = cart.items.find(c => String(c.id) === String(itemId));
             if (cartItem) {
                 quantity = cartItem.quantity;
             }
@@ -416,17 +221,6 @@ async function updateMenuBadges(cart) {
             item.appendChild(badge);
         }
     });
-}
-
-// ============================
-// Обновление цены в хедере
-// ============================
-function updateHeaderCartTotal(cart) {
-    const headerTotal = document.getElementById('header-cart-total');
-    if (headerTotal) {
-        const total = cart ? cart.total : 0;
-        headerTotal.textContent = `€ ${total.toFixed(2)}`;
-    }
 }
 
 // ============================

@@ -183,6 +183,119 @@ function updateCartUI(cart) {
     }
 }
 
+async function loadCurrentCart() {
+    const user = getCurrentUser();
+    if (!user) return getGuestCart();
+
+    try {
+        const res = await fetch(`${CART_API_URL}/carts?userId=${user.id}`);
+        if (!res.ok) {
+            const text = await res.text();
+            console.error('Не удалось загрузить корзину:', res.status, text);
+            return { items: [], total: 0 };
+        }
+        const carts = await res.json();
+        const cart = carts.length > 0 ? carts[0] : null;
+        return cart ? cart : { items: [], total: 0 };
+    } catch (e) {
+        console.error('Ошибка загрузки корзины:', e);
+        return { items: [], total: 0 };
+    }
+}
+
+async function saveCurrentCart(cart) {
+    const user = getCurrentUser();
+    if (!user) {
+        setGuestCart(cart);
+        return;
+    }
+
+    try {
+        const res = await fetch(`${CART_API_URL}/carts?userId=${user.id}`);
+        if (!res.ok) {
+            const text = await res.text();
+            console.error('Не удалось получить корзины пользователя:', res.status, text);
+            return;
+        }
+        const carts = await res.json();
+        let currentCart = carts.length > 0 ? carts[0] : null;
+
+        if (!currentCart) {
+            const createRes = await fetch(`${CART_API_URL}/carts`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    userId: user.id,
+                    restaurantId: null,
+                    items: [],
+                    total: 0
+                })
+            });
+            if (!createRes.ok) {
+                const text = await createRes.text();
+                console.error('Не удалось создать корзину:', createRes.status, text);
+                return;
+            }
+            currentCart = await createRes.json();
+        }
+
+        currentCart.items = Array.isArray(cart.items) ? cart.items : [];
+        currentCart.total = currentCart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
+
+        const putRes = await fetch(`${CART_API_URL}/carts/${currentCart.id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(currentCart)
+        });
+        if (!putRes.ok) {
+            const text = await putRes.text();
+            console.error('Не удалось сохранить корзину:', putRes.status, text);
+        }
+    } catch (e) {
+        console.error('Ошибка сохранения корзины:', e);
+    }
+}
+
+async function addItemToCurrentCart(item, quantity) {
+    const cart = await loadCurrentCart();
+    cart.items = Array.isArray(cart.items) ? cart.items : [];
+
+    const existing = cart.items.find(c => String(c.id) === String(item.id));
+    if (existing) {
+        existing.quantity = (Number(existing.quantity) || 0) + (Number(quantity) || 0);
+    } else {
+        cart.items.push({
+            id: item.id,
+            name: item.name,
+            description: item.description,
+            price: Number(item.price) || 0,
+            quantity: Number(quantity) || 0
+        });
+    }
+
+    cart.total = cart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
+    await saveCurrentCart(cart);
+    updateHeaderCartTotalFromServer();
+}
+
+async function removeItemFromCurrentCart(itemId) {
+    const cart = await loadCurrentCart();
+    cart.items = Array.isArray(cart.items) ? cart.items : [];
+
+    const index = cart.items.findIndex(c => String(c.id) === String(itemId));
+    if (index !== -1) {
+        if ((Number(cart.items[index].quantity) || 0) > 1) {
+            cart.items[index].quantity = (Number(cart.items[index].quantity) || 0) - 1;
+        } else {
+            cart.items.splice(index, 1);
+        }
+    }
+
+    cart.total = cart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
+    await saveCurrentCart(cart);
+    updateHeaderCartTotalFromServer();
+}
+
 // ============================
 // ОБНОВЛЕНИЕ БЕЙДЖЕЙ (для страниц ресторанов)
 // ============================

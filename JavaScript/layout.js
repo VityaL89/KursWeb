@@ -97,6 +97,14 @@ function renderSiteFooter() {
 }
 
 function injectLayout() {
+    if (!document.getElementById('layout-cart-styles')) {
+        const link = document.createElement('link');
+        link.id = 'layout-cart-styles';
+        link.rel = 'stylesheet';
+        link.href = 'cart-sidebar.css';
+        document.head.appendChild(link);
+    }
+
     const headerMount = document.getElementById('site-header');
     if (headerMount) {
         headerMount.outerHTML = renderSiteHeader();
