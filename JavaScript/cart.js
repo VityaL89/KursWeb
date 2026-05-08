@@ -1,5 +1,5 @@
 // JavaScript/cart.js
-const API_URL = 'http://localhost:3000';
+const CART_API_URL = 'http://localhost:3000';
 
 let isCartSidebarOpen = false;
 
@@ -19,7 +19,7 @@ async function updateHeaderCartTotalFromServer() {
     }
     
     try {
-        const res = await fetch(`${API_URL}/carts?userId=${user.id}`);
+        const res = await fetch(`${CART_API_URL}/carts?userId=${user.id}`);
         const carts = await res.json();
         const cart = carts.length > 0 ? carts[0] : null;
         const total = cart ? cart.total : 0;
@@ -36,6 +36,8 @@ async function updateHeaderCartTotalFromServer() {
 function toggleCartSidebar() {
     const sidebar = document.getElementById('cart-sidebar');
     const overlay = document.getElementById('cart-overlay');
+
+    if (!sidebar || !overlay) return;
     
     if (!isCartSidebarOpen) {
         sidebar.style.display = 'flex';
@@ -67,7 +69,7 @@ async function loadCartData() {
     }
     
     try {
-        const res = await fetch(`${API_URL}/carts?userId=${user.id}`);
+        const res = await fetch(`${CART_API_URL}/carts?userId=${user.id}`);
         const carts = await res.json();
         const cart = carts.length > 0 ? carts[0] : { items: [], total: 0 };
         
@@ -133,7 +135,7 @@ function updateCartUI(cart) {
             }
             
             if (newQuantity > 0) {
-                const resCart = await fetch(`${API_URL}/carts?userId=${user.id}`);
+                const resCart = await fetch(`${CART_API_URL}/carts?userId=${user.id}`);
                 const carts = await resCart.json();
                 const currentCart = carts[0];
                 
@@ -142,7 +144,7 @@ function updateCartUI(cart) {
                     if (cartItem) {
                         cartItem.quantity = newQuantity;
                         currentCart.total = currentCart.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
-                        await fetch(`${API_URL}/carts/${currentCart.id}`, {
+                        await fetch(`${CART_API_URL}/carts/${currentCart.id}`, {
                             method: 'PUT',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(currentCart)
@@ -152,7 +154,7 @@ function updateCartUI(cart) {
                     }
                 }
             } else if (newQuantity === 0) {
-                const resCart = await fetch(`${API_URL}/carts?userId=${user.id}`);
+                const resCart = await fetch(`${CART_API_URL}/carts?userId=${user.id}`);
                 const carts = await resCart.json();
                 const currentCart = carts[0];
                 
@@ -161,7 +163,7 @@ function updateCartUI(cart) {
                     if (index !== -1) {
                         currentCart.items.splice(index, 1);
                         currentCart.total = currentCart.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
-                        await fetch(`${API_URL}/carts/${currentCart.id}`, {
+                        await fetch(`${CART_API_URL}/carts/${currentCart.id}`, {
                             method: 'PUT',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(currentCart)

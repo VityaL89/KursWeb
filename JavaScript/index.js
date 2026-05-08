@@ -190,13 +190,6 @@ document.querySelector('.view-all-link')?.addEventListener('click', (e) => {
     window.location.href = 'Categories.html';
 });
 
-document.querySelector('.burger-menu')?.addEventListener('click', () => {
-    const nav = document.querySelector('.nav-wrapper');
-    if (nav) {
-        nav.classList.toggle('open');
-    }
-});
-
 document.addEventListener('DOMContentLoaded', async () => {
     // Проверяем, что API_URL определена
     if (typeof API_URL === 'undefined') {

@@ -249,8 +249,6 @@ function updateRestaurantPage(restaurant, menuItems, cart) {
     });
 
     if (cart) {
-        updateCartUI(cart);
-        updateHeaderCartTotal(cart);
         updateMenuBadges(cart); 
     }
 }
@@ -301,9 +299,7 @@ async function addToCart(item, quantity) {
     cart.total = cart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
     await saveCurrentCart(cart);
 
-    updateCartUI(cart);
     updateMenuBadges(cart);
-    updateHeaderCartTotal(cart);
 }
 
 async function removeFromCart(itemId) {
@@ -322,9 +318,7 @@ async function removeFromCart(itemId) {
     cart.total = cart.items.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
     await saveCurrentCart(cart);
 
-    updateCartUI(cart);
     updateMenuBadges(cart);
-    updateHeaderCartTotal(cart);
 }
 
 async function updateCartUI(cart) {
@@ -436,28 +430,6 @@ function updateHeaderCartTotal(cart) {
 }
 
 // ============================
-// Переключение сайдбара корзины
-// ============================
-async function toggleCartSidebar() {
-    const sidebar = document.getElementById('cart-sidebar');
-    const overlay = document.getElementById('cart-overlay');
-    
-    if (!isCartSidebarOpen) {
-        sidebar.style.display = 'flex';
-        overlay.style.display = 'block';
-        isCartSidebarOpen = true;
-
-        const cart = await loadCurrentCart();
-        updateCartUI(cart);
-        updateHeaderCartTotal(cart);
-    } else {
-        sidebar.style.display = 'none';
-        overlay.style.display = 'none';
-        isCartSidebarOpen = false;
-    }
-}
-
-// ============================
 // Инициализация событий
 // ============================
 document.addEventListener('DOMContentLoaded', function() {
@@ -480,16 +452,6 @@ document.addEventListener('DOMContentLoaded', function() {
             addToCart(selectedFood, foodQuantity);
         }
     });
-
-    // Обработчики корзины
-    document.getElementById('cart-close-btn').addEventListener('click', toggleCartSidebar);
-    document.getElementById('cart-overlay').addEventListener('click', toggleCartSidebar);
-
-    // Клик по иконке корзины в хедере
-    const cartButton = document.querySelector('.nav-cart');
-    if (cartButton) {
-        cartButton.addEventListener('click', toggleCartSidebar);
-    }
 
     // Загружаем данные ресторана
     loadRestaurantDetails();
