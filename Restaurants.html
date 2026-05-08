@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants</title>
+    <link rel="stylesheet" href="CategoriesStyle.css">
+    <link rel="stylesheet" href="768pxAdaptive/768PxCategories.css">
+    <link rel="stylesheet" href="360pxCategories.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+    <section class="categories-banner">
+        <div class="container categories-banner-container">
+            <a href="index.html" class="back-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </a>
+            <h1 class="categories-banner-title">All restaurants</h1>
+        </div>
+    </section>
+
+    <section class="restaurants-browser" id="restaurants-browser">
+        <div class="container">
+            <div class="restaurants-browser-header">
+                <h2 class="restaurants-browser-title">All restaurants</h2>
+                <p class="restaurants-browser-subtitle">Search and filter restaurants by category, rating or novelty.</p>
+            </div>
+
+            <div class="restaurants-filters">
+                <input class="restaurants-search" id="restaurants-search" type="text" placeholder="Search by name or category" list="restaurants-search-history">
+                <datalist id="restaurants-search-history"></datalist>
+
+                <select class="restaurants-select" id="restaurants-filter-category">
+                    <option value="">All categories</option>
+                </select>
+
+                <select class="restaurants-select" id="restaurants-filter-rating">
+                    <option value="">Any rating</option>
+                    <option value="4">4.0+</option>
+                    <option value="4.5">4.5+</option>
+                    <option value="4.8">4.8+</option>
+                </select>
+
+                <label class="restaurants-checkbox">
+                    <input type="checkbox" id="restaurants-filter-new">
+                    New only
+                </label>
+
+                <button class="restaurants-clear" id="restaurants-filter-clear" type="button">Clear</button>
+            </div>
+
+            <div class="restaurants-list" id="restaurants-list"></div>
+        </div>
+    </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="JavaScript/layout.js"></script>
+<script src="JavaScript/auth.js"></script>
+<script src="JavaScript/cart.js"></script>
+<script src="JavaScript/categories-restaurants.js"></script>
+
+</body>
+</html>

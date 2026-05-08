@@ -37,7 +37,8 @@ function renderSiteHeader() {
         <nav class="nav-wrapper">
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-home">Home</a></li>
-                <li><a href="Categories.html" class="nav-all">All restaurants</a></li>
+                <li><a href="Categories.html" class="nav-all">All categories</a></li>
+                <li><a href="Restaurants.html" class="nav-all">All restaurants</a></li>
             </ul>
 
             <div class="auth-buttons">

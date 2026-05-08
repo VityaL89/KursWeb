@@ -19,11 +19,11 @@
             <a href="index.html" class="back-btn">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
     </a>
-            <h1 class="categories-banner-title">Categories</h1>
+            <h1 class="categories-banner-title">All categories</h1>
         </div>
     </section>
 
-    <section class="menu-section">
+    <section class="menu-section" id="categories">
         <div class="container">
             <div class="menu-header">
                 <h2 class="menu-title">What's on the menu?</h2>
@@ -68,37 +68,10 @@
 
 <div id="site-footer"></div>
 
-<script>
-
-    const categoryMapping = [
-        { name: "Pizza", slug: "pizza" },
-        { name: "Burgers", slug: "burgers" },
-        { name: "Desserts", slug: "desserts" },
-        { name: "Sushi", slug: "sushi" },
-        { name: "Asian", slug: "asian" },
-        { name: "Comfort", slug: "comfort" }
-    ];
-
-    function setupCategories() {
-        const menuCards = document.querySelectorAll('.menu-card');
-        
-        menuCards.forEach((card, index) => {
-            if (categoryMapping[index]) {
-                const category = categoryMapping[index];
-                card.style.cursor = 'pointer';
-                card.addEventListener('click', () => {
-                    window.location.href = `CategoriesChild.html?category=${category.slug}`;
-                });
-            }
-        });
-    }
-    
-    document.addEventListener('DOMContentLoaded', setupCategories);
-</script>
-
 <script src="JavaScript/layout.js"></script>
 <script src="JavaScript/auth.js"></script>
 <script src="JavaScript/cart.js"></script>
+<script src="JavaScript/categories-page.js"></script>
 
 </body>
 </html>
