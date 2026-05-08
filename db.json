@@ -851,7 +851,7 @@
           "name": "Double Cheeseburger",
           "description": "Double patty with cheese",
           "price": 11.5,
-          "quantity": 4
+          "quantity": 5
         },
         {
           "id": "27",
@@ -868,7 +868,7 @@
           "quantity": 4
         }
       ],
-      "total": 89
+      "total": 100.5
     }
   ],
   "users": [

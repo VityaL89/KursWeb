@@ -220,6 +220,9 @@ function updateHeaderAuthUI() {
                     👤 ${user.firstName} ${user.lastName}
                     ${user.role === 'admin' ? ' <span style="background:#E5F8BC; padding:2px 8px; border-radius:4px; font-size:12px;">Admin</span>' : ''}
                 </span>
+                <a href="Notifications.html" style="font-family:'Hind',sans-serif; font-size:14px; font-weight:500; color:#1A1A1A; background:transparent; border:none; cursor:pointer; text-decoration:underline;">
+                    Notifications
+                </a>
                 <button onclick="logoutUser()" class="btn-logout" style="font-family:'Hind',sans-serif; font-size:14px; font-weight:500; color:#B71C1C; background:transparent; border:none; cursor:pointer; text-decoration:underline;">
                     Sign out
                 </button>
