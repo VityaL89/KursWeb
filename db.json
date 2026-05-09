@@ -538,7 +538,145 @@
       "category": "To drink"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "id": "d791",
+      "userId": "eb37",
+      "createdAt": "2026-05-09T11:49:55.499Z",
+      "contact": {
+        "firstName": "anna2",
+        "lastName": "sam",
+        "email": "anna2@gmail.com",
+        "phone": ""
+      },
+      "address": {
+        "streetname": "ывап",
+        "house": "фыва",
+        "zipcode": "фыв",
+        "city": "ыва"
+      },
+      "items": [
+        {
+          "id": "10",
+          "name": "Coca-Cola",
+          "description": "",
+          "price": 1.75,
+          "quantity": 2
+        },
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 5
+        },
+        {
+          "id": "27",
+          "name": "Hot Chocolate",
+          "description": "Warm chocolate drink",
+          "price": 2.5,
+          "quantity": 2
+        },
+        {
+          "id": "26",
+          "name": "Waffle with Berries",
+          "description": "Belgian waffle with fresh berries",
+          "price": 6.5,
+          "quantity": 5
+        },
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 3
+        }
+      ],
+      "total": 127
+    },
+    {
+      "id": "0750",
+      "userId": "eb37",
+      "createdAt": "2026-05-09T11:49:58.047Z",
+      "contact": {
+        "firstName": "",
+        "lastName": "",
+        "email": "",
+        "phone": ""
+      },
+      "address": {
+        "streetname": "",
+        "house": "",
+        "zipcode": "",
+        "city": ""
+      },
+      "items": [
+        {
+          "id": "10",
+          "name": "Coca-Cola",
+          "description": "",
+          "price": 1.75,
+          "quantity": 2
+        },
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 5
+        },
+        {
+          "id": "27",
+          "name": "Hot Chocolate",
+          "description": "Warm chocolate drink",
+          "price": 2.5,
+          "quantity": 2
+        },
+        {
+          "id": "26",
+          "name": "Waffle with Berries",
+          "description": "Belgian waffle with fresh berries",
+          "price": 6.5,
+          "quantity": 5
+        },
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 3
+        }
+      ],
+      "total": 127
+    },
+    {
+      "id": "9e82",
+      "userId": "eb37",
+      "createdAt": "2026-05-09T11:53:13.983Z",
+      "contact": {
+        "firstName": "anna2",
+        "lastName": "sam",
+        "email": "anna2@gmail.com",
+        "phone": ""
+      },
+      "address": {
+        "streetname": "смавыф",
+        "house": "савыфц",
+        "zipcode": "выйф",
+        "city": "свы"
+      },
+      "items": [
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 1
+        }
+      ],
+      "total": 11.5
+    }
+  ],
   "carts": [
     {
       "id": "cart_admin",
@@ -824,51 +962,8 @@
       "id": "c3b4",
       "userId": "eb37",
       "restaurantId": null,
-      "items": [
-        {
-          "id": "11",
-          "name": "Fanta",
-          "description": "",
-          "price": 1.5,
-          "quantity": 1
-        },
-        {
-          "id": "10",
-          "name": "Coca-Cola",
-          "description": "",
-          "price": 1.75,
-          "quantity": 2
-        },
-        {
-          "id": "8",
-          "name": "Crispy Chicken",
-          "description": "Crispy chicken sandwich",
-          "price": 9.5,
-          "quantity": 1
-        },
-        {
-          "id": "7",
-          "name": "Double Cheeseburger",
-          "description": "Double patty with cheese",
-          "price": 11.5,
-          "quantity": 5
-        },
-        {
-          "id": "27",
-          "name": "Hot Chocolate",
-          "description": "Warm chocolate drink",
-          "price": 2.5,
-          "quantity": 1
-        },
-        {
-          "id": "26",
-          "name": "Waffle with Berries",
-          "description": "Belgian waffle with fresh berries",
-          "price": 6.5,
-          "quantity": 4
-        }
-      ],
-      "total": 100.5
+      "items": [],
+      "total": 0
     }
   ],
   "users": [

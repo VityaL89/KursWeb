@@ -256,6 +256,43 @@ async function saveCurrentCart(cart) {
     }
 }
 
+async function clearCurrentCart() {
+    const user = getCurrentUser();
+    if (!user) {
+        clearGuestCart();
+        return;
+    }
+
+    try {
+        const res = await fetch(`${CART_API_URL}/carts?userId=${user.id}`);
+        if (!res.ok) {
+            const text = await res.text();
+            console.error('Не удалось получить корзины пользователя для очистки:', res.status, text);
+            return;
+        }
+        const carts = await res.json();
+        const cart = carts.length > 0 ? carts[0] : null;
+        if (!cart) return;
+
+        cart.items = [];
+        cart.total = 0;
+
+        const putRes = await fetch(`${CART_API_URL}/carts/${cart.id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(cart)
+        });
+
+        if (!putRes.ok) {
+            const text = await putRes.text();
+            console.error('Не удалось очистить корзину:', putRes.status, text);
+            return;
+        }
+    } catch (e) {
+        console.error('Ошибка очистки корзины:', e);
+    }
+}
+
 async function addItemToCurrentCart(item, quantity) {
     const cart = await loadCurrentCart();
     cart.items = Array.isArray(cart.items) ? cart.items : [];
