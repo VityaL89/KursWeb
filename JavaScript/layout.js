@@ -41,8 +41,12 @@ function renderSiteHeader() {
             </ul>
 
             <div class="auth-buttons">
-                <a href="Login.html" class="btn-login-header">Sign in</a>
-                <a href="SignUp.html" class="btn-signup-header">Sign up</a>
+                <button class="btn-profile-header" id="header-profile-btn" type="button" aria-label="Profile">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 21C20 18.7909 16.4183 17 12 17C7.58172 17 4 18.7909 4 21" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 14C14.2091 14 16 12.2091 16 10C16 7.79086 14.2091 6 12 6C9.79086 6 8 7.79086 8 10C8 12.2091 9.79086 14 12 14Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
             </div>
 
             <button class="nav-cart" id="header-cart-btn" aria-label="Cart">

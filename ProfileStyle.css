@@ -1,0 +1,196 @@
+.profile-banner {
+    width: 100%;
+    height: 242px;
+    background-color: #E5F8BC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-banner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-banner-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 43.95px;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: -5%;
+    color: #2C2C2C;
+    margin: 0;
+}
+
+.profile-section {
+    background-color: #FAFAFA;
+    padding: 56px 0 80px;
+}
+
+.profile-card {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid #E5E7EB;
+    padding: 24px;
+}
+
+.profile-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.profile-email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-email-link {
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1A1A1A;
+    text-decoration: none;
+}
+
+.profile-email-link:hover {
+    text-decoration: underline;
+}
+
+.profile-logout {
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #B71C1C;
+    background: transparent;
+    border: 1px solid rgba(183, 28, 28, 0.25);
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.profile-logout:hover {
+    background: rgba(183, 28, 28, 0.06);
+}
+
+.profile-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.profile-tab {
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1A1A1A;
+    background: transparent;
+    border: 1px solid #E5E7EB;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.profile-tab.is-active {
+    background: #1A1A1A;
+    color: #FFFFFF;
+    border-color: #1A1A1A;
+}
+
+.profile-panel {
+    display: none;
+}
+
+.profile-panel.is-active {
+    display: block;
+}
+
+.profile-orders {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.order-card {
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 14px;
+}
+
+.order-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.order-card-title {
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1A1A1A;
+}
+
+.order-status {
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    padding: 0 10px;
+    margin-left: 10px;
+    border-radius: 999px;
+    background: #F3F4F6;
+    color: #111827;
+    font-family: "Hind", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.order-card-date {
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6B7280;
+}
+
+.order-card-items {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.order-card-item {
+    display: grid;
+    grid-template-columns: 42px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    color: #1A1A1A;
+}
+
+.order-card-total {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.order-empty {
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    color: #6B7280;
+    padding: 14px;
+    border: 1px dashed #E5E7EB;
+    border-radius: 14px;
+    text-align: center;
+}

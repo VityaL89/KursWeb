@@ -1,10 +1,11 @@
 async function adminLoadAllData() {
-    const [restaurants, menuItems, categories] = await Promise.all([
+    const [restaurants, menuItems, categories, orders] = await Promise.all([
         adminApiGet('/restaurants'),
         adminApiGet('/menuItems'),
-        adminApiGet('/categories')
+        adminApiGet('/categories'),
+        adminApiGet('/orders')
     ]);
-    return { restaurants, menuItems, categories };
+    return { restaurants, menuItems, categories, orders };
 }
 
 function adminBuildMaps(state) {
@@ -39,4 +40,13 @@ async function adminRefreshUI(state) {
     adminQs('#categories-list').innerHTML = state.categories
         .map(c => adminRenderCategoryCard(c))
         .join('');
+
+    const ordersMount = document.getElementById('orders-list');
+    if (ordersMount && Array.isArray(state.orders) && typeof adminRenderOrderCard === 'function') {
+        ordersMount.innerHTML = state.orders
+            .slice()
+            .sort((a, b) => new Date(b?.createdAt || 0) - new Date(a?.createdAt || 0))
+            .map(o => adminRenderOrderCard(o))
+            .join('');
+    }
 }

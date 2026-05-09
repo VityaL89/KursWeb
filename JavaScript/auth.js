@@ -211,39 +211,28 @@ function updateHeaderAuthUI() {
     if (!authButtons) return;
     
     const user = getCurrentUser();
-    
-    if (user) {
-        // Пользователь авторизован
-        authButtons.innerHTML = `
-            <div class="user-info" style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-                <span class="user-name" style="font-family:'Hind',sans-serif; font-size:16px; font-weight:500; color:#1A1A1A;">
-                    👤 ${user.firstName} ${user.lastName}
-                    ${user.role === 'admin' ? ' <span style="background:#E5F8BC; padding:2px 8px; border-radius:4px; font-size:12px;">Admin</span>' : ''}
-                </span>
-                <a href="Notifications.html" style="font-family:'Hind',sans-serif; font-size:14px; font-weight:500; color:#1A1A1A; background:transparent; border:none; cursor:pointer; text-decoration:underline;">
-                    Notifications
-                </a>
-                <button onclick="logoutUser()" class="btn-logout" style="font-family:'Hind',sans-serif; font-size:14px; font-weight:500; color:#B71C1C; background:transparent; border:none; cursor:pointer; text-decoration:underline;">
-                    Sign out
-                </button>
-            </div>
-        `;
-        
-        // Если админ - показываем ссылку на админ-панель
-        if (user.role === 'admin') {
-            const navLinks = document.querySelector('.nav-links');
-            if (navLinks && !navLinks.querySelector('.nav-admin')) {
+
+    const profileBtn = document.getElementById('header-profile-btn');
+    if (profileBtn) {
+        profileBtn.onclick = () => {
+            window.location.href = user ? 'Profile.html' : 'SignUp.html';
+        };
+    }
+
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+        const existingAdmin = navLinks.querySelector('.nav-admin');
+        if (user && user.role === 'admin') {
+            if (!existingAdmin) {
                 const adminLink = document.createElement('li');
                 adminLink.innerHTML = `<a href="AdminPanel.html" class="nav-admin" style="display:flex; align-items:center; justify-content:center; height:55px; padding:0 24px; font-family:'Hind',sans-serif; font-size:18px; font-weight:400; color:#1A1A1A; text-decoration:none; white-space:nowrap; margin-right:8px; margin-top:1px;">Admin Panel</a>`;
                 navLinks.appendChild(adminLink);
             }
+        } else {
+            if (existingAdmin) {
+                existingAdmin.closest('li')?.remove();
+            }
         }
-    } else {
-        // Пользователь не авторизован
-        authButtons.innerHTML = `
-            <a href="Login.html" class="btn-login-header">Sign in</a>
-            <a href="SignUp.html" class="btn-signup-header">Sign up</a>
-        `;
     }
 }
 

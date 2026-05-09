@@ -110,6 +110,7 @@ function bindStep2Navigation() {
         const orderPayload = {
             userId: user?.id ?? null,
             createdAt: new Date().toISOString(),
+            status: 'Accepted',
             contact,
             address,
             items,
