@@ -50,6 +50,7 @@ function renderOrders(orders) {
     sorted.forEach(order => {
         const card = document.createElement('div');
         card.className = 'order-card';
+        card.dataset.orderId = String(order?.id ?? '');
 
         const top = document.createElement('div');
         top.className = 'order-card-top';
@@ -83,11 +84,51 @@ function renderOrders(orders) {
             <span>${formatEuro(order?.total)}</span>
         `;
 
+        const actions = document.createElement('div');
+        actions.className = 'order-card-actions';
+        actions.innerHTML = `
+            <button class="order-repeat-btn" type="button" data-repeat-order="${order?.id ?? ''}">Repeat order</button>
+        `;
+
         card.appendChild(top);
         card.appendChild(itemsWrap);
         card.appendChild(total);
+        card.appendChild(actions);
         container.appendChild(card);
     });
+}
+
+async function repeatOrderById(orderId) {
+    const user = typeof getCurrentUser === 'function' ? getCurrentUser() : null;
+    if (!user) {
+        window.location.href = 'SignUp.html';
+        return;
+    }
+
+    const orders = await loadUserOrders(user.id);
+    const order = (Array.isArray(orders) ? orders : []).find(o => String(o.id) === String(orderId));
+    if (!order) return;
+
+    const items = Array.isArray(order?.items) ? order.items : [];
+    const safeItems = items.map(i => ({
+        id: i.id,
+        name: i.name,
+        description: i.description,
+        price: Number(i.price) || 0,
+        quantity: Number(i.quantity) || 0
+    })).filter(i => i.quantity > 0);
+
+    const cart = await loadCurrentCart();
+    cart.restaurantId = cart?.restaurantId ?? null;
+    cart.items = safeItems;
+    cart.total = safeItems.reduce((sum, i) => sum + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0);
+    await saveCurrentCart(cart);
+
+    if (typeof updateHeaderCartTotalFromServer === 'function') {
+        updateHeaderCartTotalFromServer();
+    }
+
+    window.location.href = 'OrderFormStep1.html';
 }
 
 function bindTabs() {
@@ -127,6 +168,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     bindTabs();
+
+    const ordersMount = document.getElementById('profile-orders');
+    if (ordersMount) {
+        ordersMount.addEventListener('click', async (e) => {
+            const btn = e.target?.closest?.('[data-repeat-order]');
+            if (!btn) return;
+            const orderId = btn.getAttribute('data-repeat-order');
+            if (!orderId) return;
+
+            try {
+                btn.disabled = true;
+                await repeatOrderById(orderId);
+            } catch (err) {
+                console.error(err);
+                alert('Failed to repeat order');
+            } finally {
+                btn.disabled = false;
+            }
+        });
+    }
 
     try {
         const orders = await loadUserOrders(user.id);

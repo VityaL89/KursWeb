@@ -185,6 +185,34 @@
     font-weight: 600;
 }
 
+.order-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.order-repeat-btn {
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 10px;
+    border: 1px solid #1A1A1A;
+    background: #1A1A1A;
+    cursor: pointer;
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.order-repeat-btn:hover {
+    background: #2B2B2B;
+}
+
+.order-repeat-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .order-empty {
     font-family: "Hind", sans-serif;
     font-size: 14px;
