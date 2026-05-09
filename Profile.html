@@ -6,6 +6,7 @@
     <title>Profile</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="ProfileStyle.css">
+    <link rel="stylesheet" href="NotificationsStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -24,12 +25,6 @@
             <div class="profile-card">
                 <div class="profile-top">
                     <div class="profile-email">
-                        <span class="profile-email-icon" aria-hidden="true">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4H20V20H4V4Z" stroke="#1A1A1A" stroke-width="2" stroke-linejoin="round"/>
-                                <path d="M4 7L12 13L20 7" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
                         <a class="profile-email-link" id="profile-email-link" href="#">—</a>
                     </div>
 
@@ -67,9 +62,7 @@
                             </label>
                         </div>
 
-                        <div class="notifications-actions">
-                            <button class="notifications-btn" id="notif-save" type="button">Save</button>
-                        </div>
+                        <div class="profile-inbox" id="profile-inbox"></div>
 
                         <div class="notifications-status" id="notif-status" aria-live="polite"></div>
                     </div>

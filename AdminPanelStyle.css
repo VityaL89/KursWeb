@@ -103,6 +103,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+#tab-notifications .admin-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .admin-card {
     background: #fff;
     border: 1px solid #F3F4F6;

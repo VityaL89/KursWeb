@@ -69,7 +69,7 @@
     font-weight: 500;
     color: #B71C1C;
     background: transparent;
-    border: 1px solid rgba(183, 28, 28, 0.25);
+    border: none;
     padding: 10px 14px;
     border-radius: 10px;
     cursor: pointer;
@@ -109,6 +109,61 @@
 
 .profile-panel.is-active {
     display: block;
+}
+
+.profile-inbox {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inbox-item {
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 14px;
+    background: #FFFFFF;
+}
+
+.inbox-item-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.inbox-item-title {
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1A1A1A;
+}
+
+.inbox-item-date {
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6B7280;
+    white-space: nowrap;
+}
+
+.inbox-item-message {
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1A1A1A;
+    line-height: 1.35;
+}
+
+.inbox-empty {
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    color: #6B7280;
+    padding: 14px;
+    border: 1px dashed #E5E7EB;
+    border-radius: 14px;
+    text-align: center;
 }
 
 .profile-orders {

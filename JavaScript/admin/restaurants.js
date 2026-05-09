@@ -71,6 +71,23 @@ async function adminBindRestaurants(state, refreshUI) {
             };
             const created = await adminApiPost('/restaurants', payload);
             state.restaurants.push(created);
+
+            try {
+                const notifPayload = {
+                    type: 'new_restaurants',
+                    title: 'New restaurant',
+                    message: `${created.name} is now available`,
+                    createdAt: new Date().toISOString(),
+                    userId: null,
+                    restaurantId: created.id
+                };
+                const notif = await adminApiPost('/notifications', notifPayload);
+                state.notifications = Array.isArray(state.notifications) ? state.notifications : [];
+                state.notifications.push(notif);
+            } catch (e) {
+                console.error('Failed to create new restaurant notification', e);
+            }
+
             adminCloseModal();
             await refreshUI();
         });

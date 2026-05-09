@@ -17,6 +17,61 @@ function formatDateTime(iso) {
     return `${dd}.${mm}.${yyyy} ${hh}:${min}`;
 }
 
+function adminTypeToPrefsKey(type) {
+    if (type === 'discounts') return 'discounts';
+    if (type === 'promotions') return 'promotions';
+    if (type === 'new_restaurants') return 'newRestaurants';
+    return null;
+}
+
+async function loadNotifications() {
+    const res = await fetch('http://localhost:3000/notifications');
+    if (!res.ok) {
+        const text = await res.text();
+        throw new Error(`Failed to load notifications: ${res.status} ${text}`);
+    }
+    return await res.json();
+}
+
+function renderInbox(notifications) {
+    const mount = document.getElementById('profile-inbox');
+    if (!mount) return;
+
+    mount.innerHTML = '';
+
+    const prefs = (typeof loadNotificationPrefs === 'function') ? loadNotificationPrefs() : { discounts: true, promotions: true, newRestaurants: true };
+
+    const list = (Array.isArray(notifications) ? notifications : [])
+        .filter(n => {
+            const key = adminTypeToPrefsKey(n?.type);
+            if (!key) return false;
+            return !!prefs[key];
+        })
+        .slice()
+        .sort((a, b) => new Date(b?.createdAt || 0) - new Date(a?.createdAt || 0));
+
+    if (!list.length) {
+        const empty = document.createElement('div');
+        empty.className = 'inbox-empty';
+        empty.textContent = 'No notifications';
+        mount.appendChild(empty);
+        return;
+    }
+
+    list.forEach(n => {
+        const item = document.createElement('div');
+        item.className = 'inbox-item';
+        item.innerHTML = `
+            <div class="inbox-item-top">
+                <div class="inbox-item-title">${n?.title || ''}</div>
+                <div class="inbox-item-date">${formatDateTime(n?.createdAt) || ''}</div>
+            </div>
+            <div class="inbox-item-message">${n?.message || ''}</div>
+        `;
+        mount.appendChild(item);
+    });
+}
+
 async function loadUserOrders(userId) {
     const res = await fetch(`http://localhost:3000/orders?userId=${encodeURIComponent(userId)}`);
     if (!res.ok) {
@@ -196,4 +251,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error(e);
         renderOrders([]);
     }
+
+    let cachedNotifications = [];
+    try {
+        cachedNotifications = await loadNotifications();
+    } catch (e) {
+        console.error(e);
+        cachedNotifications = [];
+    }
+
+    renderInbox(cachedNotifications);
+
+    const discounts = document.getElementById('notif-discounts');
+    const promotions = document.getElementById('notif-promotions');
+    const newRestaurants = document.getElementById('notif-new-restaurants');
+    [discounts, promotions, newRestaurants].forEach(el => {
+        if (!el) return;
+        el.addEventListener('change', () => renderInbox(cachedNotifications));
+    });
 });

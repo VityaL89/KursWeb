@@ -27,6 +27,7 @@
                 <button class="admin-tab" data-tab="menuItems">Menu</button>
                 <button class="admin-tab" data-tab="categories">Categories</button>
                 <button class="admin-tab" data-tab="orders">Orders</button>
+                <button class="admin-tab" data-tab="notifications">Notifications</button>
             </div>
 
             <div class="admin-panel" id="admin-panel">
@@ -64,6 +65,14 @@
                     </div>
                     <div class="admin-grid" id="orders-list"></div>
                 </div>
+
+                <div class="admin-section" id="tab-notifications" data-tab-panel="notifications" style="display:none;">
+                    <div class="admin-section-header">
+                        <h2 class="admin-section-title">Notifications</h2>
+                        <button class="admin-primary-btn" id="add-notification-btn">Add notification</button>
+                    </div>
+                    <div class="admin-grid" id="notifications-list"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -91,6 +100,7 @@
 <script src="JavaScript/admin/menu-items.js"></script>
 <script src="JavaScript/admin/categories.js"></script>
 <script src="JavaScript/admin/orders.js"></script>
+<script src="JavaScript/admin/notifications-admin.js"></script>
 <script src="JavaScript/admin/state.js"></script>
 <script src="JavaScript/admin/index.js"></script>
 

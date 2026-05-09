@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         await adminBindMenuItems(state, refreshUI);
         await adminBindCategories(state, refreshUI);
         await adminBindOrders(state, refreshUI);
+        await adminBindNotifications(state, refreshUI);
     } catch (err) {
         console.error(err);
         alert('Admin panel error. Check console.');

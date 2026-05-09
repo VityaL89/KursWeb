@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newRestaurants = document.getElementById('notif-new-restaurants');
     const saveBtn = document.getElementById('notif-save');
 
-    if (!discounts || !promotions || !newRestaurants || !saveBtn) return;
+    if (!discounts || !promotions || !newRestaurants) return;
 
     const prefs = loadNotificationPrefs();
     discounts.checked = prefs.discounts;
@@ -72,11 +72,17 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const ok = saveNotificationPrefs(next);
-        setStatusText(ok ? 'Saved' : 'Failed to save');
+        setStatusText(ok ? '' : 'Failed to save');
         if (ok && typeof updateHeaderAuthUI === 'function') {
             updateHeaderAuthUI();
         }
     };
 
-    saveBtn.addEventListener('click', save);
+    if (saveBtn) {
+        saveBtn.addEventListener('click', save);
+    }
+
+    discounts.addEventListener('change', save);
+    promotions.addEventListener('change', save);
+    newRestaurants.addEventListener('change', save);
 });

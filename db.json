@@ -706,6 +706,26 @@
       "total": 11.5
     }
   ],
+  "notifications": [
+    {
+      "id": "1e0f",
+      "type": "discounts",
+      "title": "Limited-time discount!",
+      "message": "Save 20% on selected dishes today only. Open the menu and look for discounted items.",
+      "createdAt": "2026-05-09T12:39:46.492Z",
+      "userId": null,
+      "restaurantId": null
+    },
+    {
+      "id": "aef0",
+      "type": "promotions",
+      "title": "Free delivery promo",
+      "message": "Free delivery on your next order when you check out within the next 2 hours.",
+      "createdAt": "2026-05-09T12:40:06.753Z",
+      "userId": null,
+      "restaurantId": null
+    }
+  ],
   "carts": [
     {
       "id": "cart_admin",

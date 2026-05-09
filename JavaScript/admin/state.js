@@ -1,11 +1,12 @@
 async function adminLoadAllData() {
-    const [restaurants, menuItems, categories, orders] = await Promise.all([
+    const [restaurants, menuItems, categories, orders, notifications] = await Promise.all([
         adminApiGet('/restaurants'),
         adminApiGet('/menuItems'),
         adminApiGet('/categories'),
-        adminApiGet('/orders')
+        adminApiGet('/orders'),
+        adminApiGet('/notifications')
     ]);
-    return { restaurants, menuItems, categories, orders };
+    return { restaurants, menuItems, categories, orders, notifications };
 }
 
 function adminBuildMaps(state) {
@@ -47,6 +48,15 @@ async function adminRefreshUI(state) {
             .slice()
             .sort((a, b) => new Date(b?.createdAt || 0) - new Date(a?.createdAt || 0))
             .map(o => adminRenderOrderCard(o))
+            .join('');
+    }
+
+    const notificationsMount = document.getElementById('notifications-list');
+    if (notificationsMount && Array.isArray(state.notifications) && typeof adminRenderNotificationCard === 'function') {
+        notificationsMount.innerHTML = state.notifications
+            .slice()
+            .sort((a, b) => new Date(b?.createdAt || 0) - new Date(a?.createdAt || 0))
+            .map(n => adminRenderNotificationCard(n))
             .join('');
     }
 }
