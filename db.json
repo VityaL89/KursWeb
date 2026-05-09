@@ -206,6 +206,24 @@
       "isNew": false,
       "lat": 53.9064,
       "lng": 30.3409
+    },
+    {
+      "id": "8516",
+      "name": "Green Bowl",
+      "categoryId": 4,
+      "slug": "green-bowl",
+      "description": "Fresh Asian-inspired bowls, salads and healthy drinks.",
+      "rating": 4.7,
+      "ratingText": "Excellent",
+      "image": "https://flatironnomad.nyc/wp-content/uploads/2025/02/blackbarn-green-dining.jpg",
+      "tags": [
+        "Healthy",
+        "Asian",
+        "Bowls"
+      ],
+      "isNew": false,
+      "lat": 53.9105,
+      "lng": 30.3361
     }
   ],
   "menuItems": [
@@ -536,6 +554,22 @@
       "description": "Traditional Japanese soup",
       "price": 2,
       "category": "To drink"
+    },
+    {
+      "id": "8510",
+      "restaurantId": 8516,
+      "name": "Chicken Teriyaki Bowl",
+      "description": "Rice, chicken teriyaki, broccoli, carrots, sesame.",
+      "price": 10.5,
+      "category": "To eat"
+    },
+    {
+      "id": "fb22",
+      "restaurantId": 8516,
+      "name": "Mango Smoothie",
+      "description": "Mango, banana, yogurt.",
+      "price": 4.5,
+      "category": "To drink"
     }
   ],
   "orders": [
@@ -724,6 +758,15 @@
       "createdAt": "2026-05-09T12:40:06.753Z",
       "userId": null,
       "restaurantId": null
+    },
+    {
+      "id": "79af",
+      "type": "new_restaurants",
+      "title": "New restaurant",
+      "message": "Green Bowl is now available",
+      "createdAt": "2026-05-09T12:53:29.400Z",
+      "userId": null,
+      "restaurantId": "8516"
     }
   ],
   "carts": [
@@ -1013,6 +1056,21 @@
       "restaurantId": null,
       "items": [],
       "total": 0
+    },
+    {
+      "id": "8a04",
+      "userId": "1",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "8510",
+          "name": "Chicken Teriyaki Bowl",
+          "description": "Rice, chicken teriyaki, broccoli, carrots, sesame.",
+          "price": 10.5,
+          "quantity": 1
+        }
+      ],
+      "total": 10.5
     }
   ],
   "users": [

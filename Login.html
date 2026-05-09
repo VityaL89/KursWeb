@@ -76,7 +76,7 @@
         const result = await loginUser(email, password);
         
         if (result.success) {
-            window.location.href = 'index.html';
+            window.location.href = result.user?.role === 'admin' ? 'AdminPanel.html' : 'index.html';
         } else {
             alert(result.message);
         }

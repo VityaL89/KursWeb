@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
         adminSetActiveTab('restaurants');
 
+        const logoutBtn = document.getElementById('admin-logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                if (typeof logoutUser === 'function') logoutUser();
+            });
+        }
+
         adminQs('#admin-modal-close').addEventListener('click', adminCloseModal);
         adminQs('#admin-modal-overlay').addEventListener('click', adminCloseModal);
 
