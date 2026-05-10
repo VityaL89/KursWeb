@@ -207,9 +207,6 @@ async function logoutUser() {
 
 // Обновить UI хедера в зависимости от статуса пользователя
 function updateHeaderAuthUI() {
-    const authButtons = document.querySelector('.auth-buttons');
-    if (!authButtons) return;
-    
     const user = getCurrentUser();
 
     const profileBtn = document.getElementById('header-profile-btn');

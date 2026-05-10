@@ -94,6 +94,33 @@
         overflow-y: auto;
     }
 
+    .nav-actions {
+        display: none;
+    }
+
+    .nav-wrapper.open .nav-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .nav-wrapper.open .nav-actions .auth-buttons {
+        display: flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .nav-wrapper.open .nav-actions .lang-select {
+        width: 76px;
+        height: 44px;
+        padding: 0 10px;
+        border-radius: 10px;
+        flex: 0 0 auto;
+    }
+
     .mobile-menu-close {
         display: none;
     }

@@ -12,6 +12,7 @@
     --text: #f9fafb;
     --muted: #9CA3AF;
     --border: rgba(255, 255, 255, 0.12);
+    --bg-white: #ffffff;
 }
 
 body {
@@ -36,9 +37,9 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 10px;
+    background: none;
+    /* border: 1px solid var(--border); */
+    border: none;
     cursor: pointer;
 }
 
@@ -49,7 +50,7 @@ body {
     align-items: center;
     justify-content: center;
     background: transparent;
-    border: 1px solid var(--border);
+    border: none;
     border-radius: 10px;
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
@@ -89,16 +90,9 @@ body {
     background: rgba(255, 255, 255, 0.06);
 }
 
-.theme-toggle svg {
+:root[data-theme="dark"] .theme-toggle svg {
     display: block;
-}
-
-:root[data-theme="dark"] .theme-toggle {
-    background: rgba(255, 255, 255, 0.06);
-}
-
-:root[data-theme="dark"] .a11y-toggle {
-    background: rgba(255, 255, 255, 0.06);
+    filter: invert(1);
 }
 
 :root[data-theme="dark"] .logo span,
@@ -119,47 +113,58 @@ body {
     background-color: #111f3d ;
 }
 
-.menu-section,
-.restaurant-about,
-.categories,
-.arrivals,
-.picks,
-.restaurants-browser,
-.restaurant-list,
-.cart-sidebar-content,
-.signup-section * {
+:root[data-theme="dark"] .menu-section,
+:root[data-theme="dark"] .restaurant-about,
+:root[data-theme="dark"] .categories,
+:root[data-theme="dark"] .arrivals,
+:root[data-theme="dark"] .picks,
+:root[data-theme="dark"] .restaurants-browser,
+:root[data-theme="dark"] .restaurant-list,
+:root[data-theme="dark"] .cart-sidebar-content {
     background-color: var(--bg);
 }
 
 
-.award-banner-title,
-.main-banner-title,
-.categories-banner-title,
-.menu-item-name,
-.tag,
-.food-modal-header h2 {
+:root[data-theme="dark"] .award-banner-title,
+:root[data-theme="dark"] .main-banner-title,
+:root[data-theme="dark"] .categories-banner-title,
+:root[data-theme="dark"] .menu-item-name,
+:root[data-theme="dark"] .tag,
+:root[data-theme="dark"] .food-modal-header h2 {
     color: var(--surface);
 
 }
 
-.restaurants-browser-subtitle,
-.restaurants-checkbox,
-.view-all-link,
-.menu-subtitle,
-.about-description,
-.rating-label,
-.rating-value,
-.star-icon,
-.cart-item-name,
-.cart-item-price,
-.cart-item-quantity,
-.cart-total-row,
-.cart-sidebar-header *{
+:root[data-theme="dark"] .restaurants-browser-subtitle,
+:root[data-theme="dark"] .restaurants-checkbox,
+:root[data-theme="dark"] .view-all-link,
+:root[data-theme="dark"] .menu-subtitle,
+:root[data-theme="dark"] .about-description,
+:root[data-theme="dark"] .rating-label,
+:root[data-theme="dark"] .rating-value,
+:root[data-theme="dark"] .star-icon,
+:root[data-theme="dark"] .cart-item-name,
+:root[data-theme="dark"] .cart-item-price,
+:root[data-theme="dark"] .cart-item-quantity,
+:root[data-theme="dark"] .cart-total-row,
+:root[data-theme="dark"] .cart-sidebar-header *,
+:root[data-theme="dark"] .lang-select{
     color: var(--text);
 
 }
-
-.cart-sidebar-footer button,
-.signup-card {
+    
+:root[data-theme="dark"] .cart-sidebar-footer button,
+:root[data-theme="dark"] .nav-wrapper{
     background-color: var(--surface);
+}
+
+:root[data-theme="dark"] .signup-section,
+:root[data-theme="dark"] .nav-cart,
+:root[data-theme="dark"] .login-section{
+    background-color: var(--bg);
+}
+
+/* БЕЛЫЙ ФОН */
+:root[data-theme="dark"] .burger-line {
+    background-color: var(--bg-white);
 }

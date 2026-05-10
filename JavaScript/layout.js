@@ -145,24 +145,23 @@ function renderSiteHeader() {
 
         <nav class="nav-wrapper">
 
-            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
 
-            <button class="a11y-toggle" id="a11y-toggle" type="button" aria-label="Accessibility mode">
-                A
-            </button>
+                <button class="a11y-toggle" id="a11y-toggle" type="button" aria-label="Accessibility mode">
+                    A
+                </button>
 
-            <select class="lang-select" id="lang-select" aria-label="Language">
-                <option value="en">EN</option>
-                <option value="ru">RU</option>
-            </select>
+                <select class="lang-select" id="lang-select" aria-label="Language">
+                    <option value="en">EN</option>
+                    <option value="ru">RU</option>
+                </select>
 
-            <div id="google_translate_element" style="display:none"></div>
 
-            <div class="auth-buttons">
                 <button class="btn-profile-header" id="header-profile-btn" type="button" aria-label="Profile">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 21C20 18.7909 16.4183 17 12 17C7.58172 17 4 18.7909 4 21" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
@@ -170,6 +169,8 @@ function renderSiteHeader() {
                     </svg>
                 </button>
             </div>
+
+            <div id="google_translate_element" style="display:none"></div>
             
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-home">Home</a></li>
