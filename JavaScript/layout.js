@@ -23,6 +23,35 @@ const LAYOUT_MOBILE_MENU_OVERLAY_HTML = `
 <div id="mobile-menu-overlay" class="mobile-menu-overlay" style="display: none;"></div>
 `;
 
+const THEME_STORAGE_KEY = "theme";
+
+function ensureThemeStyles() {
+  if (document.getElementById("layout-theme-styles")) return;
+  const link = document.createElement("link");
+  link.id = "layout-theme-styles";
+  link.rel = "stylesheet";
+  link.href = "theme.css";
+  document.head.appendChild(link);
+}
+
+function getPreferredTheme() {
+  const saved = localStorage.getItem(THEME_STORAGE_KEY);
+  if (saved === "light" || saved === "dark") return saved;
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  return prefersDark ? "dark" : "light";
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute("data-theme") || "light";
+  const next = current === "dark" ? "light" : "dark";
+  localStorage.setItem(THEME_STORAGE_KEY, next);
+  applyTheme(next);
+}
+
 function renderSiteHeader() {
   return `
 <header class="header">
@@ -39,9 +68,13 @@ function renderSiteHeader() {
         </a>
 
         <nav class="nav-wrapper">
-            <button class="mobile-menu-close" type="button" aria-label="Close menu" style="display: none;">
-                ×
+
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
             </button>
+
             <div class="auth-buttons">
                 <button class="btn-profile-header" id="header-profile-btn" type="button" aria-label="Profile">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,6 +145,9 @@ function renderSiteFooter() {
 }
 
 function injectLayout() {
+  ensureThemeStyles();
+  applyTheme(getPreferredTheme());
+
   if (!document.getElementById("layout-cart-styles")) {
     const link = document.createElement("link");
     link.id = "layout-cart-styles";
@@ -153,6 +189,7 @@ function injectLayout() {
   const burger = document.querySelector(".burger-menu");
   const closeBtn = document.querySelector(".mobile-menu-close");
   const mobileOverlay = document.getElementById("mobile-menu-overlay");
+  const themeToggle = document.getElementById("theme-toggle");
 
   const setMenuOpen = (isOpen) => {
     if (!nav) return;
@@ -184,6 +221,10 @@ function injectLayout() {
       const link = e.target && e.target.closest ? e.target.closest(".nav-links a") : null;
       if (link) setMenuOpen(false);
     });
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", toggleTheme);
   }
 }
 

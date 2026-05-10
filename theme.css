@@ -1,0 +1,119 @@
+:root {
+    --bg: #f5f5f5;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6B7280;
+    --border: rgba(17, 24, 39, 0.10);
+}
+
+:root[data-theme="dark"] {
+    --bg: #0b0f19;
+    --surface: #111827;
+    --text: #f9fafb;
+    --muted: #9CA3AF;
+    --border: rgba(255, 255, 255, 0.12);
+}
+
+body {
+    background-color: var(--bg) !important;
+}
+
+.header {
+    background-color: var(--surface) !important;
+}
+
+:root[data-theme="dark"] main {
+    background-color: var(--bg) !important;
+}
+
+.footer {
+    background-color: #0b0f19 !important;
+}
+
+.theme-toggle {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.theme-toggle svg {
+    display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme="dark"] .logo span,
+:root[data-theme="dark"] .nav-home,
+:root[data-theme="dark"] .nav-all {
+    color: var(--text) !important;
+}
+
+:root[data-theme="dark"] .btn-profile-header path {
+    stroke: var(--text) !important;
+}
+
+:root[data-theme="dark"] .nav-cart {
+    background-color: #0f172a !important;
+}
+
+:root[data-theme="dark"] .nav-cart:hover {
+    background-color: #111f3d !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text) !important;
+}
+
+
+.menu-section,
+.restaurant-about,
+.categories,
+.arrivals,
+.picks,
+.restaurants-browser,
+.restaurant-list,
+.cart-sidebar-content,
+.signup-section * {
+    background-color: var(--bg) !important;
+}
+
+
+.award-banner-title,
+.main-banner-title,
+.categories-banner-title,
+.menu-item-name,
+.tag,
+.food-modal-header h2 {
+    color: var(--surface) !important;
+
+}
+
+.restaurants-browser-subtitle,
+.restaurants-checkbox,
+.view-all-link,
+.menu-subtitle,
+.about-description,
+.rating-label,
+.rating-value,
+.star-icon,
+.cart-item-name,
+.cart-item-price,
+.cart-item-quantity,
+.cart-total-row,
+.cart-sidebar-header *{
+    color: var(--text) !important;
+
+}
+
+.cart-sidebar-footer button,
+.signup-card {
+    background-color: var(--surface) !important;
+}
