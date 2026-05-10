@@ -58,6 +58,37 @@ body {
     color: var(--text);
 }
 
+.translate-widget {
+    display: inline-flex;
+    align-items: center;
+    height: 44px;
+}
+
+.translate-widget .goog-te-gadget {
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.translate-widget .goog-te-gadget span,
+.translate-widget .goog-te-gadget a {
+    display: none !important;
+}
+
+.translate-widget select.goog-te-combo {
+    height: 44px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    outline: none;
+}
+
+:root[data-theme="dark"] .translate-widget select.goog-te-combo {
+    background: rgba(255, 255, 255, 0.06);
+}
+
 .theme-toggle svg {
     display: block;
 }

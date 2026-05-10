@@ -80,6 +80,54 @@ function toggleA11y() {
   applyA11y(nextIsOn);
 }
 
+function ensureGoogleTranslate() {
+  if (!window.googleTranslateElementInit) {
+    window.googleTranslateElementInit = function () {
+      const mount = document.getElementById("google_translate_element");
+      if (!mount) return;
+      if (mount.childElementCount > 0) return;
+      if (!window.google || !window.google.translate || !window.google.translate.TranslateElement) return;
+
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,ru",
+          autoDisplay: false,
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        "google_translate_element"
+      );
+    };
+  }
+
+  if (!document.getElementById("google-translate-script")) {
+    const script = document.createElement("script");
+    script.id = "google-translate-script";
+    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.head.appendChild(script);
+  } else {
+    if (typeof window.googleTranslateElementInit === "function") {
+      window.googleTranslateElementInit();
+    }
+  }
+}
+
+function getCookieValue(name) {
+  const cookie = document.cookie
+    .split(";")
+    .map((c) => c.trim())
+    .find((c) => c.startsWith(`${name}=`));
+  if (!cookie) return "";
+  return decodeURIComponent(cookie.split("=").slice(1).join("="));
+}
+
+function setGoogleTranslateLanguage(lang) {
+  const value = lang === "ru" ? "/en/ru" : "/en/en";
+  document.cookie = `googtrans=${encodeURIComponent(value)};path=/`;
+  document.cookie = `googtrans=${encodeURIComponent(value)};path=/;SameSite=Lax`;
+  window.location.reload();
+}
+
 function renderSiteHeader() {
   return `
 <header class="header">
@@ -106,6 +154,13 @@ function renderSiteHeader() {
             <button class="a11y-toggle" id="a11y-toggle" type="button" aria-label="Accessibility mode">
                 A
             </button>
+
+            <select class="lang-select" id="lang-select" aria-label="Language">
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
+            </select>
+
+            <div id="google_translate_element" style="display:none"></div>
 
             <div class="auth-buttons">
                 <button class="btn-profile-header" id="header-profile-btn" type="button" aria-label="Profile">
@@ -183,6 +238,8 @@ function injectLayout() {
   ensureA11yStyles();
   applyA11y(getPreferredA11y());
 
+  ensureGoogleTranslate();
+
   if (!document.getElementById("layout-cart-styles")) {
     const link = document.createElement("link");
     link.id = "layout-cart-styles";
@@ -226,6 +283,7 @@ function injectLayout() {
   const mobileOverlay = document.getElementById("mobile-menu-overlay");
   const themeToggle = document.getElementById("theme-toggle");
   const a11yToggle = document.getElementById("a11y-toggle");
+  const langSelect = document.getElementById("lang-select");
 
   const setMenuOpen = (isOpen) => {
     if (!nav) return;
@@ -265,6 +323,15 @@ function injectLayout() {
 
   if (a11yToggle) {
     a11yToggle.addEventListener("click", toggleA11y);
+  }
+
+  if (langSelect) {
+    const current = getCookieValue("googtrans");
+    langSelect.value = current === "/en/ru" ? "ru" : "en";
+
+    langSelect.addEventListener("change", () => {
+      setGoogleTranslateLanguage(langSelect.value);
+    });
   }
 }
 

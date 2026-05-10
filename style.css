@@ -65,6 +65,43 @@ body {
     gap: 0;
 }
 
+.lang-select {
+    height: 44px;
+    padding: 0 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(17, 24, 39, 0.10);
+    background: transparent;
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1A1A1A;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.lang-select:focus {
+    outline: none;
+}
+
+.lang-select:focus-visible {
+    outline: 3px solid rgba(245, 158, 11, 0.9);
+    outline-offset: 3px;
+}
+
+.lang-select:hover {
+    background: rgba(17, 24, 39, 0.04);
+}
+
+:root[data-theme="dark"] .lang-select {
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #F9FAFB;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme="dark"] .lang-select:hover {
+    background: rgba(255, 255, 255, 0.10);
+}
+
 .nav-links {
     display: flex;
     list-style: none;
