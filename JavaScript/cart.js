@@ -11,10 +11,14 @@ async function updateHeaderCartTotalFromServer() {
     const user = getCurrentUser();
     const headerTotal = document.getElementById('header-cart-total');
     if (!headerTotal) return;
+
+    const cartBtn = document.getElementById('header-cart-btn') || document.querySelector('.nav-cart');
     
     if (!user) {
         const guestCart = getGuestCart();
-        headerTotal.textContent = `€ ${(guestCart.total || 0).toFixed(2)}`;
+        const total = Number(guestCart.total) || 0;
+        headerTotal.textContent = `€ ${total.toFixed(2).replace('.', ',')}`;
+        if (cartBtn) cartBtn.classList.toggle('is-empty', total <= 0);
         return;
     }
     
@@ -22,8 +26,9 @@ async function updateHeaderCartTotalFromServer() {
         const res = await fetch(`${CART_API_URL}/carts?userId=${user.id}`);
         const carts = await res.json();
         const cart = carts.length > 0 ? carts[0] : null;
-        const total = cart ? cart.total : 0;
-        headerTotal.textContent = `€ ${total.toFixed(2)}`;
+        const total = cart ? (Number(cart.total) || 0) : 0;
+        headerTotal.textContent = `€ ${total.toFixed(2).replace('.', ',')}`;
+        if (cartBtn) cartBtn.classList.toggle('is-empty', total <= 0);
     } catch (error) {
         console.error('Ошибка загрузки корзины:', error);
     }

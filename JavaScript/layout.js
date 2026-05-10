@@ -19,8 +19,12 @@ const LAYOUT_CART_SIDEBAR_HTML = `
 <div id="cart-overlay" class="cart-overlay" style="display: none;"></div>
 `;
 
+const LAYOUT_MOBILE_MENU_OVERLAY_HTML = `
+<div id="mobile-menu-overlay" class="mobile-menu-overlay" style="display: none;"></div>
+`;
+
 function renderSiteHeader() {
-    return `
+  return `
 <header class="header">
     <div class="container">
         <button class="burger-menu" aria-label="Открыть меню">
@@ -35,11 +39,9 @@ function renderSiteHeader() {
         </a>
 
         <nav class="nav-wrapper">
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-home">Home</a></li>
-                <li><a href="Restaurants.html" class="nav-all">All restaurants</a></li>
-            </ul>
-
+            <button class="mobile-menu-close" type="button" aria-label="Close menu" style="display: none;">
+                ×
+            </button>
             <div class="auth-buttons">
                 <button class="btn-profile-header" id="header-profile-btn" type="button" aria-label="Profile">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,9 +50,18 @@ function renderSiteHeader() {
                     </svg>
                 </button>
             </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-home">Home</a></li>
+                <li><a href="Restaurants.html" class="nav-all">All restaurants</a></li>
+            </ul>
 
-            <button class="nav-cart" id="header-cart-btn" aria-label="Cart">
+            <button class="nav-cart is-empty" id="header-cart-btn" aria-label="Cart">
                 <img src="images/ShoppingCart.png" alt="Cart" class="cart-icon">
+                <span class="cart-total-wrapper" aria-hidden="true">
+                    <span class="cart-total-label">Order</span>
+                    <span class="cart-total" id="header-cart-total">€ 0,00</span>
+                </span>
             </button>
         </nav>
     </div>
@@ -59,7 +70,7 @@ function renderSiteHeader() {
 }
 
 function renderSiteFooter() {
-    return `
+  return `
 <footer class="footer">
     <div class="container">
         <div class="footer-content">
@@ -101,35 +112,71 @@ function renderSiteFooter() {
 }
 
 function injectLayout() {
-    if (!document.getElementById('layout-cart-styles')) {
-        const link = document.createElement('link');
-        link.id = 'layout-cart-styles';
-        link.rel = 'stylesheet';
-        link.href = 'cart-sidebar.css';
-        document.head.appendChild(link);
-    }
+  if (!document.getElementById("layout-cart-styles")) {
+    const link = document.createElement("link");
+    link.id = "layout-cart-styles";
+    link.rel = "stylesheet";
+    link.href = "cart-sidebar.css";
+    document.head.appendChild(link);
+  }
 
-    const headerMount = document.getElementById('site-header');
-    if (headerMount) {
-        headerMount.outerHTML = renderSiteHeader();
-    }
+  const headerMount = document.getElementById("site-header");
+  if (headerMount) {
+    headerMount.outerHTML = renderSiteHeader();
+  }
 
-    const footerMount = document.getElementById('site-footer');
-    if (footerMount) {
-        footerMount.outerHTML = renderSiteFooter();
-    }
+  const footerMount = document.getElementById("site-footer");
+  if (footerMount) {
+    footerMount.outerHTML = renderSiteFooter();
+  }
 
-    if (!document.getElementById('cart-sidebar') && !document.getElementById('cart-overlay')) {
-        document.body.insertAdjacentHTML('beforeend', LAYOUT_CART_SIDEBAR_HTML);
-    }
+  if (
+    !document.getElementById("cart-sidebar") &&
+    !document.getElementById("cart-overlay")
+  ) {
+    document.body.insertAdjacentHTML("beforeend", LAYOUT_CART_SIDEBAR_HTML);
+  }
 
-    const burger = document.querySelector('.burger-menu');
-    if (burger) {
-        burger.addEventListener('click', () => {
-            const nav = document.querySelector('.nav-wrapper');
-            if (nav) nav.classList.toggle('open');
-        });
+  if (!document.getElementById("mobile-menu-overlay")) {
+    document.body.insertAdjacentHTML("beforeend", LAYOUT_MOBILE_MENU_OVERLAY_HTML);
+  }
+
+  const nav = document.querySelector(".nav-wrapper");
+  const burger = document.querySelector(".burger-menu");
+  const closeBtn = document.querySelector(".mobile-menu-close");
+  const mobileOverlay = document.getElementById("mobile-menu-overlay");
+
+  const setMenuOpen = (isOpen) => {
+    if (!nav) return;
+    nav.classList.toggle("open", isOpen);
+    document.body.classList.toggle("menu-open", isOpen);
+
+    if (mobileOverlay) {
+      mobileOverlay.style.display = isOpen ? "block" : "none";
     }
+  };
+
+  if (burger) {
+    burger.addEventListener("click", () => {
+      if (!nav) return;
+      setMenuOpen(!nav.classList.contains("open"));
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => setMenuOpen(false));
+  }
+
+  if (mobileOverlay) {
+    mobileOverlay.addEventListener("click", () => setMenuOpen(false));
+  }
+
+  if (nav) {
+    nav.addEventListener("click", (e) => {
+      const link = e.target && e.target.closest ? e.target.closest(".nav-links a") : null;
+      if (link) setMenuOpen(false);
+    });
+  }
 }
 
-document.addEventListener('DOMContentLoaded', injectLayout);
+document.addEventListener("DOMContentLoaded", injectLayout);

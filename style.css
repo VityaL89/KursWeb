@@ -118,7 +118,7 @@ body {
     padding: 16px;
     border-radius: 4px;
     background-color: #1A1A1A;
-    border: 9px;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,6 +126,30 @@ body {
     flex-shrink: 0;
     margin-right: -10px;
     margin-top: -1px;
+}
+
+.nav-cart.is-empty {
+    width: 56px;
+    padding: 16px;
+    justify-content: center;
+}
+
+.cart-total-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 18px;
+}
+
+.nav-cart.is-empty .cart-total-wrapper {
+    display: none;
+}
+
+.cart-total-label {
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #9CA3AF;
 }
 
 .nav-cart:hover {
@@ -142,7 +166,7 @@ body {
 
 .cart-total{
     color: white;
-    margin-left: 33px;
+    margin-left: 0;
     font-size: 18px;
     font-family: 'Hind';
     font-weight: 500;
@@ -918,11 +942,6 @@ body {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.btn-profile-header:hover {
-    background-color: #F5F5F5;
 }
 
 .btn-profile-header svg {
@@ -961,10 +980,10 @@ body {
 
 .slider-arrow  {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 11px);
     transform: translateY(-50%);
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     background: #ffffff;
     border: none;

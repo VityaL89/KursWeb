@@ -157,7 +157,7 @@
   .picks-grid {
         display: flex !important;
         flex-direction: row;
-        gap: 0px !important;
+        gap: 16px !important;
         margin: 0;
         padding: 0 16px 20px;
         overflow-x: auto;
@@ -172,8 +172,7 @@
 }
 
 .picks-grid::-webkit-scrollbar-track {
-  background: #E5E7EB; 
-  margin: 0 100px;  
+  background: transparent;
   border-radius: 10px;
 }
 
@@ -185,7 +184,7 @@
 
 .picks-grid {
   scrollbar-width: thin !important;
-  scrollbar-color: #64748B #E5E7EB;
+  scrollbar-color: #64748B transparent;
 }
 
   .restaurant-card {
@@ -404,13 +403,17 @@
 
 .categories-grid::-webkit-scrollbar-track {
   background: transparent;
-  margin: 0 110px;
   border-radius: 10px;
 }
 
 .categories-grid::-webkit-scrollbar-thumb {
-  background-color: #D1D5DB; 
-  border-radius: 20px;
+  background-color: #64748B;
+  border-radius: 10px;
+}
+
+.categories-grid {
+  scrollbar-width: thin;
+  scrollbar-color: #64748B transparent;
 }
 
 .category-card {
@@ -476,7 +479,7 @@
 .arrivals-grid {
   display: flex !important;
   flex-direction: row;
-  gap: 0px !important;
+  gap: 16px !important;
   margin: 0;
   padding: 0 16px 24px;
   overflow-x: auto;
@@ -489,7 +492,6 @@
 .arrivals-grid::-webkit-scrollbar {
   height: 4px; 
   display: block;
-  margin-top: 10px; 
 }
 
 .arrivals-grid::-webkit-scrollbar-track {
@@ -500,6 +502,11 @@
 .arrivals-grid::-webkit-scrollbar-thumb {
   background-color: #64748B;
   border-radius: 10px;
+}
+
+.arrivals-grid {
+  scrollbar-width: thin;
+  scrollbar-color: #64748B transparent;
 }
 
 

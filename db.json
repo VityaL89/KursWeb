@@ -1054,8 +1054,16 @@
       "id": "c3b4",
       "userId": "eb37",
       "restaurantId": null,
-      "items": [],
-      "total": 0
+      "items": [
+        {
+          "id": "15",
+          "name": "Tiramisu",
+          "description": "Classic Italian dessert",
+          "price": 4.5,
+          "quantity": 1
+        }
+      ],
+      "total": 4.5
     },
     {
       "id": "8a04",

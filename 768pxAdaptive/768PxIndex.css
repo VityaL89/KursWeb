@@ -67,14 +67,6 @@
         width: 100% !important;
     }
 
-    .auth-buttons {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-right: 6px;
-    margin-left: -40px;
-    }
-
     .card-arrow {
         display: none !important; 
     }
