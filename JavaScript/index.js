@@ -177,8 +177,7 @@ async function loadCategories() {
 // ============================
 
 document.querySelector('.main-banner-btn')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.location.href = 'Categories.html';
+    // keep default anchor navigation (href in HTML)
 });
 
 document.querySelector('.award-banner-btn')?.addEventListener('click', () => {

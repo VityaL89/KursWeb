@@ -157,7 +157,8 @@
 :root[data-theme="dark"] .cart-sidebar-header *,
 :root[data-theme="dark"] .lang-select,
 :root[data-theme="dark"] .menu-title,
-:root[data-theme="dark"] .no-restaurant-title {
+:root[data-theme="dark"] .no-restaurant-title,
+:root[data-theme="dark"] .restaurants-browser-title {
     color: var(--text);
 }
     
