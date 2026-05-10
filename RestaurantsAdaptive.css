@@ -5,6 +5,11 @@
         padding: 0 24px !important;
     }
 
+    #mobile-menu-overlay,
+    .mobile-menu-overlay {
+        display: none !important;
+    }
+
     .categories-banner-container {
         max-width: 100% !important;
         padding: 0 24px !important;

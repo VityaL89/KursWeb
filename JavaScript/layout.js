@@ -120,6 +120,11 @@ function injectLayout() {
     document.head.appendChild(link);
   }
 
+  const pathname = (window.location && window.location.pathname) ? window.location.pathname : "";
+  const isCategoriesChildPage = pathname.toLowerCase().endsWith("/categorieschild.html") ||
+    pathname.toLowerCase().endsWith("\\categorieschild.html") ||
+    pathname.toLowerCase().endsWith("categorieschild.html");
+
   const headerMount = document.getElementById("site-header");
   if (headerMount) {
     headerMount.outerHTML = renderSiteHeader();
@@ -137,7 +142,10 @@ function injectLayout() {
     document.body.insertAdjacentHTML("beforeend", LAYOUT_CART_SIDEBAR_HTML);
   }
 
-  if (!document.getElementById("mobile-menu-overlay")) {
+  if (isCategoriesChildPage) {
+    const existingOverlay = document.getElementById("mobile-menu-overlay");
+    if (existingOverlay) existingOverlay.remove();
+  } else if (!document.getElementById("mobile-menu-overlay")) {
     document.body.insertAdjacentHTML("beforeend", LAYOUT_MOBILE_MENU_OVERLAY_HTML);
   }
 
