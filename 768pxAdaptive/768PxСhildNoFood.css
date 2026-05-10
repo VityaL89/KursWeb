@@ -88,21 +88,4 @@
         align-items: center !important;
         height: 70px !important;
     }
-
-    .nav-links {
-        display: flex !important;
-        margin: 0 !important; 
-        gap: 20px !important;
-    }
-
-    @media screen and (max-width: 600px) {
-        .footer-nav {
-            justify-content: flex-start !important; 
-            gap: 25px !important;
-        }
-        
-        .footer-content {
-            flex-wrap: wrap !important; 
-        }
-    }
 }

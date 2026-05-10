@@ -15,11 +15,11 @@
     --bg-white: #ffffff;
 }
 
-body {
+:root[data-theme="dark"] body {
     background-color: var(--bg);
 }
 
-.header {
+:root[data-theme="dark"] .header {
     background-color: var(--surface);
 }
 
@@ -27,7 +27,7 @@ body {
     background-color: var(--bg);
 }
 
-.footer {
+:root[data-theme="dark"] .footer {
     background-color: #0b0f19;
 }
 
@@ -132,7 +132,14 @@ body {
 :root[data-theme="dark"] .tag,
 :root[data-theme="dark"] .food-modal-header h2 {
     color: var(--surface);
+}
 
+:root[data-theme="dark"] .picks-title,
+:root[data-theme="dark"] .categories-title,
+:root[data-theme="dark"] .arrivals-title,
+:root[data-theme="dark"] .about-title,
+:root[data-theme="dark"] .menu-category-title {
+    color: var(--text);
 }
 
 :root[data-theme="dark"] .restaurants-browser-subtitle,
@@ -148,20 +155,34 @@ body {
 :root[data-theme="dark"] .cart-item-quantity,
 :root[data-theme="dark"] .cart-total-row,
 :root[data-theme="dark"] .cart-sidebar-header *,
-:root[data-theme="dark"] .lang-select{
+:root[data-theme="dark"] .lang-select,
+:root[data-theme="dark"] .menu-title,
+:root[data-theme="dark"] .no-restaurant-title {
     color: var(--text);
-
+}
+    
+:root[data-theme="dark"] .about-content .container div *{
+    color: var(--text) !important; 
 }
     
 :root[data-theme="dark"] .cart-sidebar-footer button,
 :root[data-theme="dark"] .nav-wrapper{
-    background-color: var(--surface);
+    background-color: var(--surface) !important; 
 }
 
 :root[data-theme="dark"] .signup-section,
 :root[data-theme="dark"] .nav-cart,
-:root[data-theme="dark"] .login-section{
+:root[data-theme="dark"] .login-section,
+:root[data-theme="dark"] .profile-section,
+:root[data-theme="dark"] .cart-sidebar-footer,
+:root[data-theme="dark"] .cart-sidebar-header,
+:root[data-theme="dark"] .cart-item-quantity,
+:root[data-theme="dark"] .no-restaurant {
     background-color: var(--bg);
+}
+
+:root[data-theme="dark"] .about-content{
+    background-color: var(--bg) !important; 
 }
 
 /* БЕЛЫЙ ФОН */

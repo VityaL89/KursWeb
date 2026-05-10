@@ -213,5 +213,6 @@
     .main-banner-btn {
         max-width: 320px;
         justify-content: center;
+        margin-left: 80px !important;
     }
 }

@@ -377,3 +377,7 @@ checkout-page {
     margin-top: 2px;
     margin-right: -8px;
 }
+
+:root[data-theme="dark"] .header {
+    background-color: #0b0f19 !important;
+}

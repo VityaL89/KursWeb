@@ -6,7 +6,31 @@
     }
 
     .header .container {
-        padding: 10px 20px !important;
+        padding: 8px 16px !important;
+    }
+
+    .nav-wrapper {
+        gap: 6px !important;
+    }
+
+    .nav-actions {
+        gap: 6px !important;
+    }
+
+    .theme-toggle,
+    .a11y-toggle,
+    .btn-profile-header {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
+        padding: 0 !important;
+    }
+
+    .lang-select {
+        height: 36px !important;
+        font-size: 13px !important;
+        padding: 0 6px !important;
     }
 
     .logo-icon {
@@ -15,7 +39,6 @@
 
     .nav-cart {
         margin-left: -1px;
-        width: 150px;
         margin-right: -13px !important;
     }
 
@@ -39,7 +62,7 @@
     }
 
     .main-banner-btn {
-        margin-left: 179px !important;
+        margin-left: 130px !important;
         margin-top: 30px !important;
     }
 
@@ -207,5 +230,34 @@
 
     .cart-sidebar {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .header .container {
+        padding: 6px 12px !important;
+    }
+
+    .nav-wrapper {
+        gap: 4px !important;
+    }
+
+    .nav-actions {
+        gap: 4px !important;
+    }
+
+    .theme-toggle,
+    .a11y-toggle,
+    .btn-profile-header {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+    }
+
+    .lang-select {
+        height: 32px !important;
+        font-size: 12px !important;
+        padding: 0 4px !important;
     }
 }

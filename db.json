@@ -738,6 +738,34 @@
         }
       ],
       "total": 11.5
+    },
+    {
+      "id": "1788",
+      "userId": "eb37",
+      "createdAt": "2026-05-10T18:23:47.242Z",
+      "status": "Accepted",
+      "contact": {
+        "firstName": "anna2",
+        "lastName": "sam",
+        "email": "anna2@gmail.com",
+        "phone": ""
+      },
+      "address": {
+        "streetname": "ьтимс",
+        "house": "тимсч",
+        "zipcode": "рипмас",
+        "city": "тьимсч"
+      },
+      "items": [
+        {
+          "id": "32",
+          "name": "Classic Pepperoni",
+          "description": "Pepperoni pizza with mozzarella",
+          "price": 10.5,
+          "quantity": 1
+        }
+      ],
+      "total": 10.5
     }
   ],
   "notifications": [
@@ -1054,16 +1082,8 @@
       "id": "c3b4",
       "userId": "eb37",
       "restaurantId": null,
-      "items": [
-        {
-          "id": "15",
-          "name": "Tiramisu",
-          "description": "Classic Italian dessert",
-          "price": 4.5,
-          "quantity": 1
-        }
-      ],
-      "total": 4.5
+      "items": [],
+      "total": 0
     },
     {
       "id": "8a04",

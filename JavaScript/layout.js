@@ -336,4 +336,8 @@ function injectLayout() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", injectLayout);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", injectLayout);
+} else {
+  injectLayout();
+}
