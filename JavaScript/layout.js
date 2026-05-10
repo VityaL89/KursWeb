@@ -24,6 +24,7 @@ const LAYOUT_MOBILE_MENU_OVERLAY_HTML = `
 `;
 
 const THEME_STORAGE_KEY = "theme";
+const A11Y_STORAGE_KEY = "a11y";
 
 function ensureThemeStyles() {
   if (document.getElementById("layout-theme-styles")) return;
@@ -31,6 +32,15 @@ function ensureThemeStyles() {
   link.id = "layout-theme-styles";
   link.rel = "stylesheet";
   link.href = "theme.css";
+  document.head.appendChild(link);
+}
+
+function ensureA11yStyles() {
+  if (document.getElementById("layout-a11y-styles")) return;
+  const link = document.createElement("link");
+  link.id = "layout-a11y-styles";
+  link.rel = "stylesheet";
+  link.href = "a11y.css";
   document.head.appendChild(link);
 }
 
@@ -52,6 +62,24 @@ function toggleTheme() {
   applyTheme(next);
 }
 
+function applyA11y(isOn) {
+  document.documentElement.setAttribute("data-a11y", isOn ? "on" : "off");
+}
+
+function getPreferredA11y() {
+  const saved = localStorage.getItem(A11Y_STORAGE_KEY);
+  if (saved === "on") return true;
+  if (saved === "off") return false;
+  return false;
+}
+
+function toggleA11y() {
+  const current = document.documentElement.getAttribute("data-a11y") || "off";
+  const nextIsOn = current !== "on";
+  localStorage.setItem(A11Y_STORAGE_KEY, nextIsOn ? "on" : "off");
+  applyA11y(nextIsOn);
+}
+
 function renderSiteHeader() {
   return `
 <header class="header">
@@ -69,10 +97,14 @@ function renderSiteHeader() {
 
         <nav class="nav-wrapper">
 
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
+            </button>
+
+            <button class="a11y-toggle" id="a11y-toggle" type="button" aria-label="Accessibility mode">
+                A
             </button>
 
             <div class="auth-buttons">
@@ -148,6 +180,9 @@ function injectLayout() {
   ensureThemeStyles();
   applyTheme(getPreferredTheme());
 
+  ensureA11yStyles();
+  applyA11y(getPreferredA11y());
+
   if (!document.getElementById("layout-cart-styles")) {
     const link = document.createElement("link");
     link.id = "layout-cart-styles";
@@ -190,6 +225,7 @@ function injectLayout() {
   const closeBtn = document.querySelector(".mobile-menu-close");
   const mobileOverlay = document.getElementById("mobile-menu-overlay");
   const themeToggle = document.getElementById("theme-toggle");
+  const a11yToggle = document.getElementById("a11y-toggle");
 
   const setMenuOpen = (isOpen) => {
     if (!nav) return;
@@ -225,6 +261,10 @@ function injectLayout() {
 
   if (themeToggle) {
     themeToggle.addEventListener("click", toggleTheme);
+  }
+
+  if (a11yToggle) {
+    a11yToggle.addEventListener("click", toggleA11y);
   }
 }
 

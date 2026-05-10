@@ -15,19 +15,19 @@
 }
 
 body {
-    background-color: var(--bg) !important;
+    background-color: var(--bg);
 }
 
 .header {
-    background-color: var(--surface) !important;
+    background-color: var(--surface);
 }
 
 :root[data-theme="dark"] main {
-    background-color: var(--bg) !important;
+    background-color: var(--bg);
 }
 
 .footer {
-    background-color: #0b0f19 !important;
+    background-color: #0b0f19;
 }
 
 .theme-toggle {
@@ -42,6 +42,22 @@ body {
     cursor: pointer;
 }
 
+.a11y-toggle {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--text);
+}
+
 .theme-toggle svg {
     display: block;
 }
@@ -50,28 +66,27 @@ body {
     background: rgba(255, 255, 255, 0.06);
 }
 
+:root[data-theme="dark"] .a11y-toggle {
+    background: rgba(255, 255, 255, 0.06);
+}
+
 :root[data-theme="dark"] .logo span,
 :root[data-theme="dark"] .nav-home,
 :root[data-theme="dark"] .nav-all {
-    color: var(--text) !important;
+    color: var(--text);
 }
 
 :root[data-theme="dark"] .btn-profile-header path {
-    stroke: var(--text) !important;
+    stroke: var(--text);
 }
 
 :root[data-theme="dark"] .nav-cart {
-    background-color: #0f172a !important;
+    background-color: #0f172a;
 }
 
 :root[data-theme="dark"] .nav-cart:hover {
-    background-color: #111f3d !important;
+    background-color: #111f3d ;
 }
-
-h1, h2, h3, h4, h5, h6 {
-    color: var(--text) !important;
-}
-
 
 .menu-section,
 .restaurant-about,
@@ -82,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 .restaurant-list,
 .cart-sidebar-content,
 .signup-section * {
-    background-color: var(--bg) !important;
+    background-color: var(--bg);
 }
 
 
@@ -92,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 .menu-item-name,
 .tag,
 .food-modal-header h2 {
-    color: var(--surface) !important;
+    color: var(--surface);
 
 }
 
@@ -109,11 +124,11 @@ h1, h2, h3, h4, h5, h6 {
 .cart-item-quantity,
 .cart-total-row,
 .cart-sidebar-header *{
-    color: var(--text) !important;
+    color: var(--text);
 
 }
 
 .cart-sidebar-footer button,
 .signup-card {
-    background-color: var(--surface) !important;
+    background-color: var(--surface);
 }
