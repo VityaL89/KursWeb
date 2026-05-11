@@ -23,6 +23,20 @@ const LAYOUT_MOBILE_MENU_OVERLAY_HTML = `
 <div id="mobile-menu-overlay" class="mobile-menu-overlay" style="display: none;"></div>
 `;
 
+const LAYOUT_LOADING_OVERLAY_HTML = `
+<div id="global-loading-overlay" class="global-loading-overlay" aria-hidden="true">
+  <div class="loading-spinner">
+    <p class="loading-text">Looking for some food…</p>
+    <div class="pacman-row" aria-hidden="true">
+      <div class="pacman"></div>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</div>
+`;
+
 const THEME_STORAGE_KEY = "theme";
 const A11Y_STORAGE_KEY = "a11y";
 
@@ -42,6 +56,31 @@ function ensureA11yStyles() {
   link.rel = "stylesheet";
   link.href = "a11y.css";
   document.head.appendChild(link);
+}
+
+function ensureLoadingStyles() {
+  if (document.getElementById("layout-loading-styles")) return;
+  const link = document.createElement("link");
+  link.id = "layout-loading-styles";
+  link.rel = "stylesheet";
+  link.href = "LoadingPageStyle.css";
+  document.head.appendChild(link);
+}
+
+function showGlobalLoadingOverlay() {
+  ensureLoadingStyles();
+
+  if (!document.getElementById("global-loading-overlay")) {
+    document.body.insertAdjacentHTML("afterbegin", LAYOUT_LOADING_OVERLAY_HTML);
+  }
+
+  const overlay = document.getElementById("global-loading-overlay");
+  if (overlay) overlay.style.display = "flex";
+}
+
+function hideGlobalLoadingOverlay() {
+  const overlay = document.getElementById("global-loading-overlay");
+  if (overlay) overlay.style.display = "none";
 }
 
 function getPreferredTheme() {
@@ -233,6 +272,8 @@ function renderSiteFooter() {
 }
 
 function injectLayout() {
+  showGlobalLoadingOverlay();
+
   ensureThemeStyles();
   applyTheme(getPreferredTheme());
 
@@ -333,6 +374,12 @@ function injectLayout() {
     langSelect.addEventListener("change", () => {
       setGoogleTranslateLanguage(langSelect.value);
     });
+  }
+
+  if (document.readyState === "complete") {
+    hideGlobalLoadingOverlay();
+  } else {
+    window.addEventListener("load", hideGlobalLoadingOverlay, { once: true });
   }
 }
 

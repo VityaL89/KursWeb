@@ -19,6 +19,16 @@ body {
     color: #1a1a1a;
 }
 
+.global-loading-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.92);
+    z-index: 5000;
+}
+
 .header {
     background-color: #ffffff;
     width: 100%;
@@ -202,6 +212,7 @@ body {
     background-color: #12A39D;
     z-index: 2;
     margin-top: 3px;
+    animation: dot-pulse 1s infinite ease-in-out;
 }
 
 .dot:nth-child(2) {
@@ -296,10 +307,27 @@ body {
 
 @keyframes mouth-move {
     0% {
-        clip-path: polygon(100% 60%, 44% 48%, 100% 35%); 
+        clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    }
+
+    50% {
+        clip-path: polygon(100% 60%, 44% 48%, 100% 35%);
     }
 
     100% {
-        clip-path: polygon(100% 60%, 44% 48%, 100% 35%); 
+        clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    }
+}
+
+@keyframes dot-pulse {
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: translateX(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-6px);
     }
 }
