@@ -62,8 +62,12 @@ function initSlider(container, leftBtn, rightBtn) {
 function createRestaurantCard(restaurant) {
     const card = document.createElement('div');
     card.className = 'restaurant-card';
+    const newTag = restaurant.isNew ? '<span class="new-tag">new</span>' : '';
     card.innerHTML = `
-        <img src="${restaurant.image}" alt="${restaurant.name}" class="card-img">
+        <div class="restaurant-card-wrapper">
+            <img src="${restaurant.image}" alt="${restaurant.name}" class="card-img">
+            ${newTag}
+        </div>
         <div class="card-content">
             <h3 class="card-title">${restaurant.name}</h3>
             <div class="card-review">

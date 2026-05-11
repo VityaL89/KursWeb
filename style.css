@@ -707,6 +707,27 @@ body {
     position: relative;
 }
 
+.new-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #E5F8BC;
+    border-radius: 8px;
+    min-width: 67px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 9px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 22.5px;
+    font-weight: 500;
+    color: #1A1A1A;
+    line-height: 1;
+    text-transform: lowercase;
+    z-index: 2;
+}
+
 .card-arrow {
     position: absolute;
     top: 54%;
