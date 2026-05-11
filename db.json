@@ -766,6 +766,41 @@
         }
       ],
       "total": 10.5
+    },
+    {
+      "userId": "rrWfIKUgkEo",
+      "createdAt": "2026-05-10T20:39:01.185Z",
+      "status": "Accepted",
+      "contact": {
+        "firstName": "Vitaliy",
+        "lastName": "Luzko",
+        "email": "luzko09@mail.ru",
+        "phone": "+375 (33) 333-33-33"
+      },
+      "address": {
+        "streetname": "Leninskaya",
+        "house": "18",
+        "zipcode": "1234AB",
+        "city": "Mogilev"
+      },
+      "items": [
+        {
+          "id": "1",
+          "name": "Cheeseburger",
+          "description": "Nice grilled burger with cheese",
+          "price": 8.5,
+          "quantity": 3
+        },
+        {
+          "id": "2",
+          "name": "Fries",
+          "description": "Fried french fries",
+          "price": 2.5,
+          "quantity": 1
+        }
+      ],
+      "total": 28,
+      "id": "NLL4nazZZ_4"
     }
   ],
   "notifications": [
@@ -1082,8 +1117,16 @@
       "id": "c3b4",
       "userId": "eb37",
       "restaurantId": null,
-      "items": [],
-      "total": 0
+      "items": [
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ],
+      "total": 9.5
     },
     {
       "id": "8a04",
@@ -1099,6 +1142,471 @@
         }
       ],
       "total": 10.5
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ],
+      "total": 9.5,
+      "id": "j-OVr5WKmfY"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ],
+      "total": 9.5,
+      "id": "6Z0kzPkM4sM"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ],
+      "total": 9.5,
+      "id": "sqEtr6OdL4M"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 3
+        }
+      ],
+      "total": 28.5,
+      "id": "d30mDvn9y6g"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 1
+        }
+      ],
+      "total": 11.5,
+      "id": "Z8NQCkMZawk"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 1
+        }
+      ],
+      "total": 11.5,
+      "id": "QHkp7p5nCAs"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 1
+        }
+      ],
+      "total": 11.5,
+      "id": "6MAwBUDgSTI"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 1
+        }
+      ],
+      "total": 11.5,
+      "id": "n1_HKWtpWGs"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 1
+        }
+      ],
+      "total": 11.5,
+      "id": "4PmkvCUsCXo"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 1
+        }
+      ],
+      "total": 11.5,
+      "id": "6Jwy6-BLZWo"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "18",
+          "name": "Tuna Maki",
+          "description": "Tuna roll with rice and seaweed",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5,
+      "id": "m5CxBHuICRo"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "18",
+          "name": "Tuna Maki",
+          "description": "Tuna roll with rice and seaweed",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5,
+      "id": "alpJGSTo2ho"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "1",
+          "name": "Cheeseburger",
+          "description": "Nice grilled burger with cheese",
+          "price": 8.5,
+          "quantity": 1
+        }
+      ],
+      "total": 8.5,
+      "id": "rhAipSnWdWM"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "2",
+          "name": "Fries",
+          "description": "Fried french fries",
+          "price": 2.5,
+          "quantity": 1
+        }
+      ],
+      "total": 2.5,
+      "id": "B_av7IoC8qg"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "2",
+          "name": "Fries",
+          "description": "Fried french fries",
+          "price": 2.5,
+          "quantity": 1
+        }
+      ],
+      "total": 2.5,
+      "id": "_FQTfS6VaYg"
+    },
+    {
+      "userId": "7023",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "1",
+          "name": "Cheeseburger",
+          "description": "Nice grilled burger with cheese",
+          "price": 8.5,
+          "quantity": 1
+        }
+      ],
+      "total": 8.5,
+      "id": "FFSvuUIZnaY"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ],
+      "total": 9.5,
+      "id": "3rUSgCEVQOg"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "7",
+          "name": "Double Cheeseburger",
+          "description": "Double patty with cheese",
+          "price": 11.5,
+          "quantity": 3
+        }
+      ],
+      "total": 34.5,
+      "id": "fybAtN-huK8"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "25",
+          "name": "Chocolate Fondue",
+          "description": "Melted chocolate with fruits",
+          "price": 7.5,
+          "quantity": 3
+        }
+      ],
+      "total": 22.5,
+      "id": "4G6BTONSDtw"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "25",
+          "name": "Chocolate Fondue",
+          "description": "Melted chocolate with fruits",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5,
+      "id": "W3rjnpC6twU"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "25",
+          "name": "Chocolate Fondue",
+          "description": "Melted chocolate with fruits",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5,
+      "id": "l12F6QeNeIU"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "25",
+          "name": "Chocolate Fondue",
+          "description": "Melted chocolate with fruits",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5,
+      "id": "IfgkSiDl8Os"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "25",
+          "name": "Chocolate Fondue",
+          "description": "Melted chocolate with fruits",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5,
+      "id": "gKcTQKGEX7w"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "25",
+          "name": "Chocolate Fondue",
+          "description": "Melted chocolate with fruits",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5,
+      "id": "BH86Y0CaP8o"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "25",
+          "name": "Chocolate Fondue",
+          "description": "Melted chocolate with fruits",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5,
+      "id": "fFlRLulZ8w8"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "25",
+          "name": "Chocolate Fondue",
+          "description": "Melted chocolate with fruits",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5,
+      "id": "cMHcTaQsEK0"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "25",
+          "name": "Chocolate Fondue",
+          "description": "Melted chocolate with fruits",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5,
+      "id": "TKOFxyQt4zM"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "25",
+          "name": "Chocolate Fondue",
+          "description": "Melted chocolate with fruits",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ],
+      "total": 7.5,
+      "id": "FL_jE0r9vMk"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "26",
+          "name": "Waffle with Berries",
+          "description": "Belgian waffle with fresh berries",
+          "price": 6.5,
+          "quantity": 1
+        }
+      ],
+      "total": 6.5,
+      "id": "M1ZJ4487yf8"
+    },
+    {
+      "userId": "2",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "13",
+          "name": "Pepperoni",
+          "description": "Tomato sauce, mozzarella, pepperoni",
+          "price": 11.5,
+          "quantity": 1
+        }
+      ],
+      "total": 11.5,
+      "id": "L6YrwUZfDPM"
+    },
+    {
+      "userId": "rrWfIKUgkEo",
+      "restaurantId": null,
+      "items": [
+        {
+          "id": "8",
+          "name": "Crispy Chicken",
+          "description": "Crispy chicken sandwich",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ],
+      "total": 9.5,
+      "id": "LUmIuijLrEA"
     }
   ],
   "users": [
@@ -1110,16 +1618,6 @@
       "email": "admin@mealdrop.com",
       "password": "admin123",
       "role": "admin",
-      "phone": "+1234567890"
-    },
-    {
-      "id": "2",
-      "firstName": "John",
-      "lastName": "Doe",
-      "username": "john_doe",
-      "email": "john@example.com",
-      "password": "password123",
-      "role": "user",
       "phone": "+1234567890"
     },
     {
@@ -1141,6 +1639,16 @@
       "role": "user",
       "username": "anna2",
       "phone": ""
+    },
+    {
+      "firstName": "Vitaliy",
+      "lastName": "Luzko",
+      "email": "luzko09@mail.ru",
+      "password": "4519898",
+      "role": "user",
+      "username": "luzko09",
+      "phone": "",
+      "id": "rrWfIKUgkEo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

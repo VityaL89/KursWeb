@@ -1,4 +1,3 @@
-// JavaScript/auth.js
 const API_URL = 'http://localhost:3000';
 
 const GUEST_CART_STORAGE_KEY = 'guestCart';

@@ -1,6 +1,4 @@
-// ============================
-// СЛАЙДЕРЫ
-// ============================
+
 
 function updateArrows(container, leftBtn, rightBtn) {
     const scrollLeft = container.scrollLeft;
@@ -55,9 +53,7 @@ function initSlider(container, leftBtn, rightBtn) {
     });
 }
 
-// ============================
-// КАРТОЧКИ РЕСТОРАНОВ
-// ============================
+
 
 function createRestaurantCard(restaurant) {
     const card = document.createElement('div');
@@ -87,16 +83,11 @@ function createRestaurantCard(restaurant) {
     return card;
 }
 
-// ============================
-// ЗАГРУЗКА РЕСТОРАНОВ
-// ============================
-
 async function loadRestaurants() {
     try {
         const response = await fetch(`${API_URL}/restaurants`);
         const restaurants = await response.json();
 
-        // Picks
         const picksGrid = document.querySelector('.picks .slider-track');
         if (picksGrid) {
             picksGrid.innerHTML = '';
@@ -114,7 +105,6 @@ async function loadRestaurants() {
             }
         }
 
-        // Arrivals
         const arrivalsGrid = document.querySelector('.arrivals .slider-track');
         if (arrivalsGrid) {
             arrivalsGrid.innerHTML = '';
@@ -141,9 +131,6 @@ async function loadRestaurants() {
     }
 }
 
-// ============================
-// ЗАГРУЗКА КАТЕГОРИЙ
-// ============================
 
 async function loadCategories() {
     try {
@@ -172,16 +159,8 @@ async function loadCategories() {
     }
 }
 
-// ============================
-// КОРЗИНА
-// ============================
-
-// ============================
-// ОБРАБОТЧИКИ СОБЫТИЙ
-// ============================
 
 document.querySelector('.main-banner-btn')?.addEventListener('click', (e) => {
-    // keep default anchor navigation (href in HTML)
 });
 
 document.querySelector('.award-banner-btn')?.addEventListener('click', () => {
@@ -194,7 +173,7 @@ document.querySelector('.view-all-link')?.addEventListener('click', (e) => {
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
-    // Проверяем, что API_URL определена
+
     if (typeof API_URL === 'undefined') {
         console.error('API_URL не определена! Проверьте подключение auth.js');
         return;

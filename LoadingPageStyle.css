@@ -123,7 +123,6 @@ body {
 }
 
 .nav-cart {
-    width: 56px;
     height: 56px;
     padding: 16px;
     border-radius: 4px;
@@ -230,7 +229,7 @@ body {
     background-color: #2c2c2c; 
     padding: 80px 0;           
     color: #FFFFFF;
-    margin-top: 377px;
+    margin-top: -8px;
 }
 
 .footer-content {
@@ -243,7 +242,7 @@ body {
 .footer-logo-img {
     width: 120px;  
     height: auto;
-    margin-left: 210px;
+    margin-left: 184px;
     margin-top: 11px;
 }
 
@@ -290,17 +289,17 @@ body {
 }
 
 .footer-column:nth-child(1) {
-    margin-right: 203px;
+    margin-right: 202px;
     margin-top: -32px;
 }
 
 .footer-column:nth-child(2) {
-    margin-right: 141px;
+    margin-right: 143px;
     margin-top: -32px;
 }
 
 .footer-column:nth-child(3) {
-    margin-right: 72px;
+    margin-right: 47px;
     margin-top: -32px;
 }
 
