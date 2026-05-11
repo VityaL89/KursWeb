@@ -70,7 +70,13 @@
     padding-top: 3rem;
     padding-bottom: 5rem;
     background-color: #f9f9f9;
-    margin-left: 100px;
+    margin-left: -3px;
+    }
+
+    .menu-category{
+        margin-bottom: 3rem;
+        margin-top: -16px;
+        margin-left: 3px;
     }
 
     .menu-grid {

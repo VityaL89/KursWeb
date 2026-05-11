@@ -261,7 +261,7 @@ body {
         align-items: center;
         position: absolute;
         left: 16px;
-        top: 50%;
+        top: 30%;
         transform: translateY(-50%);
         width: 22px;
         height: 22px;
@@ -283,8 +283,8 @@ body {
 
     .logo {
         position: absolute;
-        left: 50%;
-        top: 50%;
+        left: 47%;
+        top: 33%;
         transform: translate(-50%, -50%);
         margin: 0;
         gap: 0;
