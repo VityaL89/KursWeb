@@ -1596,16 +1596,8 @@
     {
       "userId": "rrWfIKUgkEo",
       "restaurantId": null,
-      "items": [
-        {
-          "id": "8",
-          "name": "Crispy Chicken",
-          "description": "Crispy chicken sandwich",
-          "price": 9.5,
-          "quantity": 1
-        }
-      ],
-      "total": 9.5,
+      "items": [],
+      "total": 0,
       "id": "LUmIuijLrEA"
     }
   ],
