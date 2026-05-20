@@ -58,6 +58,116 @@ function loadContactDetailsFromSession() {
     return { firstName: '', lastName: '', email: '', phone: '' };
 }
 
+// ========== ВАЛИДАЦИЯ АДРЕСА ==========
+
+function validateStreetname(streetname) {
+    if (!streetname || streetname.trim() === '') {
+        return { valid: false, message: 'Street name is required' };
+    }
+    if (streetname.length < 2) {
+        return { valid: false, message: 'Street name must be at least 2 characters' };
+    }
+    if (streetname.length > 100) {
+        return { valid: false, message: 'Street name must be less than 100 characters' };
+    }
+    return { valid: true, message: '' };
+}
+
+function validateHouse(house) {
+    if (!house || house.trim() === '') {
+        return { valid: false, message: 'House number is required' };
+    }
+    if (house.length > 10) {
+        return { valid: false, message: 'House number must be less than 10 characters' };
+    }
+    if (!/^[a-zA-Z0-9\s\/\-]+$/.test(house)) {
+        return { valid: false, message: 'House number can only contain letters, numbers, spaces, slashes and hyphens' };
+    }
+    return { valid: true, message: '' };
+}
+
+function validateZipcode(zipcode) {
+    if (!zipcode || zipcode.trim() === '') {
+        return { valid: false, message: 'Zipcode is required' };
+    }
+    const zipRegex = /^[a-zA-Z0-9\s\-]{3,10}$/;
+    if (!zipRegex.test(zipcode)) {
+        return { valid: false, message: 'Please enter a valid zipcode (3-10 characters, letters and numbers only)' };
+    }
+    return { valid: true, message: '' };
+}
+
+function validateCity(city) {
+    if (!city || city.trim() === '') {
+        return { valid: false, message: 'City is required' };
+    }
+    if (city.length < 2) {
+        return { valid: false, message: 'City name must be at least 2 characters' };
+    }
+    if (city.length > 50) {
+        return { valid: false, message: 'City name must be less than 50 characters' };
+    }
+    if (!/^[a-zA-Zа-яА-ЯёЁ\s'-]+$/.test(city)) {
+        return { valid: false, message: 'City name can only contain letters, spaces, hyphens and apostrophes' };
+    }
+    return { valid: true, message: '' };
+}
+
+// ========== ОТОБРАЖЕНИЕ ОШИБОК АДРЕСА ==========
+
+function showAddressError(inputId, errorMessage) {
+    const input = document.getElementById(inputId);
+    const formGroup = input?.closest('.delivery-group');
+    if (!formGroup) return;
+
+    const existingError = formGroup.querySelector('.field-error');
+    if (existingError) existingError.remove();
+
+    if (errorMessage) {
+        input.style.border = '1px solid #DC2626';
+        input.style.backgroundColor = '#FEF2F2';
+        
+        const errorSpan = document.createElement('span');
+        errorSpan.className = 'field-error';
+        errorSpan.style.cssText = 'color: #DC2626; font-size: 12px; margin-top: 4px; display: block;';
+        errorSpan.textContent = errorMessage;
+        formGroup.appendChild(errorSpan);
+    } else {
+        input.style.border = '';
+        input.style.backgroundColor = '';
+    }
+}
+
+function clearAllAddressErrors() {
+    const errors = document.querySelectorAll('.field-error');
+    errors.forEach(error => error.remove());
+    
+    const inputs = document.querySelectorAll('.delivery-group input');
+    inputs.forEach(input => {
+        input.style.border = '';
+        input.style.backgroundColor = '';
+    });
+}
+
+function validateAllAddressFields() {
+    const streetname = document.getElementById('streetname')?.value || '';
+    const house = document.getElementById('house')?.value || '';
+    const zipcode = document.getElementById('zipcode')?.value || '';
+    const city = document.getElementById('city')?.value || '';
+
+    const streetResult = validateStreetname(streetname);
+    const houseResult = validateHouse(house);
+    const zipResult = validateZipcode(zipcode);
+    const cityResult = validateCity(city);
+
+    showAddressError('streetname', streetResult.valid ? '' : streetResult.message);
+    showAddressError('house', houseResult.valid ? '' : houseResult.message);
+    showAddressError('zipcode', zipResult.valid ? '' : zipResult.message);
+    showAddressError('city', cityResult.valid ? '' : cityResult.message);
+
+    return streetResult.valid && houseResult.valid && zipResult.valid && cityResult.valid;
+}
+
 function getAddressDetailsFromForm() {
     return {
         streetname: document.getElementById('streetname')?.value || '',
@@ -65,6 +175,41 @@ function getAddressDetailsFromForm() {
         zipcode: document.getElementById('zipcode')?.value || '',
         city: document.getElementById('city')?.value || ''
     };
+}
+
+function bindRealTimeAddressValidation() {
+    const streetname = document.getElementById('streetname');
+    const house = document.getElementById('house');
+    const zipcode = document.getElementById('zipcode');
+    const city = document.getElementById('city');
+
+    if (streetname) {
+        streetname.addEventListener('input', () => {
+            const result = validateStreetname(streetname.value);
+            showAddressError('streetname', result.valid ? '' : result.message);
+        });
+    }
+
+    if (house) {
+        house.addEventListener('input', () => {
+            const result = validateHouse(house.value);
+            showAddressError('house', result.valid ? '' : result.message);
+        });
+    }
+
+    if (zipcode) {
+        zipcode.addEventListener('input', () => {
+            const result = validateZipcode(zipcode.value);
+            showAddressError('zipcode', result.valid ? '' : result.message);
+        });
+    }
+
+    if (city) {
+        city.addEventListener('input', () => {
+            const result = validateCity(city.value);
+            showAddressError('city', result.valid ? '' : result.message);
+        });
+    }
 }
 
 async function createOrder(orderPayload) {
@@ -93,6 +238,17 @@ function bindStep2Navigation() {
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        
+        clearAllAddressErrors();
+        const isValid = validateAllAddressFields();
+        
+        if (!isValid) {
+            const firstError = document.querySelector('.field-error');
+            if (firstError) {
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+        }
 
         const contact = loadContactDetailsFromSession();
         const address = getAddressDetailsFromForm();
@@ -117,21 +273,39 @@ function bindStep2Navigation() {
             total
         };
 
-        const created = await createOrder(orderPayload);
-
-        await clearCurrentCart();
-        sessionStorage.removeItem('orderContactDetails');
-
-        window.location.href = `FinalOrder3.html?orderId=${encodeURIComponent(created.id)}`;
+        try {
+            const created = await createOrder(orderPayload);
+            await clearCurrentCart();
+            sessionStorage.removeItem('orderContactDetails');
+            window.location.href = `FinalOrder3.html?orderId=${encodeURIComponent(created.id)}`;
+        } catch (error) {
+            console.error('Order creation failed:', error);
+            alert('Failed to create order. Please try again.');
+        }
     });
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+    bindRealTimeAddressValidation();
     bindStep2Navigation();
 
     try {
         const cart = await loadCurrentCart();
         renderOrderItems(cart);
+        
+        if (!cart.items || cart.items.length === 0) {
+            const placeOrderBtn = document.querySelector('.btn-place-order');
+            if (placeOrderBtn) {
+                placeOrderBtn.disabled = true;
+                placeOrderBtn.style.opacity = '0.5';
+                placeOrderBtn.style.cursor = 'not-allowed';
+                
+                const warning = document.createElement('div');
+                warning.style.cssText = 'color: #DC2626; font-size: 14px; margin-top: 16px; text-align: center;';
+                warning.textContent = 'Your cart is empty. Please add items before proceeding.';
+                document.querySelector('.delivery-section')?.appendChild(warning);
+            }
+        }
     } catch (e) {
         console.error('Failed to render order items on step2', e);
     }
