@@ -7,10 +7,10 @@
 }
 
 :root[data-theme="dark"] {
-    --bg: #0b0f19;
-    --surface: #111827;
-    --text: #f9fafb;
-    --muted: #9CA3AF;
+    --bg: #202020;
+    --surface: #2C2C2C;
+    --text: #ffffff;
+    --muted: #D2D2D2;
     --border: rgba(255, 255, 255, 0.12);
     --bg-white: #ffffff;
 }
@@ -20,7 +20,7 @@
 }
 
 :root[data-theme="dark"] .header {
-    background-color: var(--surface);
+    background-color: #202020;
 }
 
 :root[data-theme="dark"] main {
@@ -28,7 +28,7 @@
 }
 
 :root[data-theme="dark"] .footer {
-    background-color: #0b0f19;
+    background-color: #2C2C2C;
 }
 
 .theme-toggle {
@@ -38,7 +38,6 @@
     align-items: center;
     justify-content: center;
     background: none;
-    /* border: 1px solid var(--border); */
     border: none;
     cursor: pointer;
 }
@@ -106,11 +105,11 @@
 }
 
 :root[data-theme="dark"] .nav-cart {
-    background-color: #0f172a;
+    background-color: #2C2C2C;
 }
 
 :root[data-theme="dark"] .nav-cart:hover {
-    background-color: #111f3d ;
+    background-color: #404040;
 }
 
 :root[data-theme="dark"] .menu-section,
@@ -124,14 +123,15 @@
     background-color: var(--bg);
 }
 
-
 :root[data-theme="dark"] .award-banner-title,
-:root[data-theme="dark"] .main-banner-title,
-:root[data-theme="dark"] .categories-banner-title,
 :root[data-theme="dark"] .menu-item-name,
 :root[data-theme="dark"] .tag,
 :root[data-theme="dark"] .food-modal-header h2 {
-    color: var(--surface);
+    color: var(--text);
+}
+
+:root[data-theme="dark"] .main-banner-title{
+    color: #1A1A1A;
 }
 
 :root[data-theme="dark"] .picks-title,
@@ -149,26 +149,28 @@
 :root[data-theme="dark"] .about-description,
 :root[data-theme="dark"] .rating-label,
 :root[data-theme="dark"] .rating-value,
-:root[data-theme="dark"] .star-icon,
 :root[data-theme="dark"] .cart-item-name,
 :root[data-theme="dark"] .cart-item-price,
 :root[data-theme="dark"] .cart-item-quantity,
 :root[data-theme="dark"] .cart-total-row,
 :root[data-theme="dark"] .cart-sidebar-header *,
-:root[data-theme="dark"] .lang-select,
 :root[data-theme="dark"] .menu-title,
 :root[data-theme="dark"] .no-restaurant-title,
 :root[data-theme="dark"] .restaurants-browser-title {
     color: var(--text);
 }
+
+:root[data-theme="dark"] .lang-select{
+    background-color:#202020;
+}
     
-:root[data-theme="dark"] .about-content .container div *{
+:root[data-theme="dark"] .about-content .container div * {
     color: var(--text) !important; 
 }
     
 :root[data-theme="dark"] .cart-sidebar-footer button,
-:root[data-theme="dark"] .nav-wrapper{
-    background-color: var(--surface) !important; 
+:root[data-theme="dark"] .nav-wrapper {
+    background-color: #202020; 
 }
 
 :root[data-theme="dark"] .signup-section,
@@ -182,11 +184,838 @@
     background-color: var(--bg);
 }
 
-:root[data-theme="dark"] .about-content{
+:root[data-theme="dark"] #cart-checkout-btn {
+    background-color: #2D2D2D !important;
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] #cart-checkout-btn:hover {
+    background-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .about-content {
     background-color: var(--bg) !important; 
 }
 
-/* БЕЛЫЙ ФОН */
 :root[data-theme="dark"] .burger-line {
     background-color: var(--bg-white);
 }
+
+:root[data-theme="dark"] .cart-item-quantity {
+    background-color: #2D2D2D !important;
+    color: #ffffff !important;
+    border-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .cart-item-quantity option {
+    background-color: #2D2D2D !important;
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .restaurant-card,
+:root[data-theme="dark"] .restaurant-card-content,
+:root[data-theme="dark"] .card-content {
+    background-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .restaurant-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="dark"] .card-title,
+:root[data-theme="dark"] .restaurant-card-name {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .card-desc,
+:root[data-theme="dark"] .restaurant-card-desc {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .review-score,
+:root[data-theme="dark"] .review-text,
+:root[data-theme="dark"] .rating-score,
+:root[data-theme="dark"] .rating-text {
+    color: #B1DDE4 !important;
+}
+
+:root[data-theme="dark"] .card-category,
+:root[data-theme="dark"] .restaurant-card-category {
+    background-color: #202020 !important;
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .category-card {
+    background-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .category-card:hover {
+    background-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .category-name {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .menu-item,
+:root[data-theme="dark"] .menu-card {
+    background-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .menu-item:hover {
+    background-color: #404040 !important;
+    box-shadow: 0 14px 26px 0 rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .menu-item-name {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .menu-item-description {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .menu-item-price {
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .tag {
+    background-color: #202020 !important;
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .admin-card {
+    background-color: #2C2C2C !important;
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+:root[data-theme="dark"] .admin-card-title,
+:root[data-theme="dark"] .admin-card-meta {
+    color: #f9fafb !important;
+}
+
+:root[data-theme="dark"] .slider-arrow {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="dark"] .slider-arrow:hover {
+    background-color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .slider-arrow img {
+    filter: none !important;
+}
+
+:root[data-theme="dark"] .slider-track .restaurant-card {
+    background-color: #2C2C2C;
+}
+
+:root[data-theme="dark"] .award-banner-section {
+    background-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .award-banner-container {
+    background-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .award-banner-title,
+:root[data-theme="dark"] .award-banner-subtitle {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .award-banner-btn {
+    background-color: #E5F8BC !important;
+    color: #1A1A1A !important;
+}
+
+:root[data-theme="dark"] .award-banner-btn:hover {
+    background-color: #d4e8a8 !important;
+}
+
+:root[data-theme="dark"] .award-card {
+    background-color: #ffffff !important;
+    border: none;
+}
+
+:root[data-theme="dark"] .award-card-title {
+    color: #1A1A1A !important;
+}
+
+:root[data-theme="dark"] .leaflet-popup-content-wrapper,
+:root[data-theme="dark"] .leaflet-popup-tip {
+    background-color: #2C2C2C !important;
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .leaflet-popup-content {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .leaflet-popup-content strong {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .leaflet-popup-content p {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .leaflet-popup-content a {
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .leaflet-popup-content a:hover {
+    color: #d4e8a8 !important;
+}
+
+:root[data-theme="dark"] .leaflet-popup-close-button {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .leaflet-popup-close-button:hover {
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .leaflet-control-zoom a {
+    background-color: #2C2C2C !important;
+    color: #ffffff !important;
+    border-color: #202020 !important;
+}
+
+:root[data-theme="dark"] .leaflet-control-zoom a:hover {
+    background-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .logo-icon {
+    filter: brightness(0) saturate(100%) invert(86%) sepia(18%) saturate(600%) hue-rotate(36deg) brightness(96%) contrast(88%);
+}
+
+:root[data-theme="dark"] .checkout-banner {
+    background-color: #202020 !important;
+}
+
+:root[data-theme="dark"] .checkout-title {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .checkout-page {
+    background-color: #202020 !important;
+}
+
+:root[data-theme="dark"] .contact-section,
+:root[data-theme="dark"] .delivery-section {
+    background-color: #2C2C2C !important;
+    border-radius: 8px;
+}
+
+:root[data-theme="dark"] .contact-title,
+:root[data-theme="dark"] .delivery-title {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .step-indicator,
+:root[data-theme="dark"] .delivery-step-indicator {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .progress-bar-active,
+:root[data-theme="dark"] .delivery-progress-bar-active {
+    background-color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .progress-bar-inactive,
+:root[data-theme="dark"] .delivery-progress-bar-inactive {
+    background-color: #797979 !important;
+}
+
+:root[data-theme="dark"] .contact-form label,
+:root[data-theme="dark"] .delivery-form label {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .contact-form input,
+:root[data-theme="dark"] .delivery-form input {
+    background-color: #202020 !important;
+    color: #ffffff !important;
+    border: 1px solid #797979 !important;
+}
+
+:root[data-theme="dark"] .contact-form input::placeholder,
+:root[data-theme="dark"] .delivery-form input::placeholder {
+    color: #797979 !important;
+}
+
+:root[data-theme="dark"] .contact-form input:focus,
+:root[data-theme="dark"] .delivery-form input:focus {
+    outline: 2px solid #E5F8BC !important;
+    border-color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .form-note {
+    color: #797979 !important;
+}
+
+:root[data-theme="dark"] .btn-next {
+    background-color: #E5F8BC !important;
+    color: #202020 !important;
+}
+
+:root[data-theme="dark"] .btn-next:hover {
+    background-color: #c6d88b !important;
+}
+
+:root[data-theme="dark"] .btn-previous {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .btn-previous:hover {
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .btn-place-order {
+    background-color: #E5F8BC !important;
+    color: #202020 !important;
+}
+
+:root[data-theme="dark"] .btn-place-order:hover {
+    background-color: #c6d88b !important;
+}
+
+:root[data-theme="dark"] .order-summary {
+    background-color: #2C2C2C !important;
+    border-radius: 8px;
+}
+
+:root[data-theme="dark"] .order-title {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .order-item {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .item-name {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .item-price {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .order-total {
+    border-top-color: #797979 !important;
+}
+
+:root[data-theme="dark"] .total-label {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .total-price {
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .header {
+    background-color: #202020 !important;
+}
+
+:root[data-theme="dark"] .header .logo span,
+:root[data-theme="dark"] .header .nav-home,
+:root[data-theme="dark"] .header .nav-all {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .header .nav-cart {
+    background-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .header .nav-cart:hover {
+    background-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .header .cart-total,
+:root[data-theme="dark"] .header .cart-total-label {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .FinalOrder-banner {
+    background-color: #202020 !important;
+}
+
+:root[data-theme="dark"] .FinalOrder-banner-title {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .confirmed-container {
+    background-color: #202020 !important;
+}
+
+:root[data-theme="dark"] .delivery-label {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .delivery-time {
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .order-summary-card {
+    background-color: #2C2C2C !important;
+    border-radius: 8px;
+}
+
+:root[data-theme="dark"] .card-title {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .item-row {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .card-total {
+    border-top-color: #797979 !important;
+}
+
+:root[data-theme="dark"] .total-label {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .total-price {
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .login-banner,
+:root[data-theme="dark"] .signup-banner {
+    background-color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .login-banner-title,
+:root[data-theme="dark"] .signup-banner-title {
+    color: #1A1A1A !important;
+}
+
+:root[data-theme="dark"] .login-section,
+:root[data-theme="dark"] .signup-section {
+    background-color: #202020 !important;
+}
+
+:root[data-theme="dark"] .login-card,
+:root[data-theme="dark"] .signup-card {
+    background-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .login-header h2,
+:root[data-theme="dark"] .signup-header h2 {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .login-header p,
+:root[data-theme="dark"] .signup-header p {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .login-header a,
+:root[data-theme="dark"] .signup-header a {
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .form-group label {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .form-group input {
+    background-color: #202020 !important;
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .form-group input::placeholder {
+    color: #797979 !important;
+}
+
+:root[data-theme="dark"] .btn-login,
+:root[data-theme="dark"] .btn-create-account {
+    background-color: #202020 !important;
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .btn-login:hover,
+:root[data-theme="dark"] .btn-create-account:hover {
+    background-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .checkbox-group label {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .forgot-link {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .demo-accounts p,
+:root[data-theme="dark"] .demo-note {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .profile-banner {
+    background-color: #202020 !important;
+}
+
+:root[data-theme="dark"] .profile-banner-title {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .profile-card {
+    background-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .profile-email-link {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .profile-tab {
+    color: #D2D2D2 !important;
+    border-color: #202020 !important;
+}
+
+:root[data-theme="dark"] .profile-tab.is-active {
+    background-color: #E5F8BC !important;
+    color: #202020 !important;
+    border-color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .order-card {
+    background-color: #202020 !important;
+    border-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .order-card-title,
+:root[data-theme="dark"] .order-card-date {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .order-status {
+    background-color: #2C2C2C !important;
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .order-repeat-btn {
+    background-color: #E5F8BC !important;
+    color: #202020 !important;
+    border-color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .inbox-item {
+    background-color: #202020 !important;
+    border-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .order-card-item {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .order-card-item span:first-child {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .order-card-total {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .order-card-total span:first-child {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .order-card-total span:last-child {
+    color: #E5F8BC !important;
+}
+
+
+:root[data-theme="dark"] .order-card-item span:last-child {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .order-card-item span:nth-child(2) {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .inbox-item-title {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .inbox-item-date {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .inbox-item-message {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .notification-toggle {
+    background-color: #202020 !important;
+    border-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .notification-toggle-text {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .toggle-ui {
+    background-color: #404040 !important;
+    border: 1px solid #797979 !important;
+}
+
+:root[data-theme="dark"] .toggle-ui::after {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .notification-toggle input:checked + .toggle-ui {
+    background-color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .notification-toggle input:checked + .toggle-ui::after {
+    background-color: #202020 !important;
+}
+
+:root[data-theme="dark"] .notification-toggle-text {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .notification-toggle {
+    background-color: #2C2C2C !important;
+    border-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .restaurants-select {
+    background-color: #2C2C2C !important;
+    color: #ffffff !important;
+    border-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .restaurants-select option {
+    background-color: #2C2C2C !important;
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .restaurants-search {
+    background-color: #2C2C2C !important;
+    color: #ffffff !important;
+    border-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .restaurants-search::placeholder {
+    color: #797979 !important;
+}
+
+:root[data-theme="dark"] .restaurants-checkbox {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .restaurants-checkbox input {
+    accent-color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .restaurants-clear {
+    background-color: #E5F8BC !important;
+    color: #202020 !important;
+    border-color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .restaurants-clear:hover {
+    background-color: #c6d88b !important;
+}
+
+:root[data-theme="dark"] .food-modal-content {
+    background-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .food-modal-header {
+    background-color: #202020 !important;
+}
+
+:root[data-theme="dark"] #modal-food-name {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] #modal-food-description {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] #modal-close-btn {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] #modal-close-btn:hover {
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .food-modal-body {
+    background-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .quantity-controls button {
+    background-color: #202020 !important;
+    color: #ffffff !important;
+    border: 1px solid #404040 !important;
+}
+
+:root[data-theme="dark"] .quantity-controls button:hover {
+    background-color: #404040 !important;
+}
+
+:root[data-theme="dark"] #modal-quantity {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] #modal-add-btn {
+    background-color: #353535 !important;
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] #modal-add-btn:hover {
+    background-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .admin-banner {
+    background-color: #202020 !important;
+}
+
+:root[data-theme="dark"] .admin-title {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .admin-subtitle {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .admin-logout-btn {
+    border-color: #E5F8BC !important;
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .admin-logout-btn:hover {
+    background-color: rgba(229, 248, 188, 0.1) !important;
+}
+
+:root[data-theme="dark"] .admin-tab {
+    background-color: #2C2C2C !important;
+    border-color: #404040 !important;
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .admin-tab.active {
+    background-color: #E5F8BC !important;
+    color: #202020 !important;
+    border-color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .admin-section-title {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .admin-primary-btn {
+    background-color: #2D2D2D !important;
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .admin-primary-btn:hover {
+    background-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .admin-secondary-btn {
+    background-color: #202020 !important;
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .admin-secondary-btn:hover {
+    background-color: #404040 !important;
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .admin-danger-btn {
+    background-color: #202020 !important;
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .admin-danger-btn:hover {
+    background-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .admin-card {
+    background-color: #2C2C2C !important;
+    border-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .admin-card-title {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .admin-card-meta {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .admin-label {
+    color: #D2D2D2 !important;
+}
+
+:root[data-theme="dark"] .admin-select {
+    background-color: #2C2C2C !important;
+    color: #ffffff !important;
+    border-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .admin-select option {
+    background-color: #2C2C2C !important;
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .admin-modal {
+    background-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .admin-modal-header {
+    background-color: #202020 !important;
+    border-bottom-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .admin-modal-title {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .admin-modal-close {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .admin-modal-close:hover {
+    color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .admin-modal-body {
+    background-color: #2C2C2C !important;
+}
+
+:root[data-theme="dark"] .admin-input,
+:root[data-theme="dark"] .admin-textarea {
+    background-color: #202020 !important;
+    color: #ffffff !important;
+    border-color: #404040 !important;
+}
+
+:root[data-theme="dark"] .admin-input::placeholder,
+:root[data-theme="dark"] .admin-textarea::placeholder {
+    color: #797979 !important;
+}
+
+:root[data-theme="dark"] .admin-input:focus,
+:root[data-theme="dark"] .admin-textarea:focus {
+    outline: 2px solid #E5F8BC !important;
+    border-color: #E5F8BC !important;
+}
+
+:root[data-theme="dark"] .admin-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+:root[data-theme="dark"] .admin-filter-row {
+    color: #D2D2D2 !important;
+}
+

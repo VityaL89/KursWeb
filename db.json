@@ -829,7 +829,35 @@
       ],
       "total": 8.5,
       "id": "nxyo667JsuY"
-    }    
+    },
+    {
+      "userId": "rrWfIKUgkEo",
+      "createdAt": "2026-05-20T14:29:40.604Z",
+      "status": "Accepted",
+      "contact": {
+        "firstName": "Vitaliy",
+        "lastName": "Luzko",
+        "email": "luzko09@mail.ru",
+        "phone": ""
+      },
+      "address": {
+        "streetname": "",
+        "house": "",
+        "zipcode": "",
+        "city": ""
+      },
+      "items": [
+        {
+          "id": "2",
+          "name": "Fries",
+          "description": "Fried french fries",
+          "price": 2.5,
+          "quantity": 5
+        }
+      ],
+      "total": 12.5,
+      "id": "ebjUYIZ2wWk"
+    }
   ],
   "notifications": [
     {
