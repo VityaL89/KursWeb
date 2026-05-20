@@ -25,7 +25,7 @@ body {
     display: none;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.92);
+    background: #ffffff !important;
     z-index: 5000;
 }
 
