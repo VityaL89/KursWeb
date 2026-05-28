@@ -91,14 +91,39 @@ function getPreferredTheme() {
 }
 
 function applyTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+    updateThemeIcon(); 
+}
+
+function updateThemeIcon() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+    
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    
+    themeToggle.innerHTML = '';
+    
+    if (currentTheme === 'dark') {
+        themeToggle.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="5" fill="#FFD700" stroke="#FFD700" stroke-width="2"/>
+                <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        `;
+    } else {
+        themeToggle.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        `;
+    }
 }
 
 function toggleTheme() {
-  const current = document.documentElement.getAttribute("data-theme") || "light";
-  const next = current === "dark" ? "light" : "dark";
-  localStorage.setItem(THEME_STORAGE_KEY, next);
-  applyTheme(next);
+    const current = document.documentElement.getAttribute("data-theme") || "light";
+    const next = current === "dark" ? "light" : "dark";
+    localStorage.setItem(THEME_STORAGE_KEY, next);
+    applyTheme(next);
 }
 
 function applyA11y(isOn) {
@@ -186,9 +211,7 @@ function renderSiteHeader() {
 
             <div class="nav-actions">
                 <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <!-- Пустой контейнер, иконка будет добавлена через JS -->
                 </button>
 
                 <button class="a11y-toggle" id="a11y-toggle" type="button" aria-label="Accessibility mode">
@@ -276,6 +299,7 @@ function injectLayout() {
 
   ensureThemeStyles();
   applyTheme(getPreferredTheme());
+  updateThemeIcon(); 
 
   ensureA11yStyles();
   applyA11y(getPreferredA11y());
@@ -304,6 +328,9 @@ function injectLayout() {
   if (footerMount) {
     footerMount.outerHTML = renderSiteFooter();
   }
+
+  applyTheme(getPreferredTheme());
+  updateThemeIcon();
 
   if (
     !document.getElementById("cart-sidebar") &&

@@ -91,7 +91,6 @@
 
 :root[data-theme="dark"] .theme-toggle svg {
     display: block;
-    filter: invert(1);
 }
 
 :root[data-theme="dark"] .logo span,
