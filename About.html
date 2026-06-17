@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | MealDrop</title>
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="768pxAdaptive/768PxIndex.css">
+    <link rel="stylesheet" href="360px.css">
+    <link rel="stylesheet" href="mobile-menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="site-header"></div>
+    
+    <main>
+        <section class="about-banner" style="width: 100%; height: 242px; background-color: #E5F8BC; display: flex; align-items: center; justify-content: center;">
+            <div class="container" style="max-width: 1440px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: center;">
+                <h1 class="about-banner-title" style="font-family: 'Montserrat', sans-serif; font-size: 43.95px; font-weight: 700; line-height: 64px; letter-spacing: -0.05em; color: #2C2C2C; margin: 0;">About MealDrop</h1>
+            </div>
+        </section>
+
+        <section class="about-content" style="padding: 4rem 0; background-color: #ffffff;">
+            <div class="container" style="max-width: 1440px; margin: 0 auto; padding: 0 56px;">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 31.25px; font-weight: 700; color: #1A1A1A; margin-bottom: 1.5rem;">Our Story</h2>
+                    
+                    <p style="font-family: 'Hind', sans-serif; font-size: 18px; line-height: 1.6; color: #4B5563; margin-bottom: 1.5rem;">
+                        Welcome to <strong>MealDrop</strong> – your ultimate food delivery companion. 
+                        We connect you with the best restaurants in the city, bringing delicious meals 
+                        right to your door. Whether you're craving pizza, sushi, burgers, or comfort food, 
+                        we've got you covered.
+                    </p>
+
+                    <p style="font-family: 'Hind', sans-serif; font-size: 18px; line-height: 1.6; color: #4B5563; margin-bottom: 1.5rem;">
+                        Our mission is to make ordering food as easy and enjoyable as possible. 
+                        With a carefully curated selection of restaurants, real-time tracking, 
+                        and a user-friendly interface, MealDrop is here to satisfying your cravings 
+                        with just a few clicks.
+                    </p>
+
+                    <div style="margin-top: 3rem;">
+                        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 25px; font-weight: 700; color: #1A1A1A; margin-bottom: 1rem;">Our Restaurant Locations</h3>
+                        <p style="font-family: 'Hind', sans-serif; font-size: 18px; line-height: 1.6; color: #6B7280; margin-bottom: 2rem;">
+                            Explore our partner restaurants and their locations near you.
+                        </p>
+                        
+                        <div id="map-container" style="width: 100%; height: 500px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"></div>
+
+                        <style>
+                          @media (max-width: 768px) {
+                            #map-container {
+                              height: 450px !important;
+                            }
+                          }
+                          @media (max-width: 480px) {
+                            #map-container {
+                              height: 350px !important;
+                            }
+                          }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+      function initMap() {
+
+          fetch('http://localhost:3000/restaurants')
+              .then(response => response.json())
+              .then(restaurants => {
+
+                  const map = L.map('map-container').setView([53.9000, 30.3380], 13);
+
+
+                  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  maxZoom: 18,
+                  attribution: '© OpenStreetMap contributors'
+                  }).addTo(map);
+
+                  restaurants.forEach(restaurant => {
+                      if (restaurant.lat && restaurant.lng) {
+                          const marker = L.marker([restaurant.lat, restaurant.lng])
+                              .addTo(map)
+                              .bindPopup(`
+                                  <div style="font-family: 'Hind', sans-serif; padding: 5px;">
+                                      <strong style="font-family: 'Montserrat', sans-serif; font-size: 16px;">${restaurant.name}</strong>
+                                      <p style="margin: 5px 0; font-size: 14px; color: #666;">${restaurant.description}</p>
+                                      <p style="margin: 5px 0; font-size: 14px; color: #666;">⭐ ${restaurant.rating} (${restaurant.ratingText})</p>
+                                      <a href="RestaurantDetail.html?id=${restaurant.id}" style="text-decoration: none; color: #1A1A1A; font-weight: 500;">View details →</a>
+                                  </div>
+                              `);
+                      }
+                  });
+              })
+              .catch(error => {
+                  console.error('Ошибка загрузки ресторанов для карты:', error);
+                  document.getElementById('map-container').innerHTML = '<p style="text-align:center; padding: 2rem;">Не удалось загрузить карту. Проверьте JSON Server.</p>';
+              });
+      }
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', initMap);
+</script>
+
+<script src="JavaScript/layout.js"></script>
+<script src="JavaScript/auth.js"></script>
+<script src="JavaScript/cart.js"></script>
+
+</body>
+</html>

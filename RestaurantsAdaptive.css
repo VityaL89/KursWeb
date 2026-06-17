@@ -1,0 +1,296 @@
+@media screen and (max-width: 1439px) {
+    .container {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 24px !important;
+    }
+
+    #mobile-menu-overlay,
+    .mobile-menu-overlay {
+        display: none !important;
+    }
+
+    .categories-banner-container {
+        max-width: 100% !important;
+        padding: 0 24px !important;
+        margin: 0 auto !important;
+    }
+
+    .restaurants-browser-header {
+        margin-left: 0 !important;
+        text-align: center !important;
+    }
+
+    .restaurants-browser-subtitle {
+        margin: 0 auto !important;
+        max-width: 760px !important;
+    }
+
+    .restaurants-filters {
+        max-width: 100% !important;
+        margin: 0 0 32px !important;
+        padding: 0 !important;
+        grid-template-columns: 1.6fr 1fr 1fr auto auto;
+    }
+
+    .restaurants-list {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        justify-content: stretch !important;
+    }
+
+    .restaurants-list .restaurant-card {
+        width: 100% !important;
+    }
+
+    /* .footer {
+        height: auto !important;
+        padding: 80px 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .footer-content {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        gap: 48px !important;
+        flex-wrap: wrap !important;
+    }
+
+    .footer-logo-img {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .footer-nav {
+        display: flex !important;
+        gap: 48px !important;
+        flex-wrap: wrap !important;
+        justify-content: flex-start !important;
+    }
+
+    .footer-column:nth-child(1),
+    .footer-column:nth-child(2),
+    .footer-column:nth-child(3) {
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .footer-links {
+        margin-top: 0 !important;
+    } */
+}
+
+@media screen and (max-width: 1024px) {
+    .restaurants-browser {
+        padding: 60px 0 !important;
+    }
+
+    .footer {
+        height: auto !important;
+        padding: 60px 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 32px !important;
+    }
+
+    .footer-logo-img {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 12px !important;
+    }
+
+    .footer-nav {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 30px !important;
+        width: 100% !important;
+    }
+
+    .footer-column:nth-child(1),
+    .footer-column:nth-child(2),
+    .footer-column:nth-child(3) {
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        min-width: 150px !important;
+    }
+
+    .footer-links {
+        margin-top: 0 !important;
+        align-items: center !important;
+    }
+
+    .restaurants-filters {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+    }
+
+    #restaurants-search {
+        grid-column: 1 / -1;
+    }
+
+    #restaurants-filter-clear {
+        grid-column: 1 / -1;
+    }
+
+    .restaurants-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 20px 16px !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 0 16px !important;
+    }
+
+    .footer {
+        height: auto !important;
+        padding: 48px 0 32px !important;
+        margin-top: 0 !important;
+    }
+
+    .footer-content {
+        gap: 24px !important;
+        padding: 0 16px !important;
+    }
+
+    .footer-nav {
+        flex-direction: column !important;
+        gap: 24px !important;
+        width: 100% !important;
+    }
+
+    .footer-col-title {
+        font-size: 20px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .footer-links li a {
+        font-size: 16px !important;
+    }
+
+    .categories-banner-container {
+        padding: 0 16px !important;
+    }
+
+    .categories-banner {
+        height: 200px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .categories-banner-title {
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+    }
+
+    .restaurants-filters {
+        grid-template-columns: 1fr !important;
+    }
+
+    .restaurants-search,
+    .restaurants-select,
+    .restaurants-clear {
+        width: 100% !important;
+    }
+
+    .restaurants-list {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media screen and (max-width: 361px) {
+    body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .footer {
+        margin: 0 !important;
+    }
+
+    .footer .container {
+        margin: 0 !important;
+        padding: 0 16px !important;
+    }
+
+    .header {
+        height: 58px;
+        padding: 0;
+        background-color: #ffffff;
+    }
+
+    .header .container {
+        padding: 0 16px !important;
+        height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .nav-wrapper,
+    .nav-links,
+    .auth-buttons,
+    .nav-cart {
+        display: none !important;
+    }
+
+    .burger-menu {
+        display: flex !important;
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2001;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        gap: 0;
+    }
+
+    .logo-icon {
+        margin-left: 0 !important;
+        width: 42px;
+        height: 37px;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    .categories-banner {
+        height: 220px !important;
+        padding: 0 !important;
+    }
+
+    .categories-banner-container {
+        padding: 0 16px !important;
+    }
+
+    .back-btn {
+        top: 16px !important;
+        left: 16px !important;
+    }
+
+    .categories-banner-title {
+        font-size: 30px !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+    }
+}

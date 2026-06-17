@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="768pxAdaptive/768PxIndex.css">
+    <link rel="stylesheet" href="360px.css">
+    <link rel="stylesheet" href="ProfileStyle.css">
+    <link rel="stylesheet" href="NotificationsStyle.css">
+    <link rel="stylesheet" href="ProfileAdaptive.css">
+    <link rel="stylesheet" href="mobile-menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+    <section class="profile-banner">
+        <div class="container profile-banner-container">
+            <h1 class="profile-banner-title">Your account</h1>
+        </div>
+    </section>
+
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-card">
+                <div class="profile-top">
+                    <div class="profile-email">
+                        <a class="profile-email-link" id="profile-email-link" href="#">—</a>
+                    </div>
+
+                    <button class="profile-logout" id="profile-logout" type="button">Sign out</button>
+                </div>
+
+                <div class="profile-tabs" role="tablist" aria-label="Profile tabs">
+                    <button class="profile-tab is-active" type="button" data-tab="orders">Orders</button>
+                    <button class="profile-tab" type="button" data-tab="notifications">Notifications</button>
+                </div>
+
+                <div class="profile-panels">
+                    <div class="profile-panel is-active" data-panel="orders">
+                        <div class="profile-orders" id="profile-orders"></div>
+                    </div>
+
+                    <div class="profile-panel" data-panel="notifications">
+                        <div class="notifications-list">
+                            <label class="notification-toggle">
+                                <span class="notification-toggle-text">Discounts</span>
+                                <input type="checkbox" id="notif-discounts">
+                                <span class="toggle-ui"></span>
+                            </label>
+
+                            <label class="notification-toggle">
+                                <span class="notification-toggle-text">Promotions</span>
+                                <input type="checkbox" id="notif-promotions">
+                                <span class="toggle-ui"></span>
+                            </label>
+
+                            <label class="notification-toggle">
+                                <span class="notification-toggle-text">New restaurants</span>
+                                <input type="checkbox" id="notif-new-restaurants">
+                                <span class="toggle-ui"></span>
+                            </label>
+                        </div>
+
+                        <div class="profile-inbox" id="profile-inbox"></div>
+
+                        <div class="notifications-status" id="notif-status" aria-live="polite"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="JavaScript/layout.js"></script>
+<script src="JavaScript/auth.js"></script>
+<script src="JavaScript/cart.js"></script>
+<script src="JavaScript/notifications.js"></script>
+<script src="JavaScript/profile.js"></script>
+
+</body>
+</html>

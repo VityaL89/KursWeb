@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrderForm2</title>
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <link rel="stylesheet" href="OrderFormStyleStep2.css">
+    <link rel="stylesheet" href="768pxAdaptive/768PxStep2.css">
+    <link rel="stylesheet" href="360PxStep2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/Logo.png" alt="MealDrop Logo" class="logo-icon">
+                <span>MealDrop</span>
+            </a>
+        </div>
+    </header>
+
+<main class="checkout-page">
+
+    <section class="checkout-banner">
+        <div class="container">
+            <h1 class="checkout-title">Your order at restaurant.name</h1>
+        </div>
+    </section>
+
+    <div class="checkout-content">
+
+        <div class="delivery-section">
+        <div class="delivery-header">
+            <h2 class="delivery-title">Delivery details</h2>
+            <span class="delivery-step-indicator">Step 2 of 3</span>
+        </div>
+
+        <div class="delivery-progress-bar">
+            <div class="delivery-progress-bar-active"></div>
+            <div class="delivery-progress-bar-inactive"></div>
+        </div>
+
+        <form class="delivery-form">
+
+            <div class="delivery-row">
+                <div class="delivery-group delivery-group-streetname">
+                    <label class="label-streetname" for="streetname">Streetname</label>
+                    <input class="input-streetname" type="text" id="streetname" placeholder='"5th avenue"'>
+                </div>
+
+                <div class="delivery-group delivery-group-house">
+                    <label class="label-house" for="house">House number</label>
+                    <input class="input-house" type="text" id="house" placeholder='"8B"'>
+                </div>
+            </div>
+
+            <div class="delivery-row">
+                <div class="delivery-group delivery-group-zipcode">
+                    <label class="label-zipcode" for="zipcode">Zipcode</label>
+                    <input class="input-zipcode" type="text" id="zipcode" placeholder='"1234AB"'>
+                </div>
+
+                <div class="delivery-group delivery-group-city">
+                    <label class="label-city" for="city">City</label>
+                    <input class="input-city" type="text" id="city" placeholder='"Amsterdam"'>
+                </div>
+            </div>
+
+
+            <div class="delivery-buttons">
+                <button type="button" class="btn-previous">Previous step</button>
+                <button type="submit" class="btn-place-order">Place order</button>
+            </div>
+        </form>
+    </div>
+
+        <div class="order-summary">
+        <h3 class="order-title">Your order</h3>
+
+        <div class="order-items">
+        </div>
+
+        <div class="order-total">
+            <span class="total-label">Total</span>
+            <span class="total-price">€ 8,50</span>
+        </div>
+    </div>
+
+    </div>
+
+    
+    
+</main>
+<script src="JavaScript/layout.js"></script>
+
+<script src="JavaScript/auth.js"></script>
+<script src="JavaScript/cart.js"></script>
+<script src="JavaScript/order-form-step2.js"></script>
+
+</body>
+</html>

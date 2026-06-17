@@ -1,0 +1,265 @@
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 100% !important;
+        padding: 0 24px !important;
+        margin: 0 auto !important;
+    }
+
+    .header .container {
+        padding: 8px 16px !important;
+    }
+
+    .nav-wrapper {
+        gap: 6px !important;
+    }
+
+    .nav-actions {
+        gap: 6px !important;
+    }
+
+    .theme-toggle,
+    .a11y-toggle,
+    .btn-profile-header {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
+        padding: 0 !important;
+    }
+
+    .lang-select {
+        height: 36px !important;
+        font-size: 13px !important;
+        padding: 0 6px !important;
+    }
+
+    .logo-icon {
+        margin-left: 0 !important;
+    }
+
+    .nav-cart {
+        margin-left: -1px;
+        margin-right: -13px !important;
+    }
+
+    .main-banner {
+        height: 500px !important; 
+        background-position: center !important;
+        padding: 0 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .main-banner-title {
+        margin-top: 0 !important; 
+        margin-left: 0 !important;
+        font-size: 38px !important;
+        line-height: 48px !important;
+        max-width: 100% !important;
+    }
+
+    .main-banner-btn {
+        margin-left: 160px !important;
+        margin-top: 30px !important;
+    }
+
+    .picks, .arrivals {
+        padding: 60px 0 !important;
+    }
+
+    .picks-title, .arrivals-title {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: -40px !important;
+        text-align: center !important;
+        font-size: 28px !important;
+    }
+
+    .picks-grid, .arrivals-grid {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 20px !important;
+    }
+
+    .restaurant-card {
+        width: 100% !important;
+    }
+
+    .card-arrow {
+        display: none !important; 
+    }
+
+    
+
+    .award-banner-container {
+        height: auto !important;
+        flex-direction: column !important; 
+        align-items: center !important;
+        padding: 60px 24px !important;
+        text-align: center !important;
+    }
+
+    .award-banner-text {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-bottom: 50px !important;
+    }
+
+    .award-banner-title, 
+    .award-banner-subtitle {
+        margin: 0 auto 15px auto !important;
+        text-align: center !important;
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+        max-width: 100% !important;
+    }
+
+    .award-banner-btn {
+        margin: 30px auto 0 auto !important; 
+    }
+
+    .award-restaurants-grid {
+        display: none;
+    }
+
+    .award-restaurants-grid > * {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 220px !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .award-img, 
+    .award-img-large, 
+    .award-img-small,
+    .award-card-image-center .award-img {
+        width: 100% !important;
+        height: 160px !important; 
+        object-fit: cover !important;
+        border-radius: 8px !important;
+        transform: none !important; 
+        margin: 0 0 12px 0 !important;
+    }
+
+    .award-card-title {
+        font-size: 16px !important;
+        text-align: center !important;
+        margin-top: 0 !important;
+        padding: 0 5px !important;
+    }
+
+    .categories {
+        padding: 60px 0 !important;
+        margin-top: -165px;
+    }
+
+    .categories-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-bottom: 30px !important;
+    }
+
+    .categories-title {
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+
+    .view-all-link {
+        margin-top: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .categories-grid {
+        margin-left: 0 !important;
+        margin-top: 20px !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 15px !important;
+    }
+
+    .category-card {
+        width: 100% !important;
+        height: 170px !important;
+        padding: 15px !important;
+    }
+
+    .footer {
+        height: auto !important;
+        padding: 60px 0 !important;
+    }
+
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .footer-logo-img {
+        margin-left: 0 !important;
+        margin-bottom: 40px !important;
+    }
+
+    .footer-nav {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 30px !important;
+        width: 100% !important;
+    }
+
+    .footer-column {
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        min-width: 150px !important;
+    }
+
+    .footer-links {
+        align-items: center !important;
+    }
+
+    .cart-sidebar {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .header .container {
+        padding: 6px 12px !important;
+    }
+
+    .nav-wrapper {
+        gap: 4px !important;
+    }
+
+    .nav-actions {
+        gap: 4px !important;
+    }
+
+    .theme-toggle,
+    .a11y-toggle,
+    .btn-profile-header {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+    }
+
+    .lang-select {
+        height: 32px !important;
+        font-size: 12px !important;
+        padding: 0 4px !important;
+    }
+}

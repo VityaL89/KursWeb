@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RestaurantDetail</title>
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="RestaurantDetailStyle.css">
+    <link rel="stylesheet" href="768pxAdaptive/768PxRestaurantDetail.css">
+    <link rel="stylesheet" href="360AboutRest.css">
+    <link rel="stylesheet" href="360px.css">
+    <link rel="stylesheet" href="mobile-menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+        <section class="Detail-banner">
+            <div class="container Detail-banner-container">
+                <a href="index.html" class="back-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </a>
+                <h1 class="Detail-banner-title" id="restaurant-name">restaurant.name</h1>
+            </div>
+        </section>
+
+        <section class="restaurant-about">
+            <div class="container">
+                <nav class="breadcrumb" id="breadcrumb">
+                    <a href="/categories" class="breadcrumb-link">categories</a>
+                    <span class="separator">/</span>
+                    <a href="/categories/pizza" class="breadcrumb-link" id="category-link">pizza</a>
+                    <span class="separator">/</span>
+                    <span class="current" id="restaurant-breadcrumb">restaurant.name</span>
+                </nav>
+
+                <div class="about-content">
+                    <h1 class="about-title">About</h1>
+                    <p class="about-description" id="restaurant-description">
+                        This restaurant is great for it's atmosphere. Try the speciality dish.name
+                    </p>
+                    <div class="about-rating" id="rating-container">
+                        <span class="star-icon">★</span>
+                        <span class="rating-value" id="rating-value">4.2</span>
+                        <span class="rating-label" id="rating-label">Very Good</span>
+                    </div>
+                    <div class="about-tags" id="tags-container">
+                        <span class="tag">Comfort food</span>
+                        <span class="tag">Pizza</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="container" id="menu-container">
+
+            </div>
+        </section>
+
+        <div id="food-modal" class="food-modal" style="display: none;">
+            <div class="food-modal-content">
+                <div class="food-modal-header">
+                    <h2 id="modal-food-name">Dish.name</h2>
+                    <p id="modal-food-description">Juicy dish with extra mayonaise</p>
+                    <button id="modal-close-btn">×</button>
+                </div>
+                <div class="food-modal-body">
+                    <div class="food-modal-controls">
+                        <div class="quantity-controls">
+                            <button id="modal-minus-btn">−</button>
+                            <span id="modal-quantity">1</span>
+                            <button id="modal-plus-btn">+</button>
+                        </div>
+                        <button id="modal-add-btn">add for € 8</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+   
+
+    <script src="JavaScript/layout.js"></script>
+    <script src="JavaScript/auth.js"></script>
+    <script src="JavaScript/cart.js"></script>
+    <script src="JavaScript/restaurant-detail.js"></script>
+</body>
+</html>

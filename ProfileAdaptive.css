@@ -1,0 +1,124 @@
+@media screen and (max-width: 1439px) {
+    .profile-banner-container {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 24px !important;
+    }
+
+    .profile-section .container {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 24px !important;
+    }
+
+    .profile-card {
+        max-width: 860px !important;
+    }
+
+    .footer {
+        height: auto !important;
+        padding: 80px 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .footer-content {
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        gap: 48px !important;
+        flex-wrap: wrap !important;
+    }
+
+    .footer-logo-img {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .footer-nav {
+        display: flex !important;
+        gap: 48px !important;
+        flex-wrap: wrap !important;
+        justify-content: flex-start !important;
+    }
+
+    .footer-column:nth-child(1),
+    .footer-column:nth-child(2),
+    .footer-column:nth-child(3) {
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .footer-links {
+        margin-top: 0 !important;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .profile-banner {
+        height: 200px !important;
+    }
+
+    .profile-banner-title {
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+    }
+
+    .profile-section {
+        padding: 40px 0 60px !important;
+    }
+
+    .profile-card {
+        padding: 18px !important;
+        border-radius: 14px !important;
+    }
+
+    .profile-top {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+
+    .profile-tabs {
+        flex-wrap: wrap !important;
+    }
+
+    .footer {
+        height: auto !important;
+        padding: 60px 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 32px !important;
+        margin: 0 !important;
+    }
+
+    .footer-nav {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 24px !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .footer-column {
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        text-align: center !important;
+    }
+
+    .footer-links {
+        align-items: center !important;
+    }
+}
+
+@media screen and (max-width: 361px) {
+    .profile-section .container {
+        padding: 0 16px !important;
+    }
+}

@@ -1,0 +1,571 @@
+@font-face {
+    font-family: "Hind";
+    src: url('./fonts/Hind-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1440px;
+    font-family: "Hind", sans-serif;
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+}
+
+.Detail-banner {
+    width: 100%;
+    height: 242px;
+    background-image: url('images/RestaurantDetailBanner.png'); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Detail-banner-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Detail-banner-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 43.95px; 
+    font-weight: 700; 
+    line-height: 64px; 
+    letter-spacing: -5%; 
+    color: #ffffff; 
+    margin: 0;
+}
+
+.restaurant-about {
+    padding: 2rem 0 3rem;
+    background-color: #ffffff;
+}
+
+.breadcrumb {
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #9CA3AF;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-left: 56px;
+}
+
+.breadcrumb a {
+    color: #9CA3AF;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: #6B7280;
+}
+
+.breadcrumb .separator {
+    color: #9CA3AF;
+    margin: 0 4px;
+}
+
+.breadcrumb .current {
+    color: #6B7280;
+    font-weight: 500;
+}
+
+.about-content {
+    max-width: 652px;
+}
+
+.about-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 35.16px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -2%;
+    color: #1A1A1A;
+    margin: 0 0 0.5rem 0;
+    margin-top: 35px;
+    margin-left: 56px;
+}
+
+.about-description {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+    color: #1A1A1A;
+    margin: 0 0 1rem 0;
+    margin-top: 13px;
+    margin-left: 56px;
+}
+
+.about-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 1.25rem;
+    font-family: "Hind", sans-serif;
+    font-size: 16px;
+    color: #6B7280;
+}
+
+.about-rating .star-icon {
+    color: #6B7280;
+    font-size: 22px;
+    margin-top: -18px;
+    margin-left: 57px;
+}
+
+.about-rating .rating-value {
+    font-weight: 500;
+    color: #1A1A1A;
+}
+
+.about-rating .rating-label {
+    color: #6B7280;
+}
+
+.about-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-left: 56px;
+    margin-top: -2px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    font-family: "Hind", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #6B7280;
+    white-space: nowrap;
+}
+
+.menu-section {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    background-color: #f9f9f9;
+}
+
+.menu-category {
+    margin-bottom: 3rem;
+    margin-top: -16px;
+    margin-left: -110px;
+}
+
+.menu-category:nth-child(1) .menu-category-title {
+    margin-top: 17px !important;
+    margin-bottom: 26px !important;
+    margin-left: 87px !important;
+}
+
+.menu-category:nth-child(2) .menu-category-title {
+    margin-top: 61px !important;
+    margin-bottom: 26px !important;
+    margin-left: 82px !important;
+}
+
+.menu-category:last-child {
+    margin-bottom: 0;
+    margin-top: 74px;
+}
+
+.menu-category-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 1.5rem 0;
+    padding-left: 81px;
+    margin-left: 85px;
+    margin-top: -26px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 24px;                            
+    max-width: 1327px;                    
+    margin: 0 auto;                       
+    padding: 0 56px;
+    margin-left: 0px;                      
+}
+
+.menu-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    min-height: 162px;
+    width: 427px;                    
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in;
+    position: relative;                   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-item:hover {
+    box-shadow: 0 14px 26px 0 rgba(0, 0, 0, 0.08);
+}
+
+.menu-item-name {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22.5px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+    margin-bottom: 9px;
+    margin-top: 5px;
+}
+
+.menu-item-description {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #6B7280;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+}
+
+.menu-item-price {
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1A1A1A;
+    margin: 0;
+}
+
+.menu-item-quantity {
+    position: absolute;
+    top: 18px;
+    right: 17px;
+    background-color: #1A1A1A;
+    color: #ffffff;
+    width: 39px;
+    height: 39px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Hind", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    z-index: 2;
+}
+
+.back-btn {
+    display: none;
+}
+
+
+.food-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.food-modal-content {
+    background-color: #ffffff;
+    border-radius: 16px;
+    width: 652px;
+    height: 277px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+    margin: 0 auto;
+}
+
+.food-modal-header {
+    background-color: #F9F9F9;
+    padding: 24px 32px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.food-modal-body {
+    padding: 24px 32px;
+    background-color: #ffffff;
+    height: 117px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#modal-food-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 31.25px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0;
+}
+
+#modal-food-description {
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+    color: #6B7280;
+    margin: 5px 0 0 0;
+}
+
+#modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1A1A1A;
+}
+
+.food-modal-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.quantity-controls button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #F5F5F5;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1A1A1A;
+}
+
+.quantity-controls button:hover {
+    background: #EBEBEB;
+}
+
+#modal-quantity {
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1A1A1A;
+    min-width: 20px;
+    text-align: center;
+}
+
+#modal-add-btn {
+    background-color: #202020;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 13px 24px;
+    font-family: 'Hind', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 360px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal-add-btn:hover {
+    background-color: #2B2B2B;
+
+    
+}
+
+@media (max-width: 768px) {
+    .food-modal-content {
+        width: 90%;
+        height: auto;
+        min-height: 277px;
+    }
+    .food-modal-header {
+        height: auto;
+        padding: 20px;
+    }
+    .food-modal-body {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    #modal-add-btn {
+        width: 100%;
+    }
+}
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 420px;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 1001;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cart-sidebar-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid #F3F4F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F9F9F9;
+}
+
+.cart-sidebar-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 32px;
+}
+
+.cart-sidebar-footer {
+    padding: 24px 32px;
+    border-top: 1px solid #F3F4F6;
+    background-color: #ffffff;
+}
+
+.cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+#cart-checkout-btn:hover {
+    background-color: #2B2B2B;
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1A1A1A;
+}
+
+.cart-item-description {
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+    color: #6B7280;
+    margin: 4px 0;
+}
+
+.cart-item-price {
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+    color: #1A1A1A;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-item-quantity {
+    width: 78px;
+    height: 48px;
+    border: none;
+    background-color: #F3F4F6;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1A1A1A;
+    text-align: center;
+}
+
+.menu-item-quantity-badge {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background-color: #20201F;
+    color: #ffffff;
+    width: 39px;
+    height: 39px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Hind', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .cart-sidebar {
+        width: 100%;
+    }
+}

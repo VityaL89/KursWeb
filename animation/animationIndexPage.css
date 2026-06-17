@@ -1,0 +1,58 @@
+.restaurant-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-img {
+    transition: transform 0.2s ease;
+}
+
+.restaurant-card:hover .card-img {
+    transform: scale(1.02);
+}
+
+.category-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.main-banner-btn,
+.award-banner-btn {
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.main-banner-btn:active,
+.award-banner-btn:active {
+    transform: scale(0.97);
+}
+
+.footer-links li a {
+    transition: color 0.2s ease;
+}
+
+.footer-links li a:hover {
+    color: #E5F8BC;
+}
+
+.award-img,
+.award-img-large,
+.award-img-small {
+    transition: transform 0.3s ease;
+}
+
+.award-card:hover .award-img,
+.award-card:hover .award-img-large,
+.award-card:hover .award-img-small {
+    transform: scale(1.03);
+}

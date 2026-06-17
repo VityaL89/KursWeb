@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | MealDrop</title>
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="AdminPanelStyle.css">
+    <link rel="stylesheet" href="theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<main class="admin-main">
+    <section class="admin-banner">
+        <div class="container admin-banner-container">
+            <div class="admin-banner-top">
+                <h1 class="admin-title">Admin panel</h1>
+                <button class="admin-logout-btn" id="admin-logout-btn" type="button">Sign out</button>
+            </div>
+            <p class="admin-subtitle">Manage restaurants, menu items, and categories.</p>
+        </div>
+    </section>
+
+    <section class="admin-content">
+        <div class="container">
+            <div class="admin-tabs">
+                <button class="admin-tab" data-tab="restaurants">Restaurants</button>
+                <button class="admin-tab" data-tab="menuItems">Menu</button>
+                <button class="admin-tab" data-tab="categories">Categories</button>
+                <button class="admin-tab" data-tab="orders">Orders</button>
+                <button class="admin-tab" data-tab="notifications">Notifications</button>
+            </div>
+
+            <div class="admin-panel" id="admin-panel">
+                <div class="admin-section" id="tab-restaurants" data-tab-panel="restaurants">
+                    <div class="admin-section-header">
+                        <h2 class="admin-section-title">Restaurants</h2>
+                        <button class="admin-primary-btn" id="add-restaurant-btn">Add restaurant</button>
+                    </div>
+                    <div class="admin-grid" id="restaurants-list"></div>
+                </div>
+
+                <div class="admin-section" id="tab-menuItems" data-tab-panel="menuItems" style="display:none;">
+                    <div class="admin-section-header">
+                        <h2 class="admin-section-title">Menu items</h2>
+                        <button class="admin-primary-btn" id="add-menu-item-btn">Add menu item</button>
+                    </div>
+                    <div class="admin-filter-row">
+                        <label class="admin-label" for="menu-restaurant-filter">Restaurant</label>
+                        <select id="menu-restaurant-filter" class="admin-select"></select>
+                    </div>
+                    <div class="admin-grid" id="menu-items-list"></div>
+                </div>
+
+                <div class="admin-section" id="tab-categories" data-tab-panel="categories" style="display:none;">
+                    <div class="admin-section-header">
+                        <h2 class="admin-section-title">Categories</h2>
+                        <button class="admin-primary-btn" id="add-category-btn">Add category</button>
+                    </div>
+                    <div class="admin-grid" id="categories-list"></div>
+                </div>
+
+                <div class="admin-section" id="tab-orders" data-tab-panel="orders" style="display:none;">
+                    <div class="admin-section-header">
+                        <h2 class="admin-section-title">Orders</h2>
+                    </div>
+                    <div class="admin-grid" id="orders-list"></div>
+                </div>
+
+                <div class="admin-section" id="tab-notifications" data-tab-panel="notifications" style="display:none;">
+                    <div class="admin-section-header">
+                        <h2 class="admin-section-title">Notifications</h2>
+                        <button class="admin-primary-btn" id="add-notification-btn">Add notification</button>
+                    </div>
+                    <div class="admin-grid" id="notifications-list"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div class="admin-modal-overlay" id="admin-modal-overlay" style="display:none;"></div>
+<div class="admin-modal" id="admin-modal" style="display:none;">
+    <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="admin-modal-title">Edit</h3>
+        <button class="admin-modal-close" id="admin-modal-close" aria-label="Close">×</button>
+    </div>
+    <div class="admin-modal-body" id="admin-modal-body"></div>
+</div>
+
+<script src="JavaScript/auth.js"></script>
+<script src="JavaScript/admin/guard.js"></script>
+<script src="JavaScript/admin/utils.js"></script>
+<script src="JavaScript/admin/ui.js"></script>
+<script src="JavaScript/admin/api.js"></script>
+<script src="JavaScript/admin/restaurants.js"></script>
+<script src="JavaScript/admin/menu-items.js"></script>
+<script src="JavaScript/admin/categories.js"></script>
+<script src="JavaScript/admin/orders.js"></script>
+<script src="JavaScript/admin/notifications-admin.js"></script>
+<script src="JavaScript/admin/state.js"></script>
+<script src="JavaScript/admin/index.js"></script>
+<script src="JavaScript/layout.js"></script>
+
+</body>
+</html>

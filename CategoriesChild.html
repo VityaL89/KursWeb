@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CategoriesChild</title>
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CategoriesChildStyle.css">
+    <link rel="stylesheet" href="768pxAdaptive/768PxCategoriesChilld.css">
+    <link rel="stylesheet" href="360pxCategoryRest.css">
+    <link rel="stylesheet" href="mobile-menu.css">
+    <link rel="stylesheet" href="CategoriesChildAdaptive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+    <section class="categoriesChild-banner">
+        <div class="container categories-banner-container">
+
+            <a href="index.html" class="back-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </a>
+
+            <h1 class="categories-banner-title">Pizza</h1>
+        </div>
+    </section>
+
+   <section class="restaurant-list">
+        <div class="container">
+            
+            <div class="breadcrumb">
+                <a href="#" class="breadcrumb-link">categories</a> / pizza
+            </div>
+
+            <div class="restaurant-grid">
+                
+                <div class="restaurant-card">
+                    <img src="images/Restaurant.png" alt="Burger King" class="restaurant-card-img">
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-name">Burger King</h3>
+                        <div class="restaurant-card-rating">
+                            <img src="images/Star.png" alt="Star" class="rating-star">
+                            <span class="rating-score">4.2</span>
+                            <span class="rating-text">Very Good</span>
+                        </div>
+                        <p class="restaurant-card-desc">Nicest place for burgers</p>
+                        <span class="restaurant-card-category">Comfort food</span>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <img src="images/Restaurant.png" alt="Burger King" class="restaurant-card-img">
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-name">Burger King</h3>
+                        <div class="restaurant-card-rating">
+                            <img src="images/Star.png" alt="Star" class="rating-star">
+                            <span class="rating-score">4.2</span>
+                            <span class="rating-text">Very Good</span>
+                        </div>
+                        <p class="restaurant-card-desc">Nicest place for burgers</p>
+                        <span class="restaurant-card-category">Comfort food</span>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <img src="images/Restaurant.png" alt="Burger King" class="restaurant-card-img">
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-name">Burger King</h3>
+                        <div class="restaurant-card-rating">
+                            <img src="images/Star.png" alt="Star" class="rating-star">
+                            <span class="rating-score">4.2</span>
+                            <span class="rating-text">Very Good</span>
+                        </div>
+                        <p class="restaurant-card-desc">Nicest place for burgers</p>
+                        <span class="restaurant-card-category">Comfort food</span>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <img src="images/Restaurant.png" alt="Burger King" class="restaurant-card-img">
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-name">Burger King</h3>
+                        <div class="restaurant-card-rating">
+                            <img src="images/Star.png" alt="Star" class="rating-star">
+                            <span class="rating-score">4.2</span>
+                            <span class="rating-text">Very Good</span>
+                        </div>
+                        <p class="restaurant-card-desc">Nicest place for burgers</p>
+                        <span class="restaurant-card-category">Comfort food</span>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="restaurant-card-img-wrapper">
+                        <img src="images/Restaurant.png" alt="Burger King" class="restaurant-card-img">
+                        <span class="new-tag">new</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-name">Burger King</h3>
+                        <div class="restaurant-card-rating">
+                            <img src="images/Star.png" alt="Star" class="rating-star">
+                            <span class="rating-score">4.2</span>
+                            <span class="rating-text">Very Good</span>
+                        </div>
+                        <p class="restaurant-card-desc">Nicest place for burgers</p>
+                        <span class="restaurant-card-category">Comfort food</span>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <img src="images/Restaurant.png" alt="Burger King" class="restaurant-card-img">
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-name">Burger King</h3>
+                        <div class="restaurant-card-rating">
+                            <img src="images/Star.png" alt="Star" class="rating-star">
+                            <span class="rating-score">4.2</span>
+                            <span class="rating-text">Very Good</span>
+                        </div>
+                        <p class="restaurant-card-desc">Nicest place for burgers</p>
+                        <span class="restaurant-card-category">Comfort food</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+
+<script>
+    function getCategoryFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('category');
+    }
+
+    async function loadRestaurantsByCategory() {
+        const categorySlug = getCategoryFromURL();
+        
+        if (!categorySlug) {
+            console.error('Категория не указана');
+
+            window.location.href = 'CategoriesChildNoFood.html';
+            return;
+        }
+
+        try {
+
+            const categoriesRes = await fetch('http://localhost:3000/categories');
+            const categories = await categoriesRes.json();
+            const currentCategory = categories.find(cat => cat.slug === categorySlug);
+            
+
+            if (!currentCategory) {
+                window.location.href = 'CategoriesChildNoFood.html';
+                return;
+            }
+
+
+            const bannerTitle = document.querySelector('.categories-banner-title');
+            if (bannerTitle) {
+                bannerTitle.textContent = currentCategory.name;
+            }
+            
+
+            const banner = document.querySelector('.categoriesChild-banner');
+            if (banner && currentCategory.bannerImage) {
+                banner.style.backgroundImage = `url('${currentCategory.bannerImage}')`;
+                banner.style.backgroundSize = 'cover';
+                banner.style.backgroundPosition = 'center';
+            }
+            
+
+            const breadcrumb = document.querySelector('.breadcrumb');
+            if (breadcrumb) {
+                breadcrumb.innerHTML = `<a href="Categories.html" class="breadcrumb-link">categories</a> / ${currentCategory.name.toLowerCase()}`;
+            }
+
+
+            const restaurantsRes = await fetch('http://localhost:3000/restaurants');
+            const allRestaurants = await restaurantsRes.json();
+            
+
+            const filteredRestaurants = allRestaurants.filter(restaurant => {
+                return restaurant.tags && restaurant.tags.some(tag => 
+                    tag.toLowerCase() === categorySlug.toLowerCase()
+                );
+            });
+
+            const restaurantGrid = document.querySelector('.restaurant-grid');
+            if (restaurantGrid) {
+                if (filteredRestaurants.length === 0) {
+
+                    window.location.href = 'CategoriesChildNoFood.html';
+                    return;
+                } else {
+                    restaurantGrid.innerHTML = '';
+                    filteredRestaurants.forEach(restaurant => {
+                        const card = createRestaurantCardForChild(restaurant);
+                        restaurantGrid.appendChild(card);
+                    });
+                }
+            }
+
+        } catch (error) {
+            console.error('Ошибка загрузки:', error);
+
+            window.location.href = 'CategoriesChildNoFood.html';
+        }
+    }
+
+    function createRestaurantCardForChild(restaurant) {
+        const card = document.createElement('div');
+        card.className = 'restaurant-card';
+        card.style.cursor = 'pointer';
+        
+        const hasNewTag = restaurant.isNew ? '<span class="new-tag">new</span>' : '';
+        
+        card.innerHTML = `
+            <div class="restaurant-card-img-wrapper">
+                <img src="${restaurant.image || 'images/Restaurant.png'}" alt="${restaurant.name}" class="restaurant-card-img">
+                ${hasNewTag}
+            </div>
+            <div class="restaurant-card-content">
+                <h3 class="restaurant-card-name">${restaurant.name}</h3>
+                <div class="restaurant-card-rating">
+                    <img src="images/Star.png" alt="Star" class="rating-star">
+                    <span class="rating-score">${restaurant.rating || '4.5'}</span>
+                    <span class="rating-text">${restaurant.ratingText || 'Very Good'}</span>
+                </div>
+                <p class="restaurant-card-desc">${restaurant.description || 'Best place for delicious food'}</p>
+                <span class="restaurant-card-category">${restaurant.tags ? restaurant.tags[0] : 'Food'}</span>
+            </div>
+        `;
+        
+        card.addEventListener('click', () => {
+            window.location.href = `RestaurantDetail.html?id=${restaurant.id}`;
+        });
+        
+        return card;
+    }
+
+    document.addEventListener('DOMContentLoaded', loadRestaurantsByCategory);
+</script>
+
+<script src="JavaScript/layout.js"></script>
+<script src="JavaScript/auth.js"></script>
+<script src="JavaScript/cart.js"></script>
+
+</body>
+</html>

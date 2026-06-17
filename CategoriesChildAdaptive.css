@@ -1,0 +1,33 @@
+@media screen and (max-width: 1439px) and (min-width: 1025px) {
+    .container,
+    .categories-banner-container {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 24px !important;
+    }
+
+    .restaurant-list {
+        padding-top: 32px !important;
+        padding-bottom: 80px !important;
+    }
+
+    .restaurant-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        justify-content: stretch !important;
+        gap: 28px 24px !important;
+        margin-top: 32px !important;
+    }
+
+    .restaurant-card {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .restaurant-card-img-wrapper {
+        height: 220px !important;
+    }
+
+    .restaurant-card-img {
+        height: 220px !important;
+    }
+}

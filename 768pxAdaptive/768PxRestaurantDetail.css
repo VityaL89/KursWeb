@@ -1,0 +1,258 @@
+@media screen and (max-width: 1024px) {
+
+    .header .container,
+    .Detail-banner-container,
+    .footer-content {
+        max-width: 100% !important;
+        padding: 0 32px !important;
+        margin: 0 auto !important;
+    }
+
+    .logo-icon {
+        margin-left: 0 !important;
+    }
+
+    .Detail-banner {
+        height: 220px !important;
+    }
+
+    .Detail-banner-title {
+        font-size: 36px !important;
+        line-height: 1.2 !important;
+        text-align: center;
+    }
+
+    .restaurant-about {
+        padding: 40px 0 !important;
+    }
+
+    .breadcrumb {
+        margin-left: 32px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .about-title, 
+    .about-description, 
+    .about-tags {
+        margin-left: 32px !important;
+        max-width: 90%;
+    }
+
+    .about-title {
+        font-size: 30px !important;
+        line-height: 1.2 !important;
+        margin-top: 20px !important;
+    }
+
+    .about-rating .star-icon {
+        margin-left: 32px !important;
+    }
+
+    .menu-category-title {
+        padding-left: 32px !important;
+        font-size: 24px !important;
+        margin-left: 8px;
+    }
+
+    .menu-category:nth-child(1) .menu-category-title {
+    margin-top: 17px !important;
+    margin-bottom: 26px !important;
+    margin-left: 5px !important;
+    }
+
+    .menu-category:nth-child(2) .menu-category-title {
+    margin-top: 61px !important;
+    margin-bottom: 26px !important;
+    margin-left: 5px !important;
+    }
+
+    .menu-section {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    background-color: #f9f9f9;
+    margin-left: -3px;
+    }
+
+    .menu-category{
+        margin-bottom: 3rem;
+        margin-top: -16px;
+        margin-left: 3px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+        padding: 0 32px !important;
+        max-width: 100% !important;
+    }
+
+    .menu-item {
+        width: 100% !important; 
+        min-height: auto !important;
+        padding: 20px !important;
+    }
+
+    .menu-item-name {
+        font-size: 20px !important;
+    }
+
+    .menu-item-description {
+        font-size: 16px !important;
+    }
+
+    .footer {
+        height: auto !important;
+        padding: 60px 0 !important;
+    }
+
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 40px !important;
+    }
+
+    .footer-logo-img {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .footer-nav {
+        flex-direction: row !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 30px !important;
+        width: 100% !important;
+    }
+
+    .footer-column {
+        margin-right: 0 !important; 
+        margin-top: 0 !important;
+        min-width: 160px;
+    }
+
+    .footer-links {
+        align-items: center !important;
+    }
+
+    .food-modal-content {
+        width: 90%;
+        max-width: 500px;
+        height: auto;
+        min-height: 277px;
+        border-radius: 12px;
+        margin: 0 auto; 
+        left: 0;        
+        right: 0;       
+    }
+    
+    .food-modal-header {
+        height: auto;
+        padding: 20px 24px;
+        border-radius: 12px 12px 0 0;
+    }
+    
+    .food-modal-body {
+        height: auto;
+        padding: 20px 24px;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 0 0 12px 12px;
+    }
+    
+    .food-modal-controls {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .quantity-controls {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    #modal-add-btn {
+        width: 100%;
+        height: 48px;
+        font-size: 15px;
+    }
+    
+    #modal-food-name {
+        font-size: 24px;
+    }
+    
+    #modal-food-description {
+        font-size: 16px;
+    }
+
+    .cart-sidebar {
+        width: 100%;
+        max-width: 100%;
+        right: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 2000;
+    }
+    
+    .cart-sidebar-header {
+        padding: 16px 20px;
+    }
+    
+    .cart-sidebar-header h2 {
+        font-size: 20px;
+    }
+    
+    .cart-sidebar-body {
+        padding: 16px 20px;
+    }
+    
+    .cart-sidebar-footer {
+        padding: 16px 20px;
+    }
+    
+    .cart-item-quantity {
+        width: 60px;
+        height: 40px;
+        font-size: 14px;
+    }
+    
+    #cart-checkout-btn {
+        height: 48px;
+        font-size: 16px;
+    }
+
+}
+    
+
+@media screen and (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .about-content {
+        max-width: 100%;
+    }
+
+    .food-modal-content {
+        width: 90%;
+        max-width: 400px;
+    }
+    
+    .cart-sidebar {
+        width: 100%;
+    }
+
+    .menu-category:nth-child(1) .menu-category-title {
+    margin-top: 17px !important;
+    margin-bottom: 26px !important;
+    margin-left: 7px !important;
+    }
+
+    .menu-category:nth-child(2) .menu-category-title {
+    margin-top: 61px !important;
+    margin-bottom: 26px !important;
+    margin-left: 4px !important;
+    }
+
+
+}
